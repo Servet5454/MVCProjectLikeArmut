@@ -17,7 +17,10 @@ namespace BideryaMvcProject.Controllers
         {
             return View();
         }
-
+        public IActionResult Anasayfa()
+        {
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
