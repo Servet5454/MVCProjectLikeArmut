@@ -1,4 +1,5 @@
-﻿using BideryaMvcProject.Models;
+﻿using BideryaMvcProject.DataBase;
+using BideryaMvcProject.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +8,12 @@ namespace BideryaMvcProject.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly BideryaMvcDatabase context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, BideryaMvcDatabase context)
         {
             _logger = logger;
+            this.context=context;
         }
 
         public IActionResult Index()
