@@ -1,4 +1,4 @@
-﻿namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Models.Ilanlar
+﻿namespace BideryaMvcProject.Models.Ilanlar
 {
     public class KoltukTemizlikViewModel
     {

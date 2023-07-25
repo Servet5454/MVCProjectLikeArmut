@@ -1,4 +1,4 @@
-﻿namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Models.HesapKullanici
+﻿namespace BideryaMvcProject.Models.HesapKullanici
 {
     public class HizmetVerenViewModel
     {

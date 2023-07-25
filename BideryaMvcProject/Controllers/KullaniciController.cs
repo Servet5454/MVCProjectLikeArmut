@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using System.Security.Claims;
 using NETCore.Encrypt.Extensions;
-using BideryaMvcProject.DataBase.Entities.Hizmetler.Models.HesapKullanici;
+using BideryaMvcProject.Models.HesapKullanici;
 
 namespace BideryaMvcProject.Controllers
 {

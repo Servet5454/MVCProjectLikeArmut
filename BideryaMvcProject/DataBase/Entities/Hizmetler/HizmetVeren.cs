@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
+using System.ComponentModel.DataAnnotations;
 
 namespace BideryaMvcProject.DataBase.Entities.Hizmetler
 {
     public class HizmetVeren
     {
         public int Id { get; set; }
+        public int KategoriId { get; set; } //TODO Burada enum ile hizmet işlemleri ayarlanacak...
         public string? Ad { get; set; }
         public string? Soyad { get; set; }
         public string? Sifre1 { get; set; }
@@ -14,14 +16,15 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         public string? IsTelNo { get; set; }
         public int? VergiNo { get; set; }
         public string? FirmaIsmi { get; set; }
-        [Required]
-        public string? HizmetTuru { get; set; } //TODO Burada enum ile hizmet işlemleri ayarlanacak...
-        public int HizmetTuruId { get; set; }
+        
+        
+       
 
         public string? HizmetBolge { get; set; }
         public DateTime? KayitTarihi { get; set; } = DateTime.Now;
         public DateTime? SilinmeTarihi { get; set; }
 
         public ICollection<HizmetVerenAdres>? HizmetverenAdres { get; set; } //burada Hizmetveren adresle çok ilişkisi olduğunu söyledik...
+        public ICollection<AracYikama>? AracYikamas { get; set; }
     }
 }

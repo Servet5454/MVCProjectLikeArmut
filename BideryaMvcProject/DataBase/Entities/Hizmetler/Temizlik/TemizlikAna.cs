@@ -1,9 +1,9 @@
 ﻿namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
 {
-    public class Temizlik
+    public class TemizlikAna
     {
         public int Id { get; set; }
-        public int HizmetVerenId { get; set; } //bu yaptığımız tanımlama ile foreign key tanımlamış oluyoruz...
+        public int AltKategoriId { get; set; } //bu yaptığımız tanımlama ile foreign key tanımlamış oluyoruz...
         public string? HizmetServis { get; set; }
         public short? BanyoSayisi { get; set; }
         public float? CalismaSuresi { get; set; }

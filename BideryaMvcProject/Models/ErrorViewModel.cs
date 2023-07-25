@@ -1,4 +1,4 @@
-namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Models
+namespace BideryaMvcProject.Models
 {
     public class ErrorViewModel
     {

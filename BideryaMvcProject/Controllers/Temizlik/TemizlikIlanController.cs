@@ -1,6 +1,6 @@
 ﻿using BideryaMvcProject.DataBase;
-using BideryaMvcProject.DataBase.Entities.Hizmetler.Models.Ilanlar;
 using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using BideryaMvcProject.Models.Ilanlar;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BideryaMvcProject.Controllers.Temizlik
@@ -25,7 +25,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
         [HttpPost]
         public IActionResult KoltukTemizlik(KoltukTemizlikViewModel model)
         {
-            
+
             AnkaraHizmetIlani ilan = new AnkaraHizmetIlani();
             AnkaraIlanKoltukTemizlik koltukIlan = new AnkaraIlanKoltukTemizlik();
             ilan.HizmetTuru =model.HizmetTuru;
@@ -53,9 +53,13 @@ namespace BideryaMvcProject.Controllers.Temizlik
             context.SaveChanges();
 
 
-            
-            
 
+
+
+            return View();
+        }
+        public IActionResult EvTemizlik()
+        {
             return View();
         }
     }
