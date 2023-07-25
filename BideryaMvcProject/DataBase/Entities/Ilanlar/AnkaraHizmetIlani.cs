@@ -1,4 +1,4 @@
-﻿namespace BideryaMvcProject.Models.Ilanlar
+﻿namespace BideryaMvcProject.DataBase.Entities.Ilanlar
 {
     public class AnkaraHizmetIlani
     {
