@@ -3,6 +3,7 @@
     public class KoltukTemizlik
     {
         public Guid Id { get; set; }
+        public int KategoriId { get; set; }
         public int TekliKoltukSayisi { get; set; }
         public int IkiliKoltukSayisi { get; set; }
         public int UcluKoltukSayisi { get; set; }

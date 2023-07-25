@@ -1,4 +1,5 @@
-﻿using BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon;
+﻿using BideryaMvcProject.DataBase.Entities.Hizmetler;
+using BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.DataBase.Entities.Ilanlar;
 using BideryaMvcProject.DataBase.Entities.Kullanici;
@@ -27,7 +28,7 @@ namespace BideryaMvcProject.DataBase
         #endregion
 
         #region TemizlikHizmetleri Dbset
-        public DbSet<Temizlik>? Temizliks { get; set; }
+        public DbSet<TemizlikAna>? Temizliks { get; set; }
         public DbSet<AracYikama>? AracYikamas { get; set; }
         public DbSet<EvTemizlik>? EvTemizliks { get; set; }
         public DbSet<Ilaclama>? Ilaclamas { get; set; }

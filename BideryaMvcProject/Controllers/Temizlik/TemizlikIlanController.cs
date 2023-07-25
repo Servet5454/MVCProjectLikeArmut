@@ -1,6 +1,6 @@
 ﻿using BideryaMvcProject.DataBase;
+using BideryaMvcProject.DataBase.Entities.Hizmetler.Models.Ilanlar;
 using BideryaMvcProject.DataBase.Entities.Ilanlar;
-using BideryaMvcProject.Models.Ilanlar;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BideryaMvcProject.Controllers.Temizlik

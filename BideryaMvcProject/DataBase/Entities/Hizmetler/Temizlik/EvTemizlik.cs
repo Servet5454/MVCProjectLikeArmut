@@ -3,6 +3,7 @@
     public class EvTemizlik
     {
         public Guid Id { get; set; }
+        public int KategoriId { get; set; }
         public string? OdaSayisi { get; set; }
         public int BanyoSayisi { get; set; }
         public int BalkonSayisi { get; set; }

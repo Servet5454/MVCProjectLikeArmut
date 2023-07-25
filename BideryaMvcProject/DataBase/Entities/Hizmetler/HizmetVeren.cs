@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BideryaMvcProject.DataBase.Entities.Kullanici
+namespace BideryaMvcProject.DataBase.Entities.Hizmetler
 {
     public class HizmetVeren
     {
@@ -17,7 +17,7 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanici
         [Required]
         public string? HizmetTuru { get; set; } //TODO Burada enum ile hizmet işlemleri ayarlanacak...
         public int HizmetTuruId { get; set; }
-        
+
         public string? HizmetBolge { get; set; }
         public DateTime? KayitTarihi { get; set; } = DateTime.Now;
         public DateTime? SilinmeTarihi { get; set; }
