@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230725122441_mig07")]
+    partial class mig07
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -348,9 +351,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("HizmetTuru")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("IlanTarih")
-                        .HasColumnType("datetime2");
-
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
 
@@ -556,7 +556,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 25, 15, 28, 37, 319, DateTimeKind.Local).AddTicks(3074),
+                            KayitTarihi = new DateTime(2023, 7, 25, 15, 24, 41, 311, DateTimeKind.Local).AddTicks(8610),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -567,7 +567,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 25, 15, 28, 37, 319, DateTimeKind.Local).AddTicks(3079),
+                            KayitTarihi = new DateTime(2023, 7, 25, 15, 24, 41, 311, DateTimeKind.Local).AddTicks(8614),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",

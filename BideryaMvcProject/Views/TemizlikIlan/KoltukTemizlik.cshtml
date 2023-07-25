@@ -36,51 +36,58 @@
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Üç'lü Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="İkili Koltuk Sayısı">
+                                        <input type="text" asp-for="IkiliKoltuk" placeholder="İkili Koltuk Sayısı">
                                        
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>İki'li' Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Üçlü Koltuk Sayısı">
+                                        <input type="text" asp-for="UcluKoltuk" placeholder="Üçlü Koltuk Sayısı">
 
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>L-Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="L-Koltuk Sayısı">
+                                        <input type="text" asp-for="LKoltuk" placeholder="L-Koltuk Sayısı">
 
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Minder Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Minder Sayısı">
+                                        <input type="text" asp-for="Minder" placeholder="Minder Sayısı">
 
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Sandalye Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Sandalye Sayısı">
+                                        <input type="text" aso-for="Sandalye" placeholder="Sandalye Sayısı">
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Yatak Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Yatak Sayısı">                                        
+                                        <input type="text" asp-for="YatakSayi" placeholder="Yatak Sayısı">
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Şehir</h5>
+                                    <div class="sign__input">
+                                        <input type="text" asp-for="AdresSehir" placeholder="Sehir">
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Açıklama</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Açıklama">
-
+                                        <input type="text" asp-for="Aciklama" placeholder="Açıklama">
                                     </div>
                                 </div>
-                                
+                                <input type="hidden" asp-for="HizmetTuru" value="1">
+                                <input type="hidden" asp-for="HizmetAltKategori" value="1">
+                                <input type="hidden" asp-for="TeklifSayisi" value="0">
                                 <button type="submit" class="m-btn m-btn-4 w-100"> <span></span> Hizmet Talep Et</button>
                             </form>
                         </div>

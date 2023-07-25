@@ -1,5 +1,6 @@
 ﻿using BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
+using BideryaMvcProject.DataBase.Entities.Ilanlar;
 using BideryaMvcProject.DataBase.Entities.Kullanici;
 using Microsoft.EntityFrameworkCore;
 
@@ -31,6 +32,14 @@ namespace BideryaMvcProject.DataBase
         public DbSet<EvTemizlik>? EvTemizliks { get; set; }
         public DbSet<Ilaclama>? Ilaclamas { get; set; }
         public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
+
+
+        #endregion
+
+        #region İlanlar
+
+        public DbSet<AnkaraHizmetIlani>? AnkaraHizmetIlanis { get; set; }
+        public DbSet<AnkaraIlanKoltukTemizlik>? AnkaraIlanTemizliks { get; set; }
 
 
         #endregion

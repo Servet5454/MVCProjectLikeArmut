@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230725110524_mig02")]
+    partial class mig02
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -286,9 +289,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("TekliYatakSayisi")
                         .HasColumnType("int");
 
-                    b.Property<int>("TeklifSayisi")
-                        .HasColumnType("int");
-
                     b.Property<int>("UcluKoltukSayisi")
                         .HasColumnType("int");
 
@@ -339,19 +339,10 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("HizmetAltKategori")
-                        .HasColumnType("int");
-
                     b.Property<string>("HizmetBolge")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("HizmetTuru")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("IlanTarih")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -359,7 +350,7 @@ namespace BideryaMvcProject.Migrations
                     b.ToTable("AnkaraHizmetIlanis");
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraIlanKoltukTemizlik", b =>
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraIlanTemizlik", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -367,43 +358,10 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Aciklama")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("AnkaraHizmetIlaniId")
                         .HasColumnType("int");
 
-                    b.Property<int>("CiftKisilikYatakSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("HizmetAltKategori")
-                        .HasColumnType("int");
-
-                    b.Property<string>("HizmetBolge")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("HizmetTuruId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IkiliKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinderSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SandalyeSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TekliKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TekliYatakSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UcluKoltukSayisi")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -556,7 +514,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 25, 15, 28, 37, 319, DateTimeKind.Local).AddTicks(3074),
+                            KayitTarihi = new DateTime(2023, 7, 25, 14, 5, 24, 524, DateTimeKind.Local).AddTicks(8767),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -567,7 +525,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 25, 15, 28, 37, 319, DateTimeKind.Local).AddTicks(3079),
+                            KayitTarihi = new DateTime(2023, 7, 25, 14, 5, 24, 524, DateTimeKind.Local).AddTicks(8771),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -679,7 +637,7 @@ namespace BideryaMvcProject.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraIlanKoltukTemizlik", b =>
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraIlanTemizlik", b =>
                 {
                     b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraHizmetIlani", "AnkaraHizmetIlani")
                         .WithMany("AnkaraIlanTemizliks")
