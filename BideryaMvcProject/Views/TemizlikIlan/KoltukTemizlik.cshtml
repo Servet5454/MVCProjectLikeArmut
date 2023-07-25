@@ -1,4 +1,6 @@
-﻿<main>
+﻿@model BideryaMvcProject.Models.Ilanlar.KoltukTemizlikViewModel
+
+<main>
 
     <!-- arkaplan şekil alanı başlangıcı -->
     <div class="bg-shape">
@@ -23,25 +25,25 @@
                         <div class="sign__header mb-35">
                         </div>
                         <div class="sign__form">
-                            <form asp-controller="Temizlik" asp-action="" method="post">
+                            <form asp-controller="TemizlikIlan" asp-action="KoltukTemizlik" method="post">
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Tekli Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Tekli Koltuk Sayısı">
+                                        <input type="text" asp-for="TekliKoltuk" placeholder="Tekli Koltuk Sayısı">
                                        
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Üç'lü Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Üç'lü Koltuk Sayısı">
+                                        <input type="text" placeholder="İkili Koltuk Sayısı">
                                        
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>İki'li' Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="İki'li' Koltuk Sayısı">
+                                        <input type="text" placeholder="Üçlü Koltuk Sayısı">
 
                                     </div>
                                 </div>
