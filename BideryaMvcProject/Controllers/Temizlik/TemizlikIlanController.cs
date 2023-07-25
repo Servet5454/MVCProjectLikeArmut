@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using BideryaMvcProject.Models.Ilanlar;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BideryaMvcProject.Controllers.Temizlik
 {
@@ -9,6 +10,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         public IActionResult KoltukTemizlik()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult KoltukTemizlik(KoltukTemizlikViewModel model)
         {
             return View();
         }
