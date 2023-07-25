@@ -8,56 +8,78 @@
     <!-- kayıt olma alanı başlangıcı -->
     <section class="signup__area po-rel-z1 pt-100 pb-145">
         <div class="sign__shape">
-            <img class="man-1" src="assets/img/icon/sign/man-3.png" alt="">
-            <img class="man-2 man-22" src="assets/img/icon/sign/man-2.png" alt="">
-            <img class="circle" src="assets/img/icon/sign/circle.png" alt="">
-            <img class="zigzag" src="assets/img/icon/sign/zigzag.png" alt="">
-            <img class="dot" src="assets/img/icon/sign/dot.png" alt="">
-            <img class="bg" src="assets/img/icon/sign/sign-up.png" alt="">
-            <img class="flower" src="assets/img/icon/sign/flower.png" alt="">
+            <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+            <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+            <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+            <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+            <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+            <img class="flower" src="~/img/icon/sign/flower.png" alt="">
         </div>
-        <div class="container">           
+        <div class="container">
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
                     <div class="sign__wrapper white-bg">
                         <div class="sign__header mb-35">
-                            
                         </div>
                         <div class="sign__form">
-                            <form action="#">
+                            <form asp-controller="Temizlik" asp-action="" method="post">
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Tekli Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Adınız ve Soyadınız">
-                                        <i class="fal fa-user"></i>
+                                        <input type="text" placeholder="Tekli Koltuk Sayısı">
+                                       
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5> Üç'lü Koltuk Sayısı</h5>
+                                    <h5>Üç'lü Koltuk Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="e-posta adresi">
-                                        <i class="fal fa-envelope"></i>
+                                        <input type="text" placeholder="Üç'lü Koltuk Sayısı">
+                                       
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>İki'li' Koltuk Sayısı</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="İki'li' Koltuk Sayısı">
+
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>L-Koltuk Sayısı</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="L-Koltuk Sayısı">
+
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Minder Sayısı</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="Minder Sayısı">
+
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Sandalye Sayısı</h5>
+                                    <div class="sign__input">
+                                        <input type="text" placeholder="Sandalye Sayısı">
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Yatak Sayısı</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Şifre">
-                                        <i class="fal fa-lock"></i>
+                                        <input type="text" placeholder="Yatak Sayısı">                                        
                                     </div>
                                 </div>
-                                <div class="sign__input-wrapper mb-10">
-                                    <h5>Şifreyi Tekrar Girin</h5>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Açıklama</h5>
                                     <div class="sign__input">
-                                        <input type="password" placeholder="Şifreyi Tekrar Girin">
-                                        <i class="fal fa-lock"></i>
+                                        <input type="text" placeholder="Açıklama">
+
                                     </div>
                                 </div>
                                 
-                                <button type="submit" class="m-btn m-btn-4 w-100"> <span></span> Kaydol</button>
-                                <div class="sign__new text-center mt-20">
-                                    <p>Zaten Markit'te misiniz? <a href="sign-in.html"> Giriş Yapın</a></p>
-                                </div>
+                                <button type="submit" class="m-btn m-btn-4 w-100"> <span></span> Hizmet Talep Et</button>
                             </form>
                         </div>
                     </div>
