@@ -25,7 +25,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
         [HttpPost]
         public IActionResult KoltukTemizlik(KoltukTemizlikViewModel model)
         {
-
+            
             AnkaraHizmetIlani ilan = new AnkaraHizmetIlani();
             AnkaraIlanKoltukTemizlik koltukIlan = new AnkaraIlanKoltukTemizlik();
             ilan.HizmetTuru =model.HizmetTuru;
@@ -49,7 +49,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
             ilan.AnkaraIlanTemizliks.Add(koltukIlan);
             koltukIlan.AnkaraHizmetIlani =ilan;
-
+            context.Add(koltukIlan);
             context.SaveChanges();
 
 
