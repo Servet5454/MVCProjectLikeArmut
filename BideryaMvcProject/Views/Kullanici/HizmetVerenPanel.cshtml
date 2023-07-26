@@ -4,7 +4,7 @@
 
         <!-- bg shape area start -->
         <div class="bg-shape">
-            <img src="assets/img/shape/shape-1.png" alt="">
+            <img src="~/img/shape/shape-1.png" alt="">
         </div>
         <!-- bg shape area end -->
         <!-- page title area -->
@@ -13,14 +13,7 @@
                 <div class="row">
                     <div class="col-xxl-12">
                         <div class="page__title-content mb-50">
-                            <h2 class="page__title">Zibber-Business Consulting.</h2>
-                            <nav aria-label="breadcrumb">
-                                <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="product.html">Product</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Current</li>
-                                </ol>
-                            </nav>
+                            <h2 class="page__title">Biderya - Hizmet Veren Paneli</h2>
                         </div>
                     </div>
                 </div>
@@ -34,90 +27,202 @@
                     <div class="col-xxl-8 col-xl-8 col-lg-8">
                         <div class="product__wrapper">
                             <div class="product__details-thumb w-img mb-30">
-                                <img src="assets/img/product/details/pro-de-1.jpg" alt="product-details">
+                                <img src="~/img/product/details/1.gif" alt="product-details">
                             </div>
                             <div class="product__details-content">
                                 <div class="product__tab mb-40">
                                     <ul class="nav nav-tabs" id="proTab" role="tablist">
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Overview</button>
+                                            <button class="nav-link active" id="overview-tab" data-bs-toggle="tab" data-bs-target="#overview" type="button" role="tab" aria-controls="overview" aria-selected="true">Kullanıcı Bilgileri</button>
                                         </li>
                                         <li class="nav-item" role="presentation">
-                                            <button class="nav-link" id="support-tab" data-bs-toggle="tab" data-bs-target="#support" type="button" role="tab" aria-controls="support" aria-selected="false">Support</button>
+                                            <button class="nav-link" id="support-tab" data-bs-toggle="tab" data-bs-target="#support" type="button" role="tab" aria-controls="support" aria-selected="false">Yorumlar</button>
                                         </li>
                                     </ul>
                                 </div>
+
+                                <section class="contact__area pt-105 pb-145">
+                                    <div class="contact__shape">
+                                        <img class="man-1" src="~/img/icon/sign/man-1.png" alt="">
+                                        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+                                        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+                                        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+                                        <img class="bg" src="/img/icon/sign/sign-up.png" alt="">
+                                    </div>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-xxl-24">
+                                                <div class="page__title-wrapper mb-55">
+                                                    <h2 class="page__title-2">Kiişisel Bilgiler</h2>
+                                                    <p>Hizmet arayan müşterileriniz ile iletişim kurabilmek için bilgileri doldurunuz</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xxl-11 col-xl-11">
+                                                <div class="contact__wrapper  white-bg">
+                                                    <div class="contact__form">
+                                                        <form action="assets/mail.php" method="POST">
+
+                                                            <div class="row">
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Vergi-Kimlik Numaranız</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Vergi-Kimlik Numaranız" name="email">
+                                                                            <i class="fal fa-envelope"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Şirket İsmi</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Şirket İsmi" name="subject">
+                                                                            <i class="fal fa-smile"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Adınız</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adınız" name="name">
+                                                                            <i class="fal fa-user"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Soyadınız</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Soyadınız" name="name">
+                                                                            <i class="fal fa-user"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Telefon Numarası</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Telefon Numarası" name="subject">
+                                                                            <i class="fal fa-smile"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>İş Telefon Numarası</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="İş Telefon Numarası" name="subject">
+                                                                            <i class="fal fa-smile"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>İl</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adresiniz" name="address">
+                                                                            <i class="fal fa-globe"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>İlçe</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adresiniz" name="address">
+                                                                            <i class="fal fa-globe"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Mahalle</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adresiniz" name="address">
+                                                                            <i class="fal fa-globe"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Sokak</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adresiniz" name="address">
+                                                                            <i class="fal fa-globe"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Bina Numarası</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adresiniz" name="address">
+                                                                            <i class="fal fa-globe"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Daire Numarası</h5>
+                                                                        <div class="contact__input">
+                                                                            <input type="text" placeholder="Adresiniz" name="address">
+                                                                            <i class="fal fa-globe"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-xxl-12">
+                                                                    <div class="contact__input-wrapper mb-25">
+                                                                        <h5>Mesajınız</h5>
+                                                                        <div class="contact__input textarea">
+                                                                            <textarea placeholder="Eklemek istediğiniz başka konular varsa bizimle paylaşabilirsiniz." name="message"></textarea>
+                                                                            <i class="fal fa-comment"></i>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="row">
+                                                                <div class="col-xxl-12">
+                                                                    <button type="submit" class="m-btn m-btn-4"> <span></span> Kaydet </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </section>
+
                                 <div class="product__tab-content">
                                     <div class="tab-content" id="proTabContent">
                                         <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview-tab">
                                             <div class="product__overview">
-                                                <h3 class="product__overview-title">Template Details</h3>
-                                                <p>The little rotter absolutely bladdered wind up victoria sponge starkers cack posh jolly good lost the plot nancy boy bonnet plastered, bevvy say the bee's knees only a quid well bodge daft bits and bobs amongst my good sir golly gosh crikey, the wireless Eaton mush Harry codswallop boot porkies up the duff morish cor blimey guvnor. Faff about blower twit Why it's your round matie boy bog-standard, say A bit of how's your father.</p>
-                                                <p>What a plonker say william mush bite your arm off brown bread chinwag he legged it the bee's knees lost the plot loo gutted mate old, zonked bog Harry morish cup of char butty blag get stuffed mate cobblers cockup.!</p>
-                                                <div class="product__features mt-40">
-                                                    <h3 class="product__overview-title">Template Features:</h3>
-                                                    <ol>
-                                                        <li>
-                                                            <p>Fully Responsive Layout</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>CMS for Courses (Products)</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>CMS for Workshops</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Symbols for Common Elements</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Pre-Built Templates for Common Pages</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Royalty-Free Google Fonts</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Easy-to-Change Global Color Swatches</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Working Contact Page</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Slider Testimonial Section</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Elegant Micro Interactions</p>
-                                                        </li>
-                                                    </ol>
-                                                </div>
-                                                <div class="product__features">
-                                                    <h3 class="product__overview-title">Design Layout</h3>
-                                                    <ol>
-                                                        <li>
-                                                            <p>Home / Landing</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Products Collection</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Services</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>App Collection</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Blog Collection</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Individual Blog Article</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>About</p>
-                                                        </li>
-                                                        <li>
-                                                            <p>Contact</p>
-                                                        </li>
-                                                    </ol>
-                                                </div>
+                                               
                                                 <div class="product__social m-social grey-bg-2">
                                                     <h4 class="product__social-title">Follow us</h4>
                                                     <ul>
@@ -137,7 +242,7 @@
                                                             <div class="comments-box grey-bg-2">
                                                                 <div class="comments-info d-flex">
                                                                     <div class="comments-avatar mr-15">
-                                                                        <img src="assets/img/product/support/sup-1.jpg" alt="">
+                                                                        <img src="~/img/product/support/sup-1.jpg" alt="">
                                                                     </div>
                                                                     <div class="avatar-name">
                                                                         <h5>Jason Response</h5>
@@ -153,7 +258,7 @@
                                                             <div class="comments-box grey-bg-2">
                                                                 <div class="comments-info d-flex">
                                                                     <div class="comments-avatar mr-15">
-                                                                        <img src="assets/img/product/support/sup-2.jpg" alt="">
+                                                                        <img src="~/img/product/support/sup-2.jpg" alt="">
                                                                     </div>
                                                                     <div class="avatar-name">
                                                                         <h5>Hilary Ouse</h5>
@@ -202,7 +307,7 @@
                                     <div class="product__prorietor-info mb-20 d-flex justify-content-between">
                                         <div class="product__proprietor-avater d-flex align-items-center">
                                             <div class="product__proprietor-thumb">
-                                                <img src="assets/img/product/proprietor/proprietor-1.jpg" alt="">
+                                                <img src="~/img/product/proprietor/proprietor-1.jpg" alt="">
                                             </div>
                                             <div class="product__proprietor-name">
                                                 <h5><a href="#">Justin Case</a></h5>
@@ -244,10 +349,6 @@
                                     <a href="https://themeforest.net/item/zibber-business-consulting-wordpress-theme/30120392" target="_blank" class="m-btn m-btn-border w-100"> <span></span> Preview Project</a>
                                 </div>
                             </div>
-                            <div class="sidebar__banner" data-background="assets/img/banner/sidebar-banner.jpg">
-                                <h4 class="sidebar__banner-title">Check Out <br>Our free Templates</h4>
-                                <a href="product.html" class="m-btn m-btn-white"> <span></span> free template</a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -257,29 +358,44 @@
         <!-- subscribe area start -->
         <section class="subscribe__area p-relative pt-100 pb-110" data-background="assets/img/bg/subscribe-bg.jpg">
             <div class="subscribe__icon">
-                <img class="ps" src="assets/img/icon/subscribe/ps.png" alt="">
-                <img class="wp" src="assets/img/icon/subscribe/wp.png" alt="">
-                <img class="html" src="assets/img/icon/subscribe/html.png" alt="">
-                <img class="f" src="assets/img/icon/subscribe/f.png" alt="">
-                <img class="man" src="assets/img/icon/subscribe/man.png" alt="">
+                <img class="ps" src="~/img/icon/subscribe/ps.png" alt="">
+                <img class="wp" src="~/img/icon/subscribe/wp.png" alt="">
+                <img class="html" src="~/img/icon/subscribe/html.png" alt="">
+                <img class="f" src="~/img/icon/subscribe/f.png" alt="">
+                <img class="man" src="/img/icon/subscribe/man.png" alt="">
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-xxl-12">
-                        <div class="subscribe__content text-center wow fadeInUp" data-wow-delay=".3s">
-                            <h3 class="subscribe__title">Have a project? <br> Create your website now.</h3>
+                        <div class="content text-center wow fadeInUp" data-wow-delay=".3s">
+                            <h3 class="title">Have a project? <br> Create your website now.</h3>
                             <p>Try our any product for FREE!</p>
-                            <div class="subscribe__form wow fadeInUp" data-wow-delay=".5s">
                                 <form action="#">
-                                    <input type="email" placeholder="Email Address">
-                                    <button type="submit" class="m-btn m-btn-black"><span></span> subscribe </button>
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                        <div class="row">
+                                            <div class="col-xxl-12">
+                                                <button type="submit" class="m-btn m-btn-4"> <span></span> Kaydet </button>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </form>
+                                <form action="#">
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                        <div class="row">
+                                            <div class="col-xxl-12">
+                                                <button type="submit" class="m-btn m-btn-4"> <span></span> Kaydet </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+
                                 <p>Join 20,000+ other creators in our Markit community.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            
         </section>
         <!-- subscribe area end -->
     </main>
