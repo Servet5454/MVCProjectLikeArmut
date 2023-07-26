@@ -122,10 +122,15 @@ namespace BideryaMvcProject.Controllers
 
             return RedirectToAction("Anasayfa", "Home");
         }
-
+        [HttpGet]
         public IActionResult HizmetVerenPanel()
         {
             return View();
         }
+        public IActionResult Panel1()
+        {
+            return View();
+        }
+        
     }
 }
