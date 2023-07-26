@@ -5,6 +5,11 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
 {
     public class HizmetVeren
     {
+        public HizmetVeren()
+        {
+            HizmetKategoris =new HashSet<HizmetKategori>();
+            HizmetverenAdress =new HashSet<HizmetVerenAdres>();
+        }
         public int Id { get; set; }
         public int KategoriId { get; set; } //TODO Burada enum ile hizmet işlemleri ayarlanacak...
         public string? Ad { get; set; }
@@ -24,7 +29,10 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         public DateTime? KayitTarihi { get; set; } = DateTime.Now;
         public DateTime? SilinmeTarihi { get; set; }
 
-        public ICollection<HizmetVerenAdres>? HizmetverenAdres { get; set; } //burada Hizmetveren adresle çok ilişkisi olduğunu söyledik...
-        public ICollection<AracYikama>? AracYikamas { get; set; }
+        public ICollection<HizmetVerenAdres>? HizmetverenAdress { get; set; } //burada Hizmetveren adresle çok ilişkisi olduğunu söyledik...
+
+        public ICollection<HizmetKategori>? HizmetKategoris { get; set; }
+        
+       
     }
 }

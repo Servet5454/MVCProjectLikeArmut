@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230726200854_mig13")]
+    partial class mig13
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,48 +24,6 @@ namespace BideryaMvcProject.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("AracYikamaIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CamBalkon")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EvTadilat")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EvTemizlikIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("HizmetKategoriId")
-                        .HasColumnType("int");
-
-                    b.Property<bool>("IlaclamaIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("KoltukTemizlikIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Mantolama")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("MutfakDolabiYapimi")
-                        .HasColumnType("bit");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("HizmetKategoriId");
-
-                    b.ToTable("HizmetAltKategoris");
-                });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
                 {
@@ -73,9 +34,6 @@ namespace BideryaMvcProject.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("HizmetVerenId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("KategoriId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -210,6 +168,8 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TadilatDekorasyonId");
+
                     b.ToTable("CamBalkons");
                 });
 
@@ -271,6 +231,8 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TadilatDekorasyonId");
+
                     b.ToTable("EvTadilats");
                 });
 
@@ -311,6 +273,8 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TadilatDekorasyonId");
+
                     b.ToTable("Mantolamas");
                 });
 
@@ -339,6 +303,8 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TadilatDekorasyonId");
+
                     b.ToTable("MutfakDolabiYapimis");
                 });
 
@@ -354,6 +320,8 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HizmetKategoriId");
 
                     b.ToTable("TadilatDekorasyons");
                 });
@@ -383,6 +351,8 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TemizlikAnaId");
+
                     b.ToTable("AracYikamas");
                 });
 
@@ -394,8 +364,23 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("Aktifmi")
-                        .HasColumnType("bit");
+                    b.Property<string>("Aciklama")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("BalkonSayisi")
+                        .HasColumnType("int");
+
+                    b.Property<int>("BanyoSayisi")
+                        .HasColumnType("int");
+
+                    b.Property<float>("CalismaSuresi")
+                        .HasColumnType("real");
+
+                    b.Property<string>("HayvanVarmi")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OdaSayisi")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TemizlikAnaId")
                         .HasColumnType("int");
@@ -431,6 +416,8 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TemizlikAnaId");
 
                     b.ToTable("Ilaclamas");
                 });
@@ -470,10 +457,15 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
 
+                    b.Property<int>("TemizlikAnaId")
+                        .HasColumnType("int");
+
                     b.Property<int>("UcluKoltukSayisi")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TemizlikAnaId");
 
                     b.ToTable("KoltukTemizliks");
                 });
@@ -511,6 +503,8 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("HizmetKategoriId");
 
                     b.ToTable("TemizlikAnas");
                 });
@@ -642,7 +636,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 0, 50, 59, 54, DateTimeKind.Local).AddTicks(3256),
+                            KayitTarihi = new DateTime(2023, 7, 26, 23, 8, 54, 706, DateTimeKind.Local).AddTicks(4196),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -653,7 +647,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 0, 50, 59, 54, DateTimeKind.Local).AddTicks(3258),
+                            KayitTarihi = new DateTime(2023, 7, 26, 23, 8, 54, 706, DateTimeKind.Local).AddTicks(4199),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -765,21 +759,10 @@ namespace BideryaMvcProject.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", "HizmetKategori")
-                        .WithMany("HizmetAltKategoris")
-                        .HasForeignKey("HizmetKategoriId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("HizmetKategori");
-                });
-
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
                 {
                     b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", "HizmetVeren")
-                        .WithMany("HizmetKategoris")
+                        .WithMany()
                         .HasForeignKey("HizmetVerenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -790,12 +773,78 @@ namespace BideryaMvcProject.Migrations
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVerenAdres", b =>
                 {
                     b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", "HizmetVeren")
-                        .WithMany("HizmetverenAdress")
+                        .WithMany("HizmetverenAdres")
                         .HasForeignKey("HizmetVerenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("HizmetVeren");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.CamBalkon", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.TadilatDekorasyon", "TadilatDekorasyon")
+                        .WithMany()
+                        .HasForeignKey("TadilatDekorasyonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TadilatDekorasyon");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.EvTadilat", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.TadilatDekorasyon", "TadilatDekorasyon")
+                        .WithMany()
+                        .HasForeignKey("TadilatDekorasyonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TadilatDekorasyon");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.Mantolama", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.TadilatDekorasyon", "TadilatDekorasyon")
+                        .WithMany()
+                        .HasForeignKey("TadilatDekorasyonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TadilatDekorasyon");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.MutfakDolabiYapimi", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.TadilatDekorasyon", "TadilatDekorasyon")
+                        .WithMany()
+                        .HasForeignKey("TadilatDekorasyonId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TadilatDekorasyon");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.TadilatDekorasyon", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", "HizmetKategori")
+                        .WithMany()
+                        .HasForeignKey("HizmetKategoriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HizmetKategori");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.AracYikama", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.TemizlikAna", "TemizlikAna")
+                        .WithMany()
+                        .HasForeignKey("TemizlikAnaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TemizlikAna");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.EvTemizlik", b =>
@@ -807,6 +856,39 @@ namespace BideryaMvcProject.Migrations
                         .IsRequired();
 
                     b.Navigation("TemizlikAna");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.Ilaclama", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.TemizlikAna", "TemizlikAna")
+                        .WithMany()
+                        .HasForeignKey("TemizlikAnaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TemizlikAna");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.TemizlikAna", "TemizlikAna")
+                        .WithMany()
+                        .HasForeignKey("TemizlikAnaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TemizlikAna");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.TemizlikAna", b =>
+                {
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", "HizmetKategori")
+                        .WithMany()
+                        .HasForeignKey("HizmetKategoriId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("HizmetKategori");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraIlanKoltukTemizlik", b =>
@@ -829,16 +911,9 @@ namespace BideryaMvcProject.Migrations
                     b.Navigation("Kullanici");
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
-                {
-                    b.Navigation("HizmetAltKategoris");
-                });
-
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", b =>
                 {
-                    b.Navigation("HizmetKategoris");
-
-                    b.Navigation("HizmetverenAdress");
+                    b.Navigation("HizmetverenAdres");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraHizmetIlani", b =>

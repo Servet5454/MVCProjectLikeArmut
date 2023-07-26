@@ -15,7 +15,8 @@ namespace BideryaMvcProject.DataBase
         public DbSet<KullaniciAdres>? KullaniciAdress { get; set; }
         public DbSet<HizmetVeren>? HizmetVerens { get; set; }
         public DbSet<HizmetVerenAdres>? HizmetVerenAdres { get; set; }
-
+        public DbSet<HizmetKategori>? HizmetKategoris { get; set; }
+        public DbSet<HizmetAltKategori>? HizmetAltKategoris { get; set; }
         #endregion
 
         #region Tadilat Dekorasyon DbSet
@@ -28,13 +29,12 @@ namespace BideryaMvcProject.DataBase
         #endregion
 
         #region TemizlikHizmetleri Dbset
-        public DbSet<TemizlikAna>? Temizliks { get; set; }
+        public DbSet<TemizlikAna>? TemizlikAnas { get; set; }
         public DbSet<AracYikama>? AracYikamas { get; set; }
         public DbSet<EvTemizlik>? EvTemizliks { get; set; }
         public DbSet<Ilaclama>? Ilaclamas { get; set; }
         public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
-
-
+       
         #endregion
 
         #region İlanlar
@@ -47,9 +47,10 @@ namespace BideryaMvcProject.DataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-7FIIBG4;Database=BideryaMvcProjesi;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi; User ID=sa;password=servet;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
-
+            //"Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi; User ID=sa;password=servet"    evdeki database linki
+            //"Server=DESKTOP-7FIIBG4;Database=BideryaMvcProjesi;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True" Laptop Linki
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

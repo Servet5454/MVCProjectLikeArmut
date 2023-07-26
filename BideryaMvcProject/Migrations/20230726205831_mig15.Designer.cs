@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230726205831_mig15")]
+    partial class mig15
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -30,7 +33,7 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("AracYikamaIslemi")
+                    b.Property<bool>("AracYikama")
                         .HasColumnType("bit");
 
                     b.Property<bool>("CamBalkon")
@@ -39,16 +42,16 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("EvTadilat")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("EvTemizlikIslemi")
+                    b.Property<bool>("EvTemizlik")
                         .HasColumnType("bit");
 
                     b.Property<int>("HizmetKategoriId")
                         .HasColumnType("int");
 
-                    b.Property<bool>("IlaclamaIslemi")
+                    b.Property<bool>("Ilaclama")
                         .HasColumnType("bit");
 
-                    b.Property<bool>("KoltukTemizlikIslemi")
+                    b.Property<bool>("KoltukTemizlik")
                         .HasColumnType("bit");
 
                     b.Property<bool>("Mantolama")
@@ -642,7 +645,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 0, 50, 59, 54, DateTimeKind.Local).AddTicks(3256),
+                            KayitTarihi = new DateTime(2023, 7, 26, 23, 58, 31, 712, DateTimeKind.Local).AddTicks(208),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -653,7 +656,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 0, 50, 59, 54, DateTimeKind.Local).AddTicks(3258),
+                            KayitTarihi = new DateTime(2023, 7, 26, 23, 58, 31, 712, DateTimeKind.Local).AddTicks(211),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -790,7 +793,7 @@ namespace BideryaMvcProject.Migrations
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVerenAdres", b =>
                 {
                     b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", "HizmetVeren")
-                        .WithMany("HizmetverenAdress")
+                        .WithMany("HizmetverenAdres")
                         .HasForeignKey("HizmetVerenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -838,7 +841,7 @@ namespace BideryaMvcProject.Migrations
                 {
                     b.Navigation("HizmetKategoris");
 
-                    b.Navigation("HizmetverenAdress");
+                    b.Navigation("HizmetverenAdres");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.AnkaraHizmetIlani", b =>

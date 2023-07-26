@@ -1,4 +1,6 @@
-﻿<main>
+﻿@model BideryaMvcProject.Models.HesapKullanici.HesapOlusturViewModel
+
+<main>
 
     <!-- arkaplan şekil alanı başlangıcı -->
     <div class="bg-shape">
@@ -35,18 +37,18 @@
                             </div>
                         </div>
                         <div class="sign__form">
-                            <form action="#">
+                            <form asp-controller="Kullanici" asp-action="hizmetverenekle" method="post">
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Adınız ve Soyadınız</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="Adınız ve Soyadınız">
+                                        <input type="text"asp-for="Ad"  placeholder="Adınız ve Soyadınız">
                                         <i class="fal fa-user"></i>
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>İş E-postası</h5>
                                     <div class="sign__input">
-                                        <input type="text" placeholder="e-posta adresi">
+                                        <input type="text" asp-for="Email" placeholder="e-posta adresi">
                                         <i class="fal fa-envelope"></i>
                                     </div>
                                 </div>
@@ -72,7 +74,7 @@
                                         </label>
                                     </div>
                                 </div>
-                                <button class="m-btn m-btn-4 w-100"> <span></span> Kaydol</button>
+                                <button class="m-btn m-btn-4 w-100" type="submit"> <span></span> Kaydol</button>
                                 <div class="sign__new text-center mt-20">
                                     <p>Zaten Markit'te misiniz? <a href="sign-in.html"> Giriş Yapın</a></p>
                                 </div>

@@ -4,10 +4,8 @@
     {
         public int Id { get; set; }
 
-        public int HizmetTuruId { get; set; }
-
-        public string? Ilce { get; set; }
-
-
+        public int HizmetKategoriId { get; set; }
+            
+              
     }
 }
