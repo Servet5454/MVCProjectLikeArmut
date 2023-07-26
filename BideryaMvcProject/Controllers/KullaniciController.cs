@@ -123,5 +123,9 @@ namespace BideryaMvcProject.Controllers
             return RedirectToAction("Anasayfa", "Home");
         }
 
+        public IActionResult HizmetVerenPanel()
+        {
+            return View();
+        }
     }
 }
