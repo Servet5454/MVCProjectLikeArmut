@@ -68,7 +68,7 @@
                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-4 col-6">
                         <div class="logo">
                             <a href="index.html">
-                                <img src="assets/img/logo/logo.png" alt="logo">
+                                <img src="~/img/logo/logo.png" alt="logo">
                             </a>
                         </div>
                     </div>
@@ -154,93 +154,7 @@
 
     <!-- header area end -->
     <!-- cart mini area start -->
-    <div class="cartmini__area">
-        <div class="cartmini__wrapper">
-            <div class="cartmini__title">
-                <h4>Shopping cart</h4>
-            </div>
-            <div class="cartmini__close">
-                <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
-            </div>
-            <div class="cartmini__widget">
-                <div class="cartmini__inner">
-                    <ul>
-                        <li>
-                            <div class="cartmini__thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/product/sm/cart-5.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="cartmini__content">
-                                <h5><a href="product-details.html">Findup - Directory & Listing</a></h5>
-                                <div class="product-quantity mt-10 mb-10">
-                                    <span class="cart-minus">-</span>
-                                    <input class="cart-input" type="text" value="1" />
-                                    <span class="cart-plus">+</span>
-                                </div>
-                                <div class="product__sm-price-wrapper">
-                                    <span>2 <i class="fal fa-times"></i></span>
-                                    <span class="product__sm-price">$24.00</span>
-                                </div>
-                            </div>
-                            <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
-                        </li>
-                        <li>
-                            <div class="cartmini__thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/product/sm/cart-2.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="cartmini__content">
-                                <h5><a href="product-details.html">TechBuzz - Businesses Agency</a></h5>
-                                <div class="product-quantity mt-10 mb-10">
-                                    <span class="cart-minus">-</span>
-                                    <input class="cart-input" type="text" value="1" />
-                                    <span class="cart-plus">+</span>
-                                </div>
-                                <div class="product__sm-price-wrapper">
-                                    <span>1 <i class="fal fa-times"></i></span>
-                                    <span class="product__sm-price">$17.00</span>
-                                </div>
-                            </div>
-                            <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
-                        </li>
-                        <li>
-                            <div class="cartmini__thumb">
-                                <a href="product-details.html">
-                                    <img src="assets/img/product/sm/cart-3.jpg" alt="">
-                                </a>
-                            </div>
-                            <div class="cartmini__content">
-                                <h5><a href="product-details.html">Zibber - Agency Template</a></h5>
-                                <div class="product-quantity mt-10 mb-10">
-                                    <span class="cart-minus">-</span>
-                                    <input class="cart-input" type="text" value="1" />
-                                    <span class="cart-plus">+</span>
-                                </div>
-                                <div class="product__sm-price-wrapper">
-                                    <span>5 <i class="fal fa-times"></i></span>
-                                    <span class="product__sm-price">$72.00</span>
-                                </div>
-                            </div>
-                            <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="cartmini__checkout">
-                    <div class="cartmini__checkout-title mb-30">
-                        <h4>Subtotal:</h4>
-                        <span>$113.00</span>
-                    </div>
-                    <div class="cartmini__checkout-btn">
-                        <a href="#" class="m-btn m-btn-border mb-10 w-100"> <span></span> view cart</a>
-                        <a href="#" class="m-btn m-btn-3 w-100"> <span></span> checkout</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="body-overlay"></div>
+    
     <!-- cart mini area end -->
     <!-- sidebar area start -->
     <div class="sidebar__area">
@@ -248,25 +162,19 @@
             <div class="sidebar__close">
                 <button class="sidebar__close-btn" id="sidebar__close-btn">
                     <span><i class="fal fa-times"></i></span>
-                    <span>close</span>
+                    <span>Kapat</span>
                 </button>
             </div>
             <div class="sidebar__content">
                 <div class="logo mb-40">
                     <a href="index.html">
-                        <img src="assets/img/logo/logo-white.png" alt="logo">
+                        <img src="/img/logo/logo-white.png" alt="logo">
                     </a>
                 </div>
                 <div class="mobile-menu"></div>
                 <div class="sidebar__action mt-330">
                     <div class="sidebar__login mt-15">
-                        <a href="#"><i class="far fa-unlock"></i> Log In</a>
-                    </div>
-                    <div class="sidebar__cart mt-20">
-                        <a href="javascript:void(0);" class="cart-toggle-btn">
-                            <i class="far fa-shopping-cart"></i>
-                            <span>2</span>
-                        </a>
+                        <a asp-action="GirisYap" asp-controller="Kullanici"><i class="far fa-unlock"></i>Giriş Yap</a>
                     </div>
                 </div>
             </div>
@@ -307,11 +215,11 @@
                                 <div class="footer__widget-content">
                                     <div class="footer__link">
                                         <ul>
-                                            <li><a href="#">Tutor LMS </a></li>
-                                            <li><a href="#">WP Mega Menü </a></li>
-                                            <li><a href="#">WP Sayfa Oluşturucu </a></li>
-                                            <li><a href="#">Temalar</a></li>
-                                            <li><a href="#">Etkileşimler</a></li>
+                                            <li><a href="#">Koltuk Temizleme</a></li>
+                                            <li><a href="#">Boya-Badana Hizmeti</a></li>
+                                            <li><a href="#">Evden Eve Nakliyat </a></li>
+                                            <li><a href="#">Bina Mantolama</a></li>
+                                            <li><a href="#">Cam Balkon</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -320,16 +228,15 @@
                         <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-4">
                             <div class="footer__widget mb-40 wow fadeInUp footer__pl" data-wow-delay=".7s">
                                 <div class="footer__widget-head">
-                                    <h4 class="footer__widget-title">Kaynaklar</h4>
+                                    <h4 class="footer__widget-title"> <a asp-controller="Bilgi" asp-action="Hakkimizda"> Hakkımızda </a></h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link">
                                         <ul>
-                                            <li><a href="#">Promosyon </a></li>
-                                            <li><a href="#">İçerik Gönder</a></li>
-                                            <li><a href="#">Kaynaklar</a></li>
-                                            <li><a href="#">Tasarım Sistemi</a></li>
-                                            <li><a href="#">Uzmanlık Alanı</a></li>
+                                            <li><a asp-controller="Bilgi" asp-action="Hakkimizda">Biderya Nedir?</a></li>
+                                            <li><a href="#">İletişim</a></li>
+                                            <li><a href="#">Referanslarımız</a></li>
+                                            <li><a href="#">Destek</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -338,34 +245,15 @@
                         <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4">
                             <div class="footer__widget mb-40 wow fadeInUp" data-wow-delay=".9s">
                                 <div class="footer__widget-head">
-                                    <h4 class="footer__widget-title">Ürünler</h4>
+                                    <h4 class="footer__widget-title">Bilgi</h4>
                                 </div>
                                 <div class="footer__widget-content">
                                     <div class="footer__link">
                                         <ul>
-                                            <li><a asp-controller="Bilgi" asp-action="Hakkimizda">Hakkımızda</a></li>
+                                            <li><a asp-controller="" asp-action=""></a></li>
                                             <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Destek</a></li>
-                                            <li><a href="#">Fiyatlandırma</a></li>
-                                            <li><a href="#">İletişim</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-4">
-                            <div class="footer__widget mb-40 wow fadeInUp" data-wow-delay="1.2s">
-                                <div class="footer__widget-head">
-                                    <h4 class="footer__widget-title">Topluluk</h4>
-                                </div>
-                                <div class="footer__widget-content">
-                                    <div class="footer__link">
-                                        <ul>
-                                            <li><a href="#">Forumlar</a></li>
-                                            <li><a href="#">Topluluk</a></li>
-                                            <li><a href="#">Toplantılar</a></li>
-                                            <li><a href="#">İş İlanları</a></li>
-                                            <li><a href="#">Kariyer</a></li>
+                                            <li><a asp-controller="Kullanici" asp-action="HesapOlustur">Üye Ol</a></li>
+                                            <li><a href="#">Bilgi Al</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -380,15 +268,13 @@
                         <div class="row">
                             <div class="col-xxl-6 col-xl-6 col-md-6">
                                 <div class="footer__copyright wow fadeInUp" data-wow-delay=".5s">
-                                    <p>Tüm Hakları Saklıdır, Tasarım <a href="#">SERVET ZABUN</a> Tarafından Yapılmıştır © 2023</p>
+                                    <p>Tüm Hakları Saklıdır © 2023</p>
                                 </div>
                             </div>
                             <div class="col-xxl-6 col-xl-6 col-md-6">
                                 <div class="footer__bottom-link wow fadeInUp text-md-end" data-wow-delay=".8s">
                                     <ul>
-                                        <li><a href="#">Lisans</a></li>
-                                        <li><a href="#">Gizlilik Politikası</a></li>
-                                        <li><a href="#">Bağlantı Ortaklığı Uyarısı</a></li>
+                                        <li><a href="#">destek@biderya.com</a></li>
                                     </ul>
                                 </div>
                             </div>

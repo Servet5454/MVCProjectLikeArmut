@@ -449,3 +449,12 @@
         @include transform(rotate(360deg));
     }
 }
+
+
+.icon__img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 2px; 
+}
+
+
