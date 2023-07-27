@@ -206,48 +206,8 @@ namespace BideryaMvcProject.Controllers
 
          
         }
-        public IActionResult Panel1()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult hizmetverenekle(HesapOlusturViewModel model)
-        {
-            HizmetVeren hizmetVeren = new HizmetVeren
-            {
-                Ad = model.Ad,
-                Soyad = model.Soyad,
-                Email = model.Email,
-                Sifre1 = model.Sifre1,
-                FirmaIsmi = model.FirmaIsmi,
-                Sifre2 = model.Sifre2,
-            };
-
-            hizmetVeren.HizmetKategoris.Add(new HizmetKategori
-            {
-                KategoriId = 1,
-                HizmetAltKategoris = new HashSet<HizmetAltKategori> { new()
-                {
-                    AracYikamaIslemi = true,
-                    CamBalkon = true,
-                    KoltukTemizlikIslemi = true,
-                    MutfakDolabiYapimi = true,
-                    EvTadilat=true,
-                    EvTemizlikIslemi=true,
-                    IlaclamaIslemi=true,
-                    Mantolama=true,
-
-
-                } }
-            });
-
-
-
-            context.HizmetVerens.Add(hizmetVeren);
-            context.SaveChanges();
-
-            return View();
-        }
+        
+        
 
     }
 }
