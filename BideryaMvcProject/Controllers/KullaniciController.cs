@@ -31,7 +31,7 @@ namespace BideryaMvcProject.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult GirisYap(HesapOlusturViewModel model)
+        public IActionResult GirisYap(KullaniciGirisyapViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace BideryaMvcProject.Controllers
                     ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
                     HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    TempData["Hesabım"] = model.Ad;
+                    TempData["Hesabım"] = "Hesabım";
 
                     return RedirectToAction("Anasayfa", "Home");
                 }
