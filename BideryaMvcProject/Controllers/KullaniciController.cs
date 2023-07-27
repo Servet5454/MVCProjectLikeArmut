@@ -10,6 +10,7 @@ using BideryaMvcProject.Models.HesapKullanici;
 using BideryaMvcProject.DataBase.Entities.Hizmetler;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.Helper;
+using Microsoft.Identity.Client;
 
 namespace BideryaMvcProject.Controllers
 {
@@ -103,13 +104,11 @@ namespace BideryaMvcProject.Controllers
                     return View();// Başarısız olunca burası olacak
                 }
             }
+        }
 
-
-
-
-           
-
-
+        public IActionResult HizmetVerenHesapOlustur(HesapOlusturViewModel model)
+        {
+            return View();
         }
         public IActionResult CikisYap()
         {
@@ -154,12 +153,12 @@ namespace BideryaMvcProject.Controllers
                     EvTemizlikIslemi=true,
                     IlaclamaIslemi=true,
                     Mantolama=true,
-                   
+
 
                 } }
             });
 
-           
+
 
             context.HizmetVerens.Add(hizmetVeren);
             context.SaveChanges();
