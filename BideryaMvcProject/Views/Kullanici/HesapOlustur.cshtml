@@ -1,4 +1,4 @@
-﻿@model BideryaMvcProject.Models.HesapKullanici.HesapOlusturViewModel
+﻿@model BideryaMvcProject.Models.HesapKullanici.KullaniciViewModel
 
 <main>
 
@@ -33,14 +33,14 @@
                 <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
                     <div class="sign__wrapper white-bg">
                         <div class="sign__form" >
-                            <form asp-controller="Kullanici" asp-action="hizmetverenekle" method="post">
+                            <form asp-controller="Kullanici" asp-action="HesapOlustur" method="post">
 
                                 <div class="row">
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Adınız</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Adınız" name="subject">
+                                                <input type="text" asp-for=Ad placeholder="Adınız" >
                                                 <i class="fal fa-smile"></i>
                                             </div>
                                         </div>
@@ -50,7 +50,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Soyadınız</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Soyadınız" name="subject">
+                                                <input type="text" asp-for="Soyad" placeholder="Soyadınız" >
                                                 <i class="fal fa-smile"></i>
                                             </div>
                                         </div>
@@ -67,14 +67,14 @@
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Şifre</h5>
                                     <div class="sign__input">
-                                        <input type="password" placeholder="Şifre">
+                                        <input type="password" asp-for=Sifre1 placeholder="Şifre">
                                         <i class="fal fa-lock"></i>
                                     </div>
                                 </div>
                                 <div class="sign__input-wrapper mb-10">
                                     <h5>Şifreyi Tekrar Girin</h5>
                                     <div class="sign__input">
-                                        <input type="password" placeholder="Şifreyi Tekrar Girin">
+                                        <input type="password" asp-for=Sifre2 placeholder="Şifreyi Tekrar Girin">
                                         <i class="fal fa-lock"></i>
                                     </div>
                                 </div>

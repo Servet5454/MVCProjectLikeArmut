@@ -47,7 +47,7 @@ namespace BideryaMvcProject.DataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi; User ID=sa;password=servet;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-7FIIBG4;Database=BideryaMvcDatabase;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
             //"Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi; User ID=sa;password=servet"    evdeki database linki
             //"Server=DESKTOP-7FIIBG4;Database=BideryaMvcProjesi;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True" Laptop Linki
@@ -82,7 +82,7 @@ namespace BideryaMvcProject.DataBase
                 Sifre1 = "123456",
                 Sifre2 = "123456",
                 Email = "ahmet.yilmaz@gmail.com",
-                TelNo = "5551112233",
+                TelNo = "05555555555",
                 KayitTarihi = DateTime.Now,
             },
             new Kullanici
@@ -93,7 +93,7 @@ namespace BideryaMvcProject.DataBase
                 Sifre1 = "678900",
                 Sifre2 = "678900",
                 Email = "ayse.kaya@gmail.com",
-                TelNo = "5554445566",
+                TelNo = "05555555555",
                 KayitTarihi = DateTime.Now,
             }
               );

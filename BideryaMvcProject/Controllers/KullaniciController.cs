@@ -9,6 +9,7 @@ using NETCore.Encrypt.Extensions;
 using BideryaMvcProject.Models.HesapKullanici;
 using BideryaMvcProject.DataBase.Entities.Hizmetler;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
+using BideryaMvcProject.Helper;
 
 namespace BideryaMvcProject.Controllers
 {
@@ -68,53 +69,45 @@ namespace BideryaMvcProject.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult HesapOlustur(HesapOlusturViewModel model)
+        public IActionResult HesapOlustur(KullaniciViewModel model)
         {
-            Kullanici? kullanicicontrol = context?.Kullanicis?.FirstOrDefault(k => k.Email == model.Email.ToLower());
-            if (kullanicicontrol != null)
+            if (!ModelState.IsValid)//Girilen Bilgiler Hatalı ise burası yapılacak
             {
-                ViewData["information"] = "Sisteme Zaten Kayıtlısınız";
-                return View();// Başarısız olunca burası olacak
+                //Bilgilerinizde Hata Var Lütfen Bilgileri Doğru Giriniz
+                return View();
             }
-            else if (model.Sifre1 == model.Sifre2 && kullanicicontrol == null)//Başarılı ise burası
+            else//bilgiler doğru ise burası yapılacak
             {
-                string? mD5SifreOnEk = configuration.GetValue<string>("AppSettings:MD5OnEk");
-                string paswordSifre = model.Sifre1 + mD5SifreOnEk;
-                string hashedsifre1 = paswordSifre.MD5();
-                string paswordsifre2 = model.Sifre2 + mD5SifreOnEk;
-                string hashedsifre2 = paswordsifre2.MD5();
-                Kullanici? DbKullanici = new Kullanici
+                Kullanici? kullanicicontrol = context?.Kullanicis?.FirstOrDefault(k => k.Email == model.Email.ToLower());
+                if (kullanicicontrol != null)
                 {
-                    Sifre1 = hashedsifre1,
-                    Sifre2 = hashedsifre2,
-                    Ad = model.Ad,
-                    Soyad = model.Soyad,
-                    Email = model?.Email?.ToLower(),
-                    TelNo = model?.TelNo,
+                    ViewData["information"] = "Sisteme Zaten Kayıtlısınız";
+                    return View();// Başarısız olunca burası olacak
+                }
+                else if (model.Sifre1 == model.Sifre2 && kullanicicontrol == null)//Başarılı ise burası
+                {
+                    string? mD5SifreOnEk = configuration.GetValue<string>("AppSettings:MD5OnEk");
+                    string paswordSifre = model.Sifre1 + mD5SifreOnEk;
+                    string hashedsifre1 = paswordSifre.MD5();
+                    string paswordsifre2 = model.Sifre2 + mD5SifreOnEk;
+                    string hashedsifre2 = paswordsifre2.MD5();
 
-                    KullaniciAdress = new List<KullaniciAdres>
-                    {
 
-                       new KullaniciAdres
-                       {
-                            Mahalle ="Mahalle",
-                            Adresbasligi ="3. Adresim",
-                            Il ="Şehir",
-                            Ilce ="İlçe",
-                            AdresGenel ="Genel Adres",
-                       }
-
-                    }
-                };
-                context?.Add(DbKullanici);
-                context?.SaveChanges();
-                //TODO Kayıt İşlemi Başarılı bir Şekilde Yapıldı Uyarısı Verilecek...
-                return RedirectToAction("Anasayfa", "Home");
+                    LoginRegisterIslem loginRegisterIslem = new();
+                    loginRegisterIslem.KullaniciKayitEt(model, hashedsifre1, hashedsifre2);
+                    //TODO Kayıt İşlemi Başarılı bir Şekilde Yapıldı Uyarısı Verilecek...
+                    return RedirectToAction("Anasayfa", "Home");
+                }
+                else
+                {
+                    return View();// Başarısız olunca burası olacak
+                }
             }
-            else
-            {
-                return View();// Başarısız olunca burası olacak
-            }
+
+
+
+
+           
 
 
         }
