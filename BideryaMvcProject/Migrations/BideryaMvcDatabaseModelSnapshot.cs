@@ -65,7 +65,8 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HizmetKategoriId");
+                    b.HasIndex("HizmetVerenId")
+                        .IsUnique();
 
                     b.ToTable("HizmetAltKategoris");
                 });
@@ -648,7 +649,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 16, 56, 19, 151, DateTimeKind.Local).AddTicks(6716),
+                            KayitTarihi = new DateTime(2023, 7, 27, 17, 20, 36, 598, DateTimeKind.Local).AddTicks(7871),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -659,7 +660,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 16, 56, 19, 151, DateTimeKind.Local).AddTicks(6720),
+                            KayitTarihi = new DateTime(2023, 7, 27, 17, 20, 36, 598, DateTimeKind.Local).AddTicks(7875),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -773,13 +774,11 @@ namespace BideryaMvcProject.Migrations
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", b =>
                 {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", "HizmetKategori")
-                        .WithMany("HizmetAltKategoris")
-                        .HasForeignKey("HizmetKategoriId")
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", null)
+                        .WithOne("HizmetAltKategori")
+                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", "HizmetVerenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("HizmetKategori");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
@@ -835,13 +834,10 @@ namespace BideryaMvcProject.Migrations
                     b.Navigation("Kullanici");
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
-                {
-                    b.Navigation("HizmetAltKategoris");
-                });
-
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", b =>
                 {
+                    b.Navigation("HizmetAltKategori");
+
                     b.Navigation("HizmetKategoris");
 
                     b.Navigation("HizmetverenAdress");

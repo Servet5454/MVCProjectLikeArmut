@@ -8,7 +8,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
     {
         public HizmetKategori()
         {
-            HizmetAltKategoris = new HashSet<HizmetAltKategori>();
+            //HizmetAltKategoris = new HashSet<HizmetAltKategori>();
         }
         public int Id { get; set; }
         [ForeignKey(name: "HizmetVerenId")]
@@ -16,6 +16,6 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         public int KategoriId { get; set; }
 
         public HizmetVeren? HizmetVeren { get; set; }
-        public ICollection<HizmetAltKategori>? HizmetAltKategoris { get; set; }
+        
     }
 }

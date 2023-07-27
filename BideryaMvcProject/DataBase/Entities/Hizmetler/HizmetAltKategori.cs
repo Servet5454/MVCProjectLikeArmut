@@ -9,7 +9,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         public int HizmetKategoriId { get; set; }   
         public int HizmetVerenName { get; set; }
         
-        public HizmetKategori? HizmetKategori { get; set; }
+        
         
 
         #region Temizlik

@@ -33,6 +33,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         public ICollection<HizmetVerenAdres>? HizmetverenAdress { get; set; } //burada Hizmetveren adresle çok ilişkisi olduğunu söyledik...
 
         public ICollection<HizmetKategori>? HizmetKategoris { get; set; }
+        public HizmetAltKategori? HizmetAltKategori { get; set; }
         
        
     }

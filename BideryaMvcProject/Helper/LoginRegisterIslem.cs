@@ -83,54 +83,54 @@ namespace BideryaMvcProject.Helper
 
             };
 
-            switch (model.HizmetKategori)
-            {
-                case 1:// Temizlik işlemleri için yapılacak bölüm
-                    // Hizmet Kategori ID 1 için yapılacak işlemler
-                    DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
-                    {
-                        KategoriId = model.HizmetKategori,
-                        HizmetAltKategoris = new List<HizmetAltKategori>
-            {
-                new HizmetAltKategori
-                {
-                    AracYikamaIslemi =true,
-                    EvTemizlikIslemi =true,
-                    IlaclamaIslemi=true,
-                    KoltukTemizlikIslemi=true,
+            //switch (model.HizmetKategori)
+            //{
+            //    case 1:// Temizlik işlemleri için yapılacak bölüm
+            //        // Hizmet Kategori ID 1 için yapılacak işlemler
+            //        DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
+            //        {
+            //            KategoriId = model.HizmetKategori,
+            //            HizmetAltKategoris = new List<HizmetAltKategori>
+            //{
+            //    new HizmetAltKategori
+            //    {
+            //        AracYikamaIslemi =true,
+            //        EvTemizlikIslemi =true,
+            //        IlaclamaIslemi=true,
+            //        KoltukTemizlikIslemi=true,
                     
 
-                    // Hizmet Kategori ID 1 için HizmetAltKategori oluşturulması
-                }
-            }
-                    });
-                    break;
+            //        // Hizmet Kategori ID 1 için HizmetAltKategori oluşturulması
+            //    }
+            //}
+            //        });
+            //        break;
 
-                case 2:
-                    // Hizmet Kategori ID 2 için yapılacak işlemler
-                    DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
-                    {
-                        KategoriId = model.HizmetKategori,
-                        HizmetAltKategoris = new List<HizmetAltKategori>
-            {
-                new HizmetAltKategori
-                {
-                    CamBalkon =true,
-                    EvTadilat =true,
-                    Mantolama=true,
-                    MutfakDolabiYapimi=true,
+            //    case 2:
+            //        // Hizmet Kategori ID 2 için yapılacak işlemler
+            //        DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
+            //        {
+            //            KategoriId = model.HizmetKategori,
+            //            HizmetAltKategoris = new List<HizmetAltKategori>
+            //{
+            //    new HizmetAltKategori
+            //    {
+            //        CamBalkon =true,
+            //        EvTadilat =true,
+            //        Mantolama=true,
+            //        MutfakDolabiYapimi=true,
 
-                                    }
-            }
-                    });
-                    break;
+            //                        }
+            //}
+            //        });
+            //        break;
 
-                // Diğer durumlar için case'ler ekleyebilirsiniz.
+            //    // Diğer durumlar için case'ler ekleyebilirsiniz.
 
-                default:
-                    // Belirli bir case ile eşleşmezse yapılacak işlemler
-                    break;
-            }
+            //    default:
+            //        // Belirli bir case ile eşleşmezse yapılacak işlemler
+            //        break;
+            //}
 
             context?.Add(DbHizmetVeren);
             context?.SaveChanges();
