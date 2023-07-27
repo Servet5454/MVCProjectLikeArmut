@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    [Migration("20230727124944_mig22")]
+    [Migration("20230727135619_mig22")]
     partial class mig22
     {
         /// <inheritdoc />
@@ -51,6 +51,9 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("HizmetVerenId")
                         .HasColumnType("int");
 
+                    b.Property<int>("HizmetVerenName")
+                        .HasColumnType("int");
+
                     b.Property<bool>("IlaclamaIslemi")
                         .HasColumnType("bit");
 
@@ -66,8 +69,6 @@ namespace BideryaMvcProject.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("HizmetKategoriId");
-
-                    b.HasIndex("HizmetVerenId");
 
                     b.ToTable("HizmetAltKategoris");
                 });
@@ -650,7 +651,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 15, 49, 43, 833, DateTimeKind.Local).AddTicks(448),
+                            KayitTarihi = new DateTime(2023, 7, 27, 16, 56, 19, 151, DateTimeKind.Local).AddTicks(6716),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -661,7 +662,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 15, 49, 43, 833, DateTimeKind.Local).AddTicks(452),
+                            KayitTarihi = new DateTime(2023, 7, 27, 16, 56, 19, 151, DateTimeKind.Local).AddTicks(6720),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -781,15 +782,7 @@ namespace BideryaMvcProject.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", "HizmetVeren")
-                        .WithMany("HizmetAltKategoris")
-                        .HasForeignKey("HizmetVerenId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("HizmetKategori");
-
-                    b.Navigation("HizmetVeren");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
@@ -852,8 +845,6 @@ namespace BideryaMvcProject.Migrations
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", b =>
                 {
-                    b.Navigation("HizmetAltKategoris");
-
                     b.Navigation("HizmetKategoris");
 
                     b.Navigation("HizmetverenAdress");

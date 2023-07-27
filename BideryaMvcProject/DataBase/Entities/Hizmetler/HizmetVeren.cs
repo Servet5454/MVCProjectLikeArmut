@@ -9,8 +9,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         {
             HizmetKategoris =new HashSet<HizmetKategori>();
             HizmetverenAdress =new HashSet<HizmetVerenAdres>();
-            HizmetAltKategoris =new HashSet<HizmetAltKategori>();
         }
+           
         public int Id { get; set; }
         public int KategoriId { get; set; } //TODO Burada enum ile hizmet işlemleri ayarlanacak...
         public string? Ad { get; set; }
@@ -33,7 +33,6 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
         public ICollection<HizmetVerenAdres>? HizmetverenAdress { get; set; } //burada Hizmetveren adresle çok ilişkisi olduğunu söyledik...
 
         public ICollection<HizmetKategori>? HizmetKategoris { get; set; }
-        public ICollection<HizmetAltKategori>? HizmetAltKategoris { get; set; }
         
        
     }

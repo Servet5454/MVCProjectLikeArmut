@@ -98,6 +98,7 @@ namespace BideryaMvcProject.Helper
                     EvTemizlikIslemi =true,
                     IlaclamaIslemi=true,
                     KoltukTemizlikIslemi=true,
+                    
 
                     // Hizmet Kategori ID 1 için HizmetAltKategori oluşturulması
                 }

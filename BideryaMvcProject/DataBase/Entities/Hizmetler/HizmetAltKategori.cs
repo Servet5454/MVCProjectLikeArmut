@@ -6,11 +6,11 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler
     {
         public int Id { get; set; }
         public int HizmetVerenId { get; set; }
-        public int HizmetKategoriId { get; set; }
-        
+        public int HizmetKategoriId { get; set; }   
+        public int HizmetVerenName { get; set; }
         
         public HizmetKategori? HizmetKategori { get; set; }
-        public HizmetVeren? HizmetVeren { get; set; }
+        
 
         #region Temizlik
         public bool AracYikamaIslemi { get; set; } = false;
