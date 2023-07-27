@@ -4,7 +4,10 @@
 
     <!-- arkaplan şekil alanı başlangıcı -->
     <div class="bg-shape">
-        <img src="assets/img/shape/shape-1.png" alt="">
+        <div class="center-images">
+
+            <img src="~/img/shape/shape-1.png" alt="">
+        </div>
     </div>
     <!-- arkaplan şekil alanı sonu -->
     <!-- kayıt olma alanı başlangıcı -->
@@ -22,33 +25,42 @@
             <div class="row">
                 <div class="col-xxl-8 offset-xxl-2 col-xl-8 offset-xl-2">
                     <div class="page__title-wrapper text-center mb-55">
-                        <h2 class="page__title-2">Ücretsiz Hesap Oluştur</h2>
-                        <p>Bir alt başlık, hikayeye eşlik eden bir metindir.</p>
+                        <h4 class="page__title-2">Ücretsiz Hesap Oluştur</h4>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
                     <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                            <div class="sign__in text-center">
-                                <a href="#" class="sign__social g-plus text-start mb-15"><i class="fab fa-google-plus-g"></i>Google ile Kaydol</a>
-                                <p> <span>........</span> Veya, <a href="sign-up.html">e-posta ile kaydolun</a><span> ........</span> </p>
-                            </div>
-                        </div>
-                        <div class="sign__form">
+                        <div class="sign__form" >
                             <form asp-controller="Kullanici" asp-action="hizmetverenekle" method="post">
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Adınız ve Soyadınız</h5>
-                                    <div class="sign__input">
-                                        <input type="text"asp-for="Ad"  placeholder="Adınız ve Soyadınız">
-                                        <i class="fal fa-user"></i>
+
+                                <div class="row">
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                        <div class="contact__input-wrapper mb-25">
+                                            <h5>Adınız</h5>
+                                            <div class="contact__input">
+                                                <input type="text" placeholder="Adınız" name="subject">
+                                                <i class="fal fa-smile"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
+                                        <div class="contact__input-wrapper mb-25">
+                                            <h5>Soyadınız</h5>
+                                            <div class="contact__input">
+                                                <input type="text" placeholder="Soyadınız" name="subject">
+                                                <i class="fal fa-smile"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>İş E-postası</h5>
+                                    <h5>E-mail Adresiniz</h5>
                                     <div class="sign__input">
-                                        <input type="text" asp-for="Email" placeholder="e-posta adresi">
+                                        <input type="text" asp-for="Email" placeholder="E-mail Adresiniz">
                                         <i class="fal fa-envelope"></i>
                                     </div>
                                 </div>
