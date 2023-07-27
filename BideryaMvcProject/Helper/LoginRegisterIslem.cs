@@ -25,6 +25,7 @@ namespace BideryaMvcProject.Helper
                 Ad = model.Ad,
                 Soyad = model.Soyad,
                 Email = model?.Email?.ToLower(),
+                
 
 
                 KullaniciAdress = new List<KullaniciAdres>
@@ -55,6 +56,15 @@ namespace BideryaMvcProject.Helper
                 Ad = model.Ad,
                 Soyad = model.Soyad,
                 Email = model?.Email?.ToLower(),
+                FirmaIsmi = model?.FirmaIsmi,
+                KategoriId =model.HizmetKategori,
+                TelNo=model.TelNo,
+                IsTelNo =model.IsTelNo ?? null,
+                KayitTarihi =DateTime.Now,
+                VergiNo =int.Parse(model.VergiNo.ToString()),
+                SilinmeTarihi =null,
+                Sehir =model.Il,
+                
 
 
                 HizmetverenAdress = new List<HizmetVerenAdres>

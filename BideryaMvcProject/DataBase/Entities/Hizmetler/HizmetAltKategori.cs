@@ -1,10 +1,16 @@
-﻿namespace BideryaMvcProject.DataBase.Entities.Hizmetler
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BideryaMvcProject.DataBase.Entities.Hizmetler
 {
     public class HizmetAltKategori
     {
         public int Id { get; set; }
+        public int HizmetVerenId { get; set; }
         public int HizmetKategoriId { get; set; }
+        
+        
         public HizmetKategori? HizmetKategori { get; set; }
+        public HizmetVeren? HizmetVeren { get; set; }
 
         #region Temizlik
         public bool AracYikamaIslemi { get; set; } = false;
