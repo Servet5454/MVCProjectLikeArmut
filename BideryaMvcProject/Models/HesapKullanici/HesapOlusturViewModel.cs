@@ -25,12 +25,10 @@ namespace BideryaMvcProject.Models.HesapKullanici
         [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
         public string? Email { get; set; }
         [Required(ErrorMessage = "Telefon numarası alanı zorunludur.")]
-        [RegularExpression(@"^[0-9]{1,11}$", ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
+        [RegularExpression(@"^[0-9]{11}$", ErrorMessage = "Telefon Numaranızı Başında Sıfır Olacak Şekilde Yazınız")]
         [MaxLength(11, ErrorMessage = "Telefon numarası en fazla 11 haneli olmalıdır.")]
         public string? TelNo { get; set; }
-        [Required(ErrorMessage = "Telefon numarası alanı zorunludur.")]
-        [RegularExpression(@"^[0-9]{1,11}$", ErrorMessage = "Geçerli bir telefon numarası giriniz.")]
-        [MaxLength(11, ErrorMessage = "Telefon numarası en fazla 11 haneli olmalıdır.")]
+
         public string? IsTelNo { get; set; }
         [Required(ErrorMessage = "Vergi numarası alanı zorunludur.")]
         public string? VergiNo { get; set; }
@@ -47,7 +45,7 @@ namespace BideryaMvcProject.Models.HesapKullanici
         [Required(ErrorMessage = "Adres tanımı alanı zorunludur.")]
         public string? AdresTanimi { get; set; }
         public int HizmetKategori { get; set; }
-                
+
 
     }
 }

@@ -61,11 +61,11 @@ namespace BideryaMvcProject.Helper
                 {
                     new HizmetVerenAdres
                     {
-                        Mahalle ="Mahalle",
-                        Adresbasligi ="1. Adresim",
-                        Il ="Şehir",
-                        Ilce ="İlçe",
-                        AdresGenel ="Genel Adres",
+                        
+                        Adresbasligi ="İş Adresim",
+                        Il =model.Il,
+                        Ilce =model.Ilce,
+                        AdresGenel =model.AdresTanimi,
                     }
 
                 },

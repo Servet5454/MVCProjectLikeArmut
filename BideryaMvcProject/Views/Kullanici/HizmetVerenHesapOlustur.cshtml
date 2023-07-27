@@ -1,4 +1,4 @@
-﻿
+﻿@model BideryaMvcProject.Models.HesapKullanici.HesapOlusturViewModel
 
 <main>
 
@@ -30,14 +30,14 @@
                 <div class="col-xxl-11 col-xl-11">
                     <div class="contact__wrapper  white-bg">
                         <div class="contact__form">
-                            <form action="assets/mail.php" method="POST">
+                            <form asp-controller="Kullanici" asp-action="HizmetVerenHesapOlustur" method="post">
 
                                 <div class="row">
                                     <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6">
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Vergi-Kimlik Numaranız</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Vergi-Kimlik Numaranız" name="email">
+                                                <input type="text" asp-for="VergiNo" placeholder="Vergi-Kimlik Numaranız">
                                                 <i class="fal fa-envelope"></i>
                                             </div>
                                         </div>
@@ -47,7 +47,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Firma İsmi</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Firma İsmi" name="subject">
+                                                <input type="text" asp-for=FirmaIsmi placeholder="Firma İsmi">
                                                 <i class="fal fa-smile"></i>
                                             </div>
                                         </div>
@@ -59,7 +59,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Adınız</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Adınız" name="name">
+                                                <input type="text" asp-for=Ad placeholder="Adınız">
                                                 <i class="fal fa-user"></i>
                                             </div>
                                         </div>
@@ -69,7 +69,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Soyadınız</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Soyadınız" name="name">
+                                                <input type="text" asp-for=Soyad placeholder="Soyadınız">
                                                 <i class="fal fa-user"></i>
                                             </div>
                                         </div>
@@ -81,7 +81,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>Telefon Numarası</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Telefon Numarası" name="subject">
+                                                <input type="text" asp-for=TelNo placeholder="Telefon Numarası">
                                                 <i class="fal fa-smile"></i>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>İş Telefon Numarası</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="İş Telefon Numarası" name="subject">
+                                                <input type="text" asp-for=IsTelNo placeholder="İş Telefon Numarası">
                                                 <i class="fal fa-smile"></i>
                                             </div>
                                         </div>
@@ -103,7 +103,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>İl</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Adresiniz" name="address">
+                                                <input type="text" asp-for=Il placeholder="İliniz">
                                                 <i class="fal fa-globe"></i>
                                             </div>
                                         </div>
@@ -113,7 +113,7 @@
                                         <div class="contact__input-wrapper mb-25">
                                             <h5>İlçe</h5>
                                             <div class="contact__input">
-                                                <input type="text" placeholder="Adresiniz" name="address">
+                                                <input type="text" asp-for=Ilce placeholder="İlçeniz">
                                                 <i class="fal fa-globe"></i>
                                             </div>
                                         </div>
@@ -123,9 +123,9 @@
                                 <div class="row">
                                     <div class="col-xxl-12">
                                         <div class="contact__input-wrapper mb-25">
-                                            <h5>Mesajınız</h5>
+                                            <h5>Adres Detayı</h5>
                                             <div class="contact__input textarea">
-                                                <textarea placeholder="Eklemek istediğiniz başka konular varsa bizimle paylaşabilirsiniz." name="message"></textarea>
+                                                <textarea asp-for=AdresTanimi placeholder="Açık Adresinizi Yazınız."></textarea>
                                                 <i class="fal fa-comment"></i>
                                             </div>
                                         </div>
@@ -134,7 +134,7 @@
 
                                 <div class="row">
                                     <div class="col-xxl-12">
-                                        <button type="submit" class="m-btn m-btn-4"> <span></span> Kaydet </button>
+                                        <button type="submit" class="m-btn m-btn-4"> <span></span> Kaydet Ol </button>
                                     </div>
                                 </div>
                             </form>
