@@ -105,10 +105,52 @@ namespace BideryaMvcProject.Controllers
                 }
             }
         }
-
-        public IActionResult HizmetVerenHesapOlustur(HesapOlusturViewModel model)
+        [HttpGet]
+        public IActionResult HizmetVerenHesapOlustur()
         {
             return View();
+        }
+
+
+        [HttpPost]
+        public IActionResult HizmetVerenHesapOlustur(HesapOlusturViewModel model)
+        {
+            if (!ModelState.IsValid)//Girilen Bilgiler Hatalı ise burası yapılacak
+            {
+                //Bilgilerinizde Hata Var Lütfen Bilgileri Doğru Giriniz
+                return View();
+            }
+            else
+            {
+                HizmetVeren? kullanicicontrol = context?.HizmetVerens?.FirstOrDefault(k => k.Email == model.Email.ToLower());
+                if (kullanicicontrol != null)
+                {
+                    ViewData["information"] = "Sisteme Zaten Kayıtlısınız";
+                    return View();// Başarısız olunca burası olacak
+                }
+                else if (model.Sifre1 == model.Sifre2 && kullanicicontrol == null)//Başarılı ise burası
+                {
+                    string? mD5SifreOnEk = configuration.GetValue<string>("AppSettings:MD5OnEk");
+                    string paswordSifre = model.Sifre1 + mD5SifreOnEk;
+                    string hashedsifre1 = paswordSifre.MD5();
+                    string paswordsifre2 = model.Sifre2 + mD5SifreOnEk;
+                    string hashedsifre2 = paswordsifre2.MD5();
+
+
+                    LoginRegisterIslem loginRegisterIslem = new();
+                    //Kayıt İşlemi Yapılacak
+                    loginRegisterIslem.HizmetVerenKayitEt(model, hashedsifre1, hashedsifre2);
+
+
+                    //TODO Kayıt İşlemi Başarılı bir Şekilde Yapıldı Uyarısı Verilecek...
+                    return RedirectToAction("Anasayfa", "Home");
+                }
+                else
+                {
+                    return View();// Başarısız olunca burası olacak
+                }
+
+            }
         }
         public IActionResult CikisYap()
         {
@@ -119,9 +161,50 @@ namespace BideryaMvcProject.Controllers
         [HttpGet]
         public IActionResult HizmetVerenPanel()
         {
-
-
+            
             return View();
+        }
+        [HttpPost]
+        public IActionResult HizmetVerenPanel(HesapOlusturViewModel model)
+        {
+            if (!ModelState.IsValid)//Girilen Bilgiler Hatalı ise burası yapılacak
+            {
+                //Bilgilerinizde Hata Var Lütfen Bilgileri Doğru Giriniz
+                return View();
+            }
+            else
+            {
+                HizmetVeren? kullanicicontrol = context?.HizmetVerens?.FirstOrDefault(k => k.Email == model.Email.ToLower());
+                if (kullanicicontrol != null)
+                {
+                    ViewData["information"] = "Sisteme Zaten Kayıtlısınız";
+                    return View();// Başarısız olunca burası olacak
+                }
+                else if (model.Sifre1 == model.Sifre2 && kullanicicontrol == null)//Başarılı ise burası
+                {
+                    string? mD5SifreOnEk = configuration.GetValue<string>("AppSettings:MD5OnEk");
+                    string paswordSifre = model.Sifre1 + mD5SifreOnEk;
+                    string hashedsifre1 = paswordSifre.MD5();
+                    string paswordsifre2 = model.Sifre2 + mD5SifreOnEk;
+                    string hashedsifre2 = paswordsifre2.MD5();
+
+
+                    LoginRegisterIslem loginRegisterIslem = new();
+                    //Kayıt İşlemi Yapılacak
+                    loginRegisterIslem.HizmetVerenKayitEt(model, hashedsifre1, hashedsifre2);
+
+
+                    //TODO Kayıt İşlemi Başarılı bir Şekilde Yapıldı Uyarısı Verilecek...
+                    return RedirectToAction("Anasayfa", "Home");
+                }
+                else
+                {
+                    return View();// Başarısız olunca burası olacak
+                }
+
+            }
+
+         
         }
         public IActionResult Panel1()
         {

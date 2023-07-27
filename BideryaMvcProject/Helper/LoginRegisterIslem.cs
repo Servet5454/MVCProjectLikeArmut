@@ -1,4 +1,5 @@
 ﻿using BideryaMvcProject.DataBase;
+using BideryaMvcProject.DataBase.Entities.Hizmetler;
 using BideryaMvcProject.DataBase.Entities.Kullanici;
 using BideryaMvcProject.Models.HesapKullanici;
 using Microsoft.Extensions.Configuration;
@@ -24,7 +25,7 @@ namespace BideryaMvcProject.Helper
                 Ad = model.Ad,
                 Soyad = model.Soyad,
                 Email = model?.Email?.ToLower(),
-                
+
 
                 KullaniciAdress = new List<KullaniciAdres>
                     {
@@ -45,38 +46,83 @@ namespace BideryaMvcProject.Helper
 
         }
 
-        public void HizmetVerenKayitEt(HesapOlusturViewModel model, int HizmetKategori)
+        public void HizmetVerenKayitEt(HesapOlusturViewModel model, string hashedsifre1, string hashedsifre2)
         {
-
-
-            switch (HizmetKategori)
+            HizmetVeren? DbHizmetVeren = new HizmetVeren
             {
-                case 1:
+                Sifre1 = hashedsifre1,
+                Sifre2 = hashedsifre2,
+                Ad = model.Ad,
+                Soyad = model.Soyad,
+                Email = model?.Email?.ToLower(),
 
+
+                HizmetverenAdress = new List<HizmetVerenAdres>
+                {
+                    new HizmetVerenAdres
+                    {
+                        Mahalle ="Mahalle",
+                        Adresbasligi ="1. Adresim",
+                        Il ="Şehir",
+                        Ilce ="İlçe",
+                        AdresGenel ="Genel Adres",
+                    }
+
+                },
+                HizmetKategoris =new List<HizmetKategori>()
+
+            };
+
+            switch (model.HizmetKategori)
+            {
+                case 1:// Temizlik işlemleri için yapılacak bölüm
+                    // Hizmet Kategori ID 1 için yapılacak işlemler
+                    DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
+                    {
+                        KategoriId = model.HizmetKategori,
+                        HizmetAltKategoris = new List<HizmetAltKategori>
+            {
+                new HizmetAltKategori
+                {
+                    AracYikamaIslemi =true,
+                    EvTemizlikIslemi =true,
+                    IlaclamaIslemi=true,
+                    KoltukTemizlikIslemi=true,
+
+                    // Hizmet Kategori ID 1 için HizmetAltKategori oluşturulması
+                }
+            }
+                    });
                     break;
 
                 case 2:
+                    // Hizmet Kategori ID 2 için yapılacak işlemler
+                    DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
+                    {
+                        KategoriId = model.HizmetKategori,
+                        HizmetAltKategoris = new List<HizmetAltKategori>
+            {
+                new HizmetAltKategori
+                {
+                    CamBalkon =true,
+                    EvTadilat =true,
+                    Mantolama=true,
+                    MutfakDolabiYapimi=true,
 
+                                    }
+            }
+                    });
                     break;
 
-                case 3:
+                // Diğer durumlar için case'ler ekleyebilirsiniz.
 
-                    break;
-
-                case 4:
-
-                    break;
-
-                case 5:
-
-                    break;
-
-                case 6:
-
+                default:
+                    // Belirli bir case ile eşleşmezse yapılacak işlemler
                     break;
             }
 
-
+            context?.Add(DbHizmetVeren);
+            context?.SaveChanges();
 
 
         }
