@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    [Migration("20230727142036_mig30")]
-    partial class mig30
+    [Migration("20230727175801_mig32")]
+    partial class mig32
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -652,7 +652,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 17, 20, 36, 598, DateTimeKind.Local).AddTicks(7871),
+                            KayitTarihi = new DateTime(2023, 7, 27, 20, 58, 1, 804, DateTimeKind.Local).AddTicks(6317),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -663,7 +663,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 17, 20, 36, 598, DateTimeKind.Local).AddTicks(7875),
+                            KayitTarihi = new DateTime(2023, 7, 27, 20, 58, 1, 804, DateTimeKind.Local).AddTicks(6320),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -777,11 +777,13 @@ namespace BideryaMvcProject.Migrations
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", b =>
                 {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", null)
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", "HizmetVeren")
                         .WithOne("HizmetAltKategori")
                         .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", "HizmetVerenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("HizmetVeren");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>

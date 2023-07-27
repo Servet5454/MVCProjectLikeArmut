@@ -15,7 +15,7 @@ namespace BideryaMvcProject.DataBase
         public DbSet<KullaniciAdres>? KullaniciAdress { get; set; }
         public DbSet<HizmetVeren>? HizmetVerens { get; set; }
         public DbSet<HizmetVerenAdres>? HizmetVerenAdres { get; set; }
-        public DbSet<HizmetKategori>? HizmetKategoris { get; set; }
+        //public DbSet<HizmetKategori>? HizmetKategoris { get; set; }
         public DbSet<HizmetAltKategori>? HizmetAltKategoris { get; set; }
         #endregion
 
@@ -47,7 +47,7 @@ namespace BideryaMvcProject.DataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-7FIIBG4;Database=BideryaMvcDatabase3;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi10; User ID=sa;password=servet;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
             //"Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi; User ID=sa;password=servet"    evdeki database linki
             //"Server=DESKTOP-7FIIBG4;Database=BideryaMvcProjesi;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True" Laptop Linki

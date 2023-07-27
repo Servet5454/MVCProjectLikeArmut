@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230727175157_mig30")]
+    partial class mig30
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,7 +25,7 @@ namespace BideryaMvcProject.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", b =>
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -30,45 +33,17 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<bool>("AracYikamaIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("CamBalkon")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EvTadilat")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("EvTemizlikIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<int>("HizmetKategoriId")
-                        .HasColumnType("int");
-
                     b.Property<int>("HizmetVerenId")
                         .HasColumnType("int");
 
-                    b.Property<int>("HizmetVerenName")
+                    b.Property<int>("KategoriId")
                         .HasColumnType("int");
-
-                    b.Property<bool>("IlaclamaIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("KoltukTemizlikIslemi")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("Mantolama")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("MutfakDolabiYapimi")
-                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HizmetVerenId")
-                        .IsUnique();
+                    b.HasIndex("HizmetVerenId");
 
-                    b.ToTable("HizmetAltKategoris");
+                    b.ToTable("HizmetKategoris");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", b =>
@@ -88,11 +63,11 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("FirmaIsmi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("HizmetKategoriId")
-                        .HasColumnType("int");
-
                     b.Property<string>("IsTelNo")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("KategoriId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("KayitTarihi")
                         .HasColumnType("datetime2");
@@ -115,8 +90,8 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("TelNo")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("VergiNo")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("VergiNo")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -628,7 +603,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 21, 30, 12, 344, DateTimeKind.Local).AddTicks(3297),
+                            KayitTarihi = new DateTime(2023, 7, 27, 20, 51, 57, 769, DateTimeKind.Local).AddTicks(1964),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -639,7 +614,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 27, 21, 30, 12, 344, DateTimeKind.Local).AddTicks(3299),
+                            KayitTarihi = new DateTime(2023, 7, 27, 20, 51, 57, 769, DateTimeKind.Local).AddTicks(1966),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
@@ -751,11 +726,11 @@ namespace BideryaMvcProject.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", b =>
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetKategori", b =>
                 {
                     b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", "HizmetVeren")
-                        .WithOne("HizmetAltKategori")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetAltKategori", "HizmetVerenId")
+                        .WithMany("HizmetKategoris")
+                        .HasForeignKey("HizmetVerenId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -806,7 +781,7 @@ namespace BideryaMvcProject.Migrations
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.HizmetVeren", b =>
                 {
-                    b.Navigation("HizmetAltKategori");
+                    b.Navigation("HizmetKategoris");
 
                     b.Navigation("HizmetverenAdress");
                 });
