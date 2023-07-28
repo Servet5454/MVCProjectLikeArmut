@@ -7,6 +7,7 @@
 
         public int IlanKategori { get; set; }
 
-
+        public Kullanici? Kullanici { get; set; }
+        public ICollection<IlanAltKategori>? IlanAltKategoris { get; set; }
     }
 }

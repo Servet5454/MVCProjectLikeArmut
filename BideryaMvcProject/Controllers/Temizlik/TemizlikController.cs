@@ -17,8 +17,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
         public TemizlikController(BideryaMvcDatabase? context, IConfiguration configuration)
         {
-            this.context=context;
-            this.configuration=configuration;
+            this.context = context;
+            this.configuration = configuration;
         }
 
         public IActionResult Index()
@@ -35,20 +35,20 @@ namespace BideryaMvcProject.Controllers.Temizlik
             var kul = context?.Kullanicis?
             .Include(p => p.KullaniciAdress)
             .FirstOrDefault(p => p.Email == UserEmail && p.Id == int.Parse(UserId));
-            
-            var KullaniciAdres = kul.KullaniciAdress?.FirstOrDefault(p => p.KullaniciId ==int.Parse(UserId));
-            
-            if (KullaniciAdres !=null)
+
+            var KullaniciAdres = kul.KullaniciAdress?.FirstOrDefault(p => p.KullaniciId == int.Parse(UserId));
+
+            if (KullaniciAdres != null)
             {
-                koltukTemizlikViewModel.Il =KullaniciAdres.Il;
-                koltukTemizlikViewModel.Ilce =KullaniciAdres.Ilce;
-                koltukTemizlikViewModel.AdresGenel =KullaniciAdres.AdresGenel;
+                koltukTemizlikViewModel.Il = KullaniciAdres.Il;
+                koltukTemizlikViewModel.Ilce = KullaniciAdres.Ilce;
+                koltukTemizlikViewModel.AdresGenel = KullaniciAdres.AdresGenel;
             }
             else
             {
-                koltukTemizlikViewModel.Il =null;
-                koltukTemizlikViewModel.Ilce =null;
-                koltukTemizlikViewModel.AdresGenel =null;
+                koltukTemizlikViewModel.Il = null;
+                koltukTemizlikViewModel.Ilce = null;
+                koltukTemizlikViewModel.AdresGenel = null;
             }
 
             return View(koltukTemizlikViewModel);
@@ -56,6 +56,22 @@ namespace BideryaMvcProject.Controllers.Temizlik
         [HttpPost]
         public IActionResult KoltukTemizlik(KoltukTemizlikViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                var kul = context?.Kullanicis?
+                    .Include(p => p.IlanAltKategoris)
+                    .Include(p => p.Ilans)
+                    .FirstOrDefault(p => p.Id == int.Parse(UserId));
+               
+            }
 
             return View();
         }

@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230728193155_mig35")]
+    partial class mig35
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -621,40 +624,10 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Aciklama")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CiftKisilikYatakSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IkiliKoltukSayisi")
-                        .HasColumnType("int");
-
                     b.Property<int?>("IlanId")
                         .HasColumnType("int");
 
                     b.Property<int>("KullaniciId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MinderSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SandalyeSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TekliKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TekliYatakSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("TeklifSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UcluKoltukSayisi")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -711,7 +684,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 28, 22, 54, 11, 732, DateTimeKind.Local).AddTicks(2611),
+                            KayitTarihi = new DateTime(2023, 7, 28, 22, 31, 55, 1, DateTimeKind.Local).AddTicks(1682),
                             Sifre1 = "123456",
                             Sifre2 = "123456",
                             Soyad = "Yılmaz",
@@ -722,7 +695,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse.kaya@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 28, 22, 54, 11, 732, DateTimeKind.Local).AddTicks(2614),
+                            KayitTarihi = new DateTime(2023, 7, 28, 22, 31, 55, 1, DateTimeKind.Local).AddTicks(1707),
                             Sifre1 = "678900",
                             Sifre2 = "678900",
                             Soyad = "Kaya",
