@@ -1,6 +1,6 @@
-﻿namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
+﻿namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
-    public class CamBalkon
+    public class CamBalkonViewModel
     {
         public int Id { get; set; }
         public int TadilatDekorasyonId { get; set; }
@@ -14,7 +14,5 @@
         public string? Il { get; set; }
         public string? Ilce { get; set; }
         public string? AdresDetay { get; set; }
-
-
     }
 }
