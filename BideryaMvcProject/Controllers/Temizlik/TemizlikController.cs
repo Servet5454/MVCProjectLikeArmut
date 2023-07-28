@@ -70,7 +70,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     .Include(p => p.IlanAltKategoris)
                     .Include(p => p.Ilans)
                     .FirstOrDefault(p => p.Id == int.Parse(UserId));
-               
+               //TODO burada kaldım
             }
 
             return View();
