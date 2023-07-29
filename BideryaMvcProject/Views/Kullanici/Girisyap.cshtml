@@ -21,45 +21,67 @@
             <img class="bg" src="/img/icon/sign/sign-up.png" alt=""/>
         </div>
         <div class="container">
-           
-            <form asp-action="GirisYap" asp-controller="Kullanici" method="post">
+        <form asp-action="GirisYap" asp-controller="Kullanici" method="post">
             <div class="row">
                 <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                    <div class="sign__wrapper white-bg">                       
-                        <div class="sign__form">                      
-                           
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Email Adresi</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Email" placeholder="Email Adresi">
-                                        <i class="fal fa-envelope"></i>
-                                    </div>
+                    <div class="sign__wrapper white-bg">
+                        <div class="sign__form">
+                            <div class="sign__input-wrapper mb-25">
+                                <h5>Email Adresi</h5>
+                                <div class="sign__input">
+                                    <input type="text" asp-for="Email" placeholder="Email Adresi">
+                                    <i class="fal fa-envelope"></i>
                                 </div>
-                                <div class="sign__input-wrapper mb-10">
-                                    <h5>Şifre</h5>
-                                    <div class="sign__input">
-                                        <input type="password" asp-for="Sifre1" placeholder="Şifre">
-                                        <i class="fal fa-lock"></i>
-                                    </div>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-10">
+                                <h5>Şifre</h5>
+                                <div class="sign__input">
+                                    <input type="password" asp-for="Sifre1" placeholder="Şifre">
+                                    <i class="fal fa-lock"></i>
                                 </div>
-                                <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                    <div class="sign__agree d-flex align-items-center">
-                                        <input class="m-check-input" type="checkbox" id="m-agree">
-                                        <label class="m-check-label" for="m-agree">
-                                            Bilgilerimi Kaydet
-                                        </label>
-                                    </div>
-                                    <div class="sign__forgot">
-                                        <a href="#">Şifrenizi mi unuttunuz?</a>
-                                    </div>
-                                </div>
-                                <button type="submit" class="m-btn m-btn-4 w-100">Giriş Yap</button>
-                                <div class="sign__new text-center mt-20">
-                                    <p>Henüz Kayıt Olmadınız mı?</P><br />
-                                       <p> <a asp-controller="Kullanici" asp-action="HesapOlustur">Buraya Tıklayarak Kayıt Olabilirsiniz</a></p>
-                                </div>
-                           
+                            </div>
                         </div>
+
+                        <div class="sign__action d-sm-flex justify-content-between mb-30">
+                            <div class="sign__agree d-flex align-items-center">
+                                <input class="m-check-input" type="checkbox" id="m-agree">
+                                <label class="m-check-label" for="m-agree">
+                                    Hizmet Veren Olarak Giriş Yap
+                                </label>
+                            </div>
+
+                            <div class="sign__agree d-flex align-items-center">
+                                <input class="m-check-input" type="checkbox" id="m-agree">
+                                <label class="m-check-label" for="m-agree">
+                                    Hizmet Arayan Olarak Giriş Yap
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="sign__action d-sm-flex justify-content-between mb-30">
+                            <div class="sign__agree d-flex align-items-center">
+                                <div>
+                                    <input class="m-check-input" type="checkbox" id="m-agree">
+                                    <label class="m-check-label" for="m-agree">
+                                        Bilgilerimi Kaydet
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sign__action d-sm-flex justify-content-between mb-30">
+                            <div class="sign__forgot">
+                                <button type="submit" class="m-btn m-btn-4 w-100">Şifrenizi mi unuttunuz?</button>
+                            </div>
+                        </div>
+                          
+
+                            <button type="submit" class="m-btn m-btn-4 w-100">Giriş Yap</button>
+                            <div class="sign__new text-center mt-20">
+                                <p>Henüz Kayıt Olmadınız mı?</p><br />
+                                <p> <a asp-controller="Kullanici" asp-action="HesapOlustur">Buraya Tıklayarak Kayıt Olabilirsiniz</a></p>
+                            </div>
                     </div>
                 </div>
             </div>
