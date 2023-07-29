@@ -1,5 +1,5 @@
 ﻿using BideryaMvcProject.DataBase;
-using BideryaMvcProject.DataBase.Entities.Kullanici;
+using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;

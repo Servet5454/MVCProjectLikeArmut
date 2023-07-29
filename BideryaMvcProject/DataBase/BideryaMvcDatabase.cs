@@ -2,7 +2,7 @@
 using BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.DataBase.Entities.Ilanlar;
-using BideryaMvcProject.DataBase.Entities.Kullanici;
+using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using Microsoft.EntityFrameworkCore;
 
 namespace BideryaMvcProject.DataBase
@@ -17,9 +17,25 @@ namespace BideryaMvcProject.DataBase
         public DbSet<HizmetVerenAdres>? HizmetVerenAdres { get; set; }
         //public DbSet<HizmetKategori>? HizmetKategoris { get; set; }
         public DbSet<HizmetAltKategori>? HizmetAltKategoris { get; set; }
+        
+        
+        #endregion
 
-        public DbSet<Ilan>? Ilans { get; set; }
-        public DbSet<IlanAltKategori>? IlanAltKategoris { get; set; }
+        
+
+        
+
+        #region İlanlar
+
+        public DbSet<Ilan> Ilans { get; set; }
+
+        #region TemizlikHizmetleri Dbset
+        public DbSet<TemizlikAna>? TemizlikAnas { get; set; }
+        public DbSet<AracYikama>? AracYikamas { get; set; }
+        public DbSet<EvTemizlik>? EvTemizliks { get; set; }
+        public DbSet<Ilaclama>? Ilaclamas { get; set; }
+        public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
+
         #endregion
 
         #region Tadilat Dekorasyon DbSet
@@ -31,26 +47,11 @@ namespace BideryaMvcProject.DataBase
 
         #endregion
 
-        #region TemizlikHizmetleri Dbset
-        public DbSet<TemizlikAna>? TemizlikAnas { get; set; }
-        public DbSet<AracYikama>? AracYikamas { get; set; }
-        public DbSet<EvTemizlik>? EvTemizliks { get; set; }
-        public DbSet<Ilaclama>? Ilaclamas { get; set; }
-        public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
-       
-        #endregion
-
-        #region İlanlar
-
-        public DbSet<AnkaraHizmetIlani>? AnkaraHizmetIlanis { get; set; }
-        public DbSet<AnkaraIlanKoltukTemizlik>? AnkaraIlanTemizliks { get; set; }
-
-
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesiYedek; User ID=sa;password=servet;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Server=DESKTOP-7FIIBG4;Database=BideryaMvcProjesiSira1;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True");
             base.OnConfiguring(optionsBuilder);
             //"Data Source =DESKTOP-F43C5LA\\SQLEXPRESS; Initial Catalog=BideryaMvcProjesi; User ID=sa;password=servet"    evdeki database linki
             //"Server=DESKTOP-7FIIBG4;Database=BideryaMvcProjesi;Trusted_Connection=True;Integrated Security=True;TrustServerCertificate=True" Laptop Linki
@@ -166,7 +167,24 @@ namespace BideryaMvcProject.DataBase
                     Mahalle = "Yeniken",
                     AdresGenel = "Yenikent Ankara"
                 });
-
+            modelBuilder.Entity<Ilan>().HasData(new Ilan()
+            {
+                Id =1,
+                Il = "Ankara",
+                Ilce ="Yenikent",
+                IlanKategoriId =1,
+                IlanAltKategoriId =1,
+                
+                EvTemizlik =new EvTemizlik() { IlanId = 1,
+                BalkonSayisi =1,
+                BanyoSayisi =2,
+                CalismaSuresi =2,
+                HayvanVarmi =false,
+                OdaSayisi =3,
+                Aciklama ="Heryer Temizlenecek",               
+                
+                },
+            });
 
 
 

@@ -1,4 +1,4 @@
-﻿namespace BideryaMvcProject.DataBase.Entities.Kullanici
+﻿namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
 {
     public class KullaniciAdres
     {

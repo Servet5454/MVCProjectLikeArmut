@@ -1,4 +1,4 @@
-﻿using BideryaMvcProject.DataBase.Entities.Kullanici;
+﻿using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using BideryaMvcProject.Models.Ilanlar.Temizlik;
 
 namespace BideryaMvcProject.Helper.IlanHelpers

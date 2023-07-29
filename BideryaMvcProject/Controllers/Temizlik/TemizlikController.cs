@@ -1,7 +1,5 @@
 ﻿using BideryaMvcProject.DataBase;
-using BideryaMvcProject.DataBase.Entities.Ilanlar;
-using BideryaMvcProject.DataBase.Entities.Kullanici;
-using BideryaMvcProject.Models.Ilanlar;
+using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using BideryaMvcProject.Models.Ilanlar.Temizlik;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -66,16 +64,23 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
-                var kul = context?.Kullanicis?
-                    .Include(p => p.IlanAltKategoris)
-                    .Include(p => p.Ilans)
-                    .FirstOrDefault(p => p.Id == int.Parse(UserId));
-               //TODO burada kaldım
+               
+                //TODO burada kaldım
             }
 
             return View();
         }
         public IActionResult EvTemizlik()
+        {
+            return View();
+        }
+
+
+        public IActionResult AracYikama()
+        {
+            return View();
+        }
+        public IActionResult Ilaclama()
         {
             return View();
         }

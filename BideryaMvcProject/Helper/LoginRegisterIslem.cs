@@ -1,6 +1,6 @@
 ﻿using BideryaMvcProject.DataBase;
 using BideryaMvcProject.DataBase.Entities.Hizmetler;
-using BideryaMvcProject.DataBase.Entities.Kullanici;
+using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using BideryaMvcProject.Models.HesapKullanici;
 using Microsoft.Extensions.Configuration;
 using NETCore.Encrypt.Extensions;

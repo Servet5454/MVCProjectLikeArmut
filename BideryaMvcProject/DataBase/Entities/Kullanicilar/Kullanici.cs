@@ -1,6 +1,7 @@
-﻿using System.Numerics;
+﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using System.Numerics;
 
-namespace BideryaMvcProject.DataBase.Entities.Kullanici
+namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
 {
     public class Kullanici
     {
@@ -8,7 +9,7 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanici
         public Kullanici()
         {
             KullaniciAdress = new HashSet<KullaniciAdres>();
-            Ilans = new HashSet<Ilan>();
+           Ilans =new HashSet<Ilan>();
         }
 
         public int Id { get; set; }
@@ -22,8 +23,8 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanici
         public DateTime? KayitTarihi { get; set; } = DateTime.Now;
 
 
-        public ICollection<Ilan>? Ilans { get; set; }
+       
         public ICollection<KullaniciAdres>? KullaniciAdress { get; set; } //burada kullanıcı adresle çok ilişkisi olduğunu söyledik...
-        public ICollection<IlanAltKategori>? IlanAltKategoris { get; set; }
+       public ICollection<Ilan>? Ilans { get; set; }
     }
 }
