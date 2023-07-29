@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230729070246_mig37")]
+    partial class mig37
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -176,6 +179,9 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("Aciklama")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("AdresDetay")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("BalkonCephe")
                         .HasColumnType("nvarchar(max)");
 
@@ -191,16 +197,16 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("CamRengi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
+                    b.Property<string>("Il")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ilce")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TadilatDekorasyonId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IlanId")
-                        .IsUnique();
 
                     b.ToTable("CamBalkons");
                 });
@@ -234,9 +240,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("FayansDoseme")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
-
                     b.Property<string>("KapıPencere")
                         .HasColumnType("nvarchar(max)");
 
@@ -252,6 +255,9 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("ParkeLaminant")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TadilatDekorasyonId")
+                        .HasColumnType("int");
+
                     b.Property<string>("TadilatIsTuru")
                         .HasColumnType("nvarchar(max)");
 
@@ -262,9 +268,6 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IlanId")
-                        .IsUnique();
 
                     b.ToTable("EvTadilats");
                 });
@@ -292,9 +295,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("CepheSayisi")
                         .HasColumnType("int");
 
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
-
                     b.Property<int>("KisaCepheUzunluk")
                         .HasColumnType("int");
 
@@ -304,10 +304,10 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("Ozellikler")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.Property<int>("TadilatDekorasyonId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("IlanId")
-                        .IsUnique();
+                    b.HasKey("Id");
 
                     b.ToTable("Mantolamas");
                 });
@@ -323,22 +323,19 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("Aciklama")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
-
                     b.Property<string>("IsTuru")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MalzemeTercihi")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("TadilatDekorasyonId")
+                        .HasColumnType("int");
+
                     b.Property<short>("ToplamDolapUzunluk")
                         .HasColumnType("smallint");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IlanId")
-                        .IsUnique();
 
                     b.ToTable("MutfakDolabiYapimis");
                 });
@@ -370,19 +367,19 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("Aciklama")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("AltKategoriId")
+                        .HasColumnType("int");
+
                     b.Property<string>("DigerYerler")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
 
                     b.Property<int>("KoltukSayisi")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("TemizlikAnaId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("IlanId")
-                        .IsUnique();
+                    b.HasKey("Id");
 
                     b.ToTable("AracYikamas");
                 });
@@ -395,46 +392,17 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Aciklama")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("BalkonSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("BanyoSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<float>("CalismaSuresi")
-                        .HasColumnType("real");
-
-                    b.Property<bool>("HayvanVarmi")
+                    b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("OdaSayisi")
+                    b.Property<int>("TemizlikAnaId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IlanId")
-                        .IsUnique();
+                    b.HasIndex("TemizlikAnaId");
 
                     b.ToTable("EvTemizliks");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Aciklama = "Temizlenecek",
-                            BalkonSayisi = 1,
-                            BanyoSayisi = 1,
-                            CalismaSuresi = 3f,
-                            HayvanVarmi = false,
-                            IlanId = 1,
-                            OdaSayisi = 1
-                        });
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.Ilaclama", b =>
@@ -451,19 +419,16 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("HasereTipi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IlanId")
-                        .HasColumnType("int");
-
                     b.Property<string>("MekanTipi")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Metrekare")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<int>("TemizlikAnaId")
+                        .HasColumnType("int");
 
-                    b.HasIndex("IlanId")
-                        .IsUnique();
+                    b.HasKey("Id");
 
                     b.ToTable("Ilaclamas");
                 });
@@ -483,9 +448,6 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("IkiliKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IlanId")
                         .HasColumnType("int");
 
                     b.Property<int>("LKoltukSayisi")
@@ -510,9 +472,6 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("IlanId")
-                        .IsUnique();
 
                     b.ToTable("KoltukTemizliks");
                 });
@@ -562,20 +521,8 @@ namespace BideryaMvcProject.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("AdresDetay")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IlanAltKategoriId")
-                        .HasColumnType("int");
-
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("KullaniciId")
                         .HasColumnType("int");
@@ -585,18 +532,6 @@ namespace BideryaMvcProject.Migrations
                     b.HasIndex("KullaniciId");
 
                     b.ToTable("Ilans");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AdresDetay = "Ayaş Merkez",
-                            Il = "Ankara",
-                            IlanAltKategoriId = 1,
-                            IlanKategoriId = 1,
-                            Ilce = "Yenikent",
-                            KullaniciId = 1
-                        });
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Kullanicilar.Kullanici", b =>
@@ -644,9 +579,9 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 29, 11, 33, 51, 885, DateTimeKind.Local).AddTicks(6313),
-                            Sifre1 = "3A987843C71CDC036B1477D929084804",
-                            Sifre2 = "3A987843C71CDC036B1477D929084804",
+                            KayitTarihi = new DateTime(2023, 7, 29, 10, 2, 45, 910, DateTimeKind.Local).AddTicks(3461),
+                            Sifre1 = "123456",
+                            Sifre2 = "123456",
                             Soyad = "Yılmaz",
                             TelNo = "05555555555"
                         },
@@ -654,10 +589,10 @@ namespace BideryaMvcProject.Migrations
                         {
                             Id = 2,
                             Ad = "Ayşe",
-                            Email = "ayse@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 29, 11, 33, 51, 885, DateTimeKind.Local).AddTicks(6318),
-                            Sifre1 = "3A987843C71CDC036B1477D929084804",
-                            Sifre2 = "3A987843C71CDC036B1477D929084804",
+                            Email = "ayse.kaya@gmail.com",
+                            KayitTarihi = new DateTime(2023, 7, 29, 10, 2, 45, 910, DateTimeKind.Local).AddTicks(3465),
+                            Sifre1 = "678900",
+                            Sifre2 = "678900",
                             Soyad = "Kaya",
                             TelNo = "05555555555"
                         });
@@ -789,92 +724,15 @@ namespace BideryaMvcProject.Migrations
                     b.Navigation("HizmetVeren");
                 });
 
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.CamBalkon", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("CamBalkon")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.CamBalkon", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.EvTadilat", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("EvTadilat")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.EvTadilat", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.Mantolama", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("Mantolama")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.Mantolama", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.MutfakDolabiYapimi", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("MutfakDolabiYapimi")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.MutfakDolabiYapimi", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.AracYikama", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("AracYikama")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.AracYikama", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
-                });
-
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.EvTemizlik", b =>
                 {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("EvTemizlik")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.EvTemizlik", "IlanId")
+                    b.HasOne("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.TemizlikAna", "TemizlikAna")
+                        .WithMany()
+                        .HasForeignKey("TemizlikAnaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Ilan");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.Ilaclama", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("Ilaclama")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.Ilaclama", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik", b =>
-                {
-                    b.HasOne("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", "Ilan")
-                        .WithOne("KoltukTemizlik")
-                        .HasForeignKey("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik", "IlanId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Ilan");
+                    b.Navigation("TemizlikAna");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", b =>
@@ -904,25 +762,6 @@ namespace BideryaMvcProject.Migrations
                     b.Navigation("HizmetAltKategori");
 
                     b.Navigation("HizmetverenAdress");
-                });
-
-            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", b =>
-                {
-                    b.Navigation("AracYikama");
-
-                    b.Navigation("CamBalkon");
-
-                    b.Navigation("EvTadilat");
-
-                    b.Navigation("EvTemizlik");
-
-                    b.Navigation("Ilaclama");
-
-                    b.Navigation("KoltukTemizlik");
-
-                    b.Navigation("Mantolama");
-
-                    b.Navigation("MutfakDolabiYapimi");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Kullanicilar.Kullanici", b =>

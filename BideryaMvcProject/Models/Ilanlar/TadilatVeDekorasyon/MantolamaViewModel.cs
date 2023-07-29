@@ -1,14 +1,9 @@
-﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
+﻿namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
-    public class Mantolama
+    public class MantolamaViewModel
     {
         public int Id { get; set; }
-        [ForeignKey(nameof(IlanId))]
-        public int IlanId { get; set; }
-        
+        public int TadilatDekorasyonId { get; set; }
         public int BinaKatSayisi { get; set; }
         public int BinaCepheUzunluk { get; set; }
         public int KisaCepheUzunluk { get; set; }
@@ -17,7 +12,5 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public string? MarkaTercih { get; set; }
         public int BalkonTipi { get; set; }
         public string? Aciklama { get; set; }
-
-        public virtual Ilan? Ilan { get; set; }
     }
 }

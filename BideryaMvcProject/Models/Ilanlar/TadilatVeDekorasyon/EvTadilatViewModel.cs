@@ -1,14 +1,9 @@
-﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
-using System.ComponentModel.DataAnnotations.Schema;
-
-namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
+﻿namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
-    public class EvTadilat
+    public class EvTadilatViewModel
     {
         public int Id { get; set; }
-        [ForeignKey(nameof(IlanId))]
-        public int IlanId { get; set; }
-       
+        public int TadilatDekorasyonId { get; set; }
         public string? TadilatTipi { get; set; }
         public string? BoyaBadana { get; set; }
         public string? Mutfak { get; set; }
@@ -24,7 +19,5 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public string? MalzemeKalitesi { get; set; }
         public string? Aciklama { get; set; }
         public string? Diger { get; set; }
-        public virtual Ilan? Ilan { get; set; }
-
     }
 }

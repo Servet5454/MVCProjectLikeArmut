@@ -1,9 +1,10 @@
 ﻿using BideryaMvcProject.DataBase;
 using BideryaMvcProject.DataBase.Entities.Hizmetler;
-using BideryaMvcProject.DataBase.Entities.Kullanici;
+using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using BideryaMvcProject.Models.HesapKullanici;
 using Microsoft.Extensions.Configuration;
 using NETCore.Encrypt.Extensions;
+using System.Linq.Expressions;
 
 namespace BideryaMvcProject.Helper
 {
@@ -57,14 +58,15 @@ namespace BideryaMvcProject.Helper
                 Soyad = model.Soyad,
                 Email = model?.Email?.ToLower(),
                 FirmaIsmi = model?.FirmaIsmi,
-                KategoriId =model.HizmetKategori,
-                TelNo=model.TelNo,
-                IsTelNo =model.IsTelNo ?? null,
-                KayitTarihi =DateTime.Now,
-                VergiNo =int.Parse(model.VergiNo.ToString()),
-                SilinmeTarihi =null,
-                Sehir =model.Il,
-                
+                HizmetKategoriId = model.HizmetKategori,
+                TelNo = model.TelNo,
+                IsTelNo = model.IsTelNo ?? null,
+                KayitTarihi = DateTime.Now,
+                VergiNo =model.VergiNo,
+                SilinmeTarihi = null,
+                Sehir = model.Il,
+               
+
 
 
                 HizmetverenAdress = new List<HizmetVerenAdres>
@@ -77,65 +79,93 @@ namespace BideryaMvcProject.Helper
                         Ilce =model.Ilce,
                         AdresGenel =model.AdresTanimi,
                     }
+                    
 
                 },
-                HizmetKategoris =new List<HizmetKategori>()
+                               
 
             };
 
-            //switch (model.HizmetKategori)
-            //{
-            //    case 1:// Temizlik işlemleri için yapılacak bölüm
-            //        // Hizmet Kategori ID 1 için yapılacak işlemler
-            //        DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
-            //        {
-            //            KategoriId = model.HizmetKategori,
-            //            HizmetAltKategoris = new List<HizmetAltKategori>
-            //{
-            //    new HizmetAltKategori
-            //    {
-            //        AracYikamaIslemi =true,
-            //        EvTemizlikIslemi =true,
-            //        IlaclamaIslemi=true,
-            //        KoltukTemizlikIslemi=true,
-                    
+            switch (DbHizmetVeren.HizmetKategoriId)
+            {
+                case 1://BurasıTemizlik
+                    DbHizmetVeren.HizmetAltKategori = new HizmetAltKategori
+                    {
+                        AracYikamaIslemi = true,
+                        EvTemizlikIslemi = true,
+                        IlaclamaIslemi = true,
+                        KoltukTemizlikIslemi = true,
 
-            //        // Hizmet Kategori ID 1 için HizmetAltKategori oluşturulması
-            //    }
-            //}
-            //        });
-            //        break;
+                    };
+                    break;
+                case 2://Burası Tadilat
+                    DbHizmetVeren.HizmetAltKategori = new HizmetAltKategori
+                    {
+                        CamBalkon = true,
+                        EvTadilat = true,
+                        Mantolama = true,
+                        MutfakDolabiYapimi = true,
+                    };
 
-            //    case 2:
-            //        // Hizmet Kategori ID 2 için yapılacak işlemler
-            //        DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
-            //        {
-            //            KategoriId = model.HizmetKategori,
-            //            HizmetAltKategoris = new List<HizmetAltKategori>
-            //{
-            //    new HizmetAltKategori
-            //    {
-            //        CamBalkon =true,
-            //        EvTadilat =true,
-            //        Mantolama=true,
-            //        MutfakDolabiYapimi=true,
-
-            //                        }
-            //}
-            //        });
-            //        break;
-
-            //    // Diğer durumlar için case'ler ekleyebilirsiniz.
-
-            //    default:
-            //        // Belirli bir case ile eşleşmezse yapılacak işlemler
-            //        break;
-            //}
+                    break; 
+                
+                case 3:
+                    break;
+                default:
+                    break;
+            }
 
             context?.Add(DbHizmetVeren);
             context?.SaveChanges();
 
-
         }
     }
 }
+//switch (model.HizmetKategori)
+//{
+//    case 1:// Temizlik işlemleri için yapılacak bölüm
+//        // Hizmet Kategori ID 1 için yapılacak işlemler
+//        DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
+//        {
+//            KategoriId = model.HizmetKategori,
+//            HizmetAltKategoris = new List<HizmetAltKategori>
+//{
+//    new HizmetAltKategori
+//    {
+//        AracYikamaIslemi =true,
+//        EvTemizlikIslemi =true,
+//        IlaclamaIslemi=true,
+//        KoltukTemizlikIslemi=true,
+
+
+//        // Hizmet Kategori ID 1 için HizmetAltKategori oluşturulması
+//    }
+//}
+//        });
+//        break;
+
+//    case 2:
+//        // Hizmet Kategori ID 2 için yapılacak işlemler
+//        DbHizmetVeren.HizmetKategoris.Add(new HizmetKategori
+//        {
+//            KategoriId = model.HizmetKategori,
+//            HizmetAltKategoris = new List<HizmetAltKategori>
+//{
+//    new HizmetAltKategori
+//    {
+//        CamBalkon =true,
+//        EvTadilat =true,
+//        Mantolama=true,
+//        MutfakDolabiYapimi=true,
+
+//                        }
+//}
+//        });
+//        break;
+
+//    // Diğer durumlar için case'ler ekleyebilirsiniz.
+
+//    default:
+//        // Belirli bir case ile eşleşmezse yapılacak işlemler
+//        break;
+//}

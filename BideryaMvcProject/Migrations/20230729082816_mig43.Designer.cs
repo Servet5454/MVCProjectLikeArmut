@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230729082816_mig43")]
+    partial class mig43
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -644,9 +647,9 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 29, 11, 33, 51, 885, DateTimeKind.Local).AddTicks(6313),
-                            Sifre1 = "3A987843C71CDC036B1477D929084804",
-                            Sifre2 = "3A987843C71CDC036B1477D929084804",
+                            KayitTarihi = new DateTime(2023, 7, 29, 11, 28, 16, 336, DateTimeKind.Local).AddTicks(3543),
+                            Sifre1 = "123456",
+                            Sifre2 = "123456",
                             Soyad = "Yılmaz",
                             TelNo = "05555555555"
                         },
@@ -654,10 +657,10 @@ namespace BideryaMvcProject.Migrations
                         {
                             Id = 2,
                             Ad = "Ayşe",
-                            Email = "ayse@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 29, 11, 33, 51, 885, DateTimeKind.Local).AddTicks(6318),
-                            Sifre1 = "3A987843C71CDC036B1477D929084804",
-                            Sifre2 = "3A987843C71CDC036B1477D929084804",
+                            Email = "ayse.kaya@gmail.com",
+                            KayitTarihi = new DateTime(2023, 7, 29, 11, 28, 16, 336, DateTimeKind.Local).AddTicks(3547),
+                            Sifre1 = "678900",
+                            Sifre2 = "678900",
                             Soyad = "Kaya",
                             TelNo = "05555555555"
                         });
