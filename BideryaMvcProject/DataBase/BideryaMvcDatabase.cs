@@ -17,13 +17,13 @@ namespace BideryaMvcProject.DataBase
         public DbSet<HizmetVerenAdres>? HizmetVerenAdres { get; set; }
         //public DbSet<HizmetKategori>? HizmetKategoris { get; set; }
         public DbSet<HizmetAltKategori>? HizmetAltKategoris { get; set; }
-        
-        
+
+
         #endregion
 
-        
 
-        
+
+
 
         #region İlanlar
 
@@ -83,8 +83,8 @@ namespace BideryaMvcProject.DataBase
                 Id = 1,
                 Ad = "Ahmet",
                 Soyad = "Yılmaz",
-                Sifre1 = "123456",
-                Sifre2 = "123456",
+                Sifre1 = "3A987843C71CDC036B1477D929084804",
+                Sifre2 = "3A987843C71CDC036B1477D929084804",
                 Email = "ahmet.yilmaz@gmail.com",
                 TelNo = "05555555555",
                 KayitTarihi = DateTime.Now,
@@ -94,9 +94,9 @@ namespace BideryaMvcProject.DataBase
                 Id = 2,
                 Ad = "Ayşe",
                 Soyad = "Kaya",
-                Sifre1 = "678900",
-                Sifre2 = "678900",
-                Email = "ayse.kaya@gmail.com",
+                Sifre1 = "3A987843C71CDC036B1477D929084804",
+                Sifre2 = "3A987843C71CDC036B1477D929084804",
+                Email = "ayse@gmail.com",
                 TelNo = "05555555555",
                 KayitTarihi = DateTime.Now,
             }
@@ -169,21 +169,24 @@ namespace BideryaMvcProject.DataBase
                 });
             modelBuilder.Entity<Ilan>().HasData(new Ilan()
             {
-                Id =1,
+                Id = 1,
+                KullaniciId =1,
                 Il = "Ankara",
                 Ilce ="Yenikent",
                 IlanKategoriId =1,
                 IlanAltKategoriId =1,
-                
-                EvTemizlik =new EvTemizlik() { IlanId = 1,
-                BalkonSayisi =1,
-                BanyoSayisi =2,
-                CalismaSuresi =2,
+                AdresDetay ="Ayaş Merkez"
+            });
+            modelBuilder.Entity<EvTemizlik>().HasData(new EvTemizlik()
+            {
+                Id = 1,
+                IlanId= 1,
+                BalkonSayisi = 1,
+                BanyoSayisi = 1,
+                CalismaSuresi =3,
+                OdaSayisi = 1,
                 HayvanVarmi =false,
-                OdaSayisi =3,
-                Aciklama ="Heryer Temizlenecek",               
-                
-                },
+                Aciklama ="Temizlenecek"
             });
 
 

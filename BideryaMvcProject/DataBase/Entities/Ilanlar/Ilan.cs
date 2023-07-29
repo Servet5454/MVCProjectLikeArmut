@@ -1,12 +1,14 @@
 ﻿using BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.DataBase.Entities.Kullanicilar;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BideryaMvcProject.DataBase.Entities.Ilanlar
 {
     public class Ilan
     {
         public int Id { get; set; }
+        [ForeignKey(nameof(KullaniciId))]
         public int KullaniciId { get; set; }
         public int IlanKategoriId { get; set; }
         public int IlanAltKategoriId { get; set; }
@@ -25,7 +27,7 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
 
         public virtual AracYikama? AracYikama { get; set; }
         public virtual EvTemizlik? EvTemizlik { get; set; }
-        public virtual Ilaclama? Ilaclama { get; set;}
+        public virtual Ilaclama? Ilaclama { get; set; }
         public virtual KoltukTemizlik? KoltukTemizlik { get; set; }
     }
 }
