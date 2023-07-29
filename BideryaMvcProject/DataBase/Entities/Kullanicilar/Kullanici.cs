@@ -9,7 +9,7 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
         public Kullanici()
         {
             KullaniciAdress = new HashSet<KullaniciAdres>();
-           Ilans =new HashSet<Ilan>();
+            Ilans =new HashSet<Ilan>();
         }
 
         public int Id { get; set; }
@@ -23,8 +23,8 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
         public DateTime? KayitTarihi { get; set; } = DateTime.Now;
 
 
-       
+
         public ICollection<KullaniciAdres>? KullaniciAdress { get; set; } //burada kullanıcı adresle çok ilişkisi olduğunu söyledik...
-       public ICollection<Ilan>? Ilans { get; set; }
+        public ICollection<Ilan>? Ilans { get; set; }
     }
 }

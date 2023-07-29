@@ -34,21 +34,26 @@ namespace BideryaMvcProject.Controllers.Temizlik
             var kul = context?.Kullanicis?
             .Include(p => p.KullaniciAdress)
             .FirstOrDefault(p => p.Email == UserEmail && p.Id == int.Parse(UserId));
-
+            var ilanlar = context.Ilans//TODO Bu Sorun Çözülecek
+              .Include(i => i.KoltukTemizlik)
+              .Include(i => i.EvTadilat)
+              .Include(i => i.Mantolama)
+              .Where(i => i.IlanAltKategoriId ==2)
+              .ToList();
             var KullaniciAdres = kul.KullaniciAdress?.FirstOrDefault(p => p.KullaniciId == int.Parse(UserId));
 
             if (KullaniciAdres != null)
             {
-                koltukTemizlikViewModel.Il = KullaniciAdres.Il;
-                koltukTemizlikViewModel.Ilce = KullaniciAdres.Ilce;
-                koltukTemizlikViewModel.AdresGenel = KullaniciAdres.AdresGenel;
+                koltukTemizlikViewModel.Il = KullaniciAdres.Il ?? null;
+                koltukTemizlikViewModel.Ilce = KullaniciAdres.Ilce ?? null;
+                koltukTemizlikViewModel.AdresGenel = KullaniciAdres.AdresGenel ?? null;
             }
-            else
-            {
-                koltukTemizlikViewModel.Il = null;
-                koltukTemizlikViewModel.Ilce = null;
-                koltukTemizlikViewModel.AdresGenel = null;
-            }
+            //else
+            //{
+            //    koltukTemizlikViewModel.Il = null;
+            //    koltukTemizlikViewModel.Ilce = null;
+            //    koltukTemizlikViewModel.AdresGenel = null;
+            //}
 
             return View(koltukTemizlikViewModel);
         }
@@ -78,7 +83,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                     KoltukTemizlik =new DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik
-                    {TeklifSayisi =0,
+                    {
+                    TeklifSayisi =0,
                     IkiliKoltukSayisi =model.IkiliKoltukSayisi,
                     LKoltukSayisi =model.LKoltukSayisi,
                     MinderSayisi =model.MinderSayisi,
@@ -88,14 +94,10 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     SandalyeSayisi =model.SandalyeSayisi,
                     CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
                     TekliYatakSayisi =model.TekliYatakSayisi,
-
                     }
-
-
-
-
-
-                } };
+                    }
+                };
+                
 
                 context.Update(kul);
                 context.SaveChanges();
