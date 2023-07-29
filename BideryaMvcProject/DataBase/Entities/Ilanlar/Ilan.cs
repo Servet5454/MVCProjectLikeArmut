@@ -16,8 +16,6 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public string? Ilce { get; set; }
         public string? AdresDetay { get; set; }
 
-
-
         public virtual Kullanici? Kullanici { get; set; }
         public virtual CamBalkon? CamBalkon { get; set; }
         public virtual EvTadilat? EvTadilat { get; set; }

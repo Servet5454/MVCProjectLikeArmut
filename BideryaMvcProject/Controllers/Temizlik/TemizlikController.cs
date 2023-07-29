@@ -1,4 +1,5 @@
 ﻿using BideryaMvcProject.DataBase;
+using BideryaMvcProject.DataBase.Entities.Ilanlar;
 using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using BideryaMvcProject.Models.Ilanlar.Temizlik;
 using Microsoft.AspNetCore.Mvc;
@@ -64,7 +65,40 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
-               
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    KoltukTemizlik =new DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik
+                    {TeklifSayisi =0,
+                    IkiliKoltukSayisi =model.IkiliKoltukSayisi,
+                    LKoltukSayisi =model.LKoltukSayisi,
+                    MinderSayisi =model.MinderSayisi,
+                    TekliKoltukSayisi=model.TekliKoltukSayisi,
+                    UcluKoltukSayisi =model.UcluKoltukSayisi,
+                    Aciklama =model.Aciklama,
+                    
+
+
+                        SandalyeSayisi =model.SandalyeSayisi,
+                        CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
+                        TekliYatakSayisi =model.TekliYatakSayisi,
+                    }
+
+
+
+
+
+                } };
+
+                context.Update(kul);
+                context.SaveChanges();
+
+
                 //TODO burada kaldım
             }
 
