@@ -75,6 +75,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
+
+
                     KoltukTemizlik =new DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik
                     {TeklifSayisi =0,
                     IkiliKoltukSayisi =model.IkiliKoltukSayisi,
@@ -83,12 +85,10 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     TekliKoltukSayisi=model.TekliKoltukSayisi,
                     UcluKoltukSayisi =model.UcluKoltukSayisi,
                     Aciklama =model.Aciklama,
-                    
+                    SandalyeSayisi =model.SandalyeSayisi,
+                    CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
+                    TekliYatakSayisi =model.TekliYatakSayisi,
 
-
-                        SandalyeSayisi =model.SandalyeSayisi,
-                        CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
-                        TekliYatakSayisi =model.TekliYatakSayisi,
                     }
 
 

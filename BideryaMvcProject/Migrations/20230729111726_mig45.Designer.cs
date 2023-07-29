@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230729111726_mig45")]
+    partial class mig45
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,7 +134,7 @@ namespace BideryaMvcProject.Migrations
                             FirmaIsmi = "BeautyElla",
                             HizmetKategoriId = 1,
                             IsTelNo = "05455503341",
-                            KayitTarihi = new DateTime(2023, 7, 29, 14, 36, 23, 805, DateTimeKind.Local).AddTicks(4582),
+                            KayitTarihi = new DateTime(2023, 7, 29, 14, 17, 26, 199, DateTimeKind.Local).AddTicks(933),
                             Sehir = "ankara",
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
@@ -391,9 +394,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("DigerYerler")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("IlanAltKategoriId")
-                        .HasColumnType("int");
-
                     b.Property<int>("IlanId")
                         .HasColumnType("int");
 
@@ -431,9 +431,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("HayvanVarmi")
                         .HasColumnType("bit");
 
-                    b.Property<int>("IlanAltKategoriId")
-                        .HasColumnType("int");
-
                     b.Property<int>("IlanId")
                         .HasColumnType("int");
 
@@ -456,7 +453,6 @@ namespace BideryaMvcProject.Migrations
                             BanyoSayisi = 1,
                             CalismaSuresi = 3f,
                             HayvanVarmi = false,
-                            IlanAltKategoriId = 0,
                             IlanId = 1,
                             OdaSayisi = 1
                         });
@@ -475,9 +471,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<string>("HasereTipi")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("IlanAltKategoriId")
-                        .HasColumnType("int");
 
                     b.Property<int>("IlanId")
                         .HasColumnType("int");
@@ -511,9 +504,6 @@ namespace BideryaMvcProject.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("IkiliKoltukSayisi")
-                        .HasColumnType("int");
-
-                    b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
                     b.Property<int>("IlanId")
@@ -675,7 +665,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 29, 14, 36, 23, 805, DateTimeKind.Local).AddTicks(4225),
+                            KayitTarihi = new DateTime(2023, 7, 29, 14, 17, 26, 199, DateTimeKind.Local).AddTicks(547),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Yılmaz",
@@ -686,7 +676,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse@gmail.com",
-                            KayitTarihi = new DateTime(2023, 7, 29, 14, 36, 23, 805, DateTimeKind.Local).AddTicks(4230),
+                            KayitTarihi = new DateTime(2023, 7, 29, 14, 17, 26, 199, DateTimeKind.Local).AddTicks(551),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Kaya",

@@ -6,7 +6,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
     public class KoltukTemizlik
     {
         public int Id { get; set; }
-        [ForeignKey(nameof(IlanId))]
+        [ForeignKey(nameof(IlanAltKategoriId))]
+        public int IlanAltKategoriId { get; set; }
         public int IlanId { get; set; }
         public int TekliKoltukSayisi { get; set; }
         public int IkiliKoltukSayisi { get; set; }

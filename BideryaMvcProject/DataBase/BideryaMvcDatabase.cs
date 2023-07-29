@@ -189,7 +189,23 @@ namespace BideryaMvcProject.DataBase
                 Aciklama ="Temizlenecek"
             });
 
-
+            modelBuilder.Entity<HizmetVeren>().HasData(new HizmetVeren()
+            {Id =1,
+                Ad ="servet",
+                Soyad ="zabun",
+                Sehir ="ankara",
+                Sifre1 ="3A987843C71CDC036B1477D929084804",
+                Sifre2 ="3A987843C71CDC036B1477D929084804",
+                Email ="servet@gmail.com",
+                FirmaIsmi="BeautyElla",
+                HizmetKategoriId =1,
+               TelNo ="05455503341",
+               IsTelNo ="05455503341",
+               SilinmeTarihi =null,
+               KayitTarihi =DateTime.Now,
+               VergiNo ="11111111111",
+               
+            });
 
 
             #endregion

@@ -168,7 +168,11 @@ namespace BideryaMvcProject.Controllers
         [HttpGet]
         public IActionResult HizmetVerenPanel()
         {
-            
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            HizmetVeren hizmetVeren = context.HizmetVerens.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
             return View();
         }
         [HttpPost]

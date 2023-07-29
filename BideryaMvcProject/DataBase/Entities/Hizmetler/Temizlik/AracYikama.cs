@@ -6,8 +6,10 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
     public class AracYikama
     {
         public int Id { get; set; }
-        [ForeignKey(nameof(IlanId))]
+        
         public int IlanId { get; set; }
+        [ForeignKey(nameof(IlanAltKategoriId))]
+        public int IlanAltKategoriId { get; set; }
         
         public int KoltukSayisi { get; set; }
         public string? DigerYerler { get; set; }
