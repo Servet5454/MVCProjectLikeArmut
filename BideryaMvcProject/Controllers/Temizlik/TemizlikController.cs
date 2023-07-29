@@ -70,6 +70,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 kul.Ilans =new List<Ilan>() { new Ilan
                 {
                     AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
