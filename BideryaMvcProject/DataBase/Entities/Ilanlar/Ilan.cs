@@ -26,5 +26,9 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public virtual EvTemizlik? EvTemizlik { get; set; }
         public virtual Ilaclama? Ilaclama { get; set; }
         public virtual KoltukTemizlik? KoltukTemizlik { get; set; }
+
+
+
+
     }
 }

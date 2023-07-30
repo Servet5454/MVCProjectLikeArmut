@@ -29,6 +29,10 @@ namespace BideryaMvcProject.Controllers.Temizlik
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var UserEmail = User.FindFirstValue(ClaimTypes.Email);
             KoltukTemizlikViewModel koltukTemizlikViewModel = new KoltukTemizlikViewModel();
+            //var deneme = context.Ilans?.Include(p => p.Kullanici)
+            //    .Include(p=>p.KoltukTemizlik).Where(p=>p.IlanAltKategoriId ==2)
+            //    .Where(p => p.KullaniciId == int.Parse(UserId));
+
 
 
             var kul = context?.Kullanicis?
@@ -38,8 +42,9 @@ namespace BideryaMvcProject.Controllers.Temizlik
               .Include(i => i.KoltukTemizlik)
               .Include(i => i.EvTadilat)
               .Include(i => i.Mantolama)
-              .Where(i => i.IlanAltKategoriId ==2)
+              .Where(i => i.IlanAltKategoriId == 2)
               .ToList();
+
             var KullaniciAdres = kul.KullaniciAdress?.FirstOrDefault(p => p.KullaniciId == int.Parse(UserId));
 
             if (KullaniciAdres != null)
@@ -94,6 +99,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     SandalyeSayisi =model.SandalyeSayisi,
                     CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
                     TekliYatakSayisi =model.TekliYatakSayisi,
+                    IlanAltKategoriId =2,
                     }
                     }
                 };

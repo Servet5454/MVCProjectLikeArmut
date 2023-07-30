@@ -11,6 +11,7 @@ using BideryaMvcProject.DataBase.Entities.Hizmetler;
 using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.Helper;
 using Microsoft.Identity.Client;
+using Microsoft.EntityFrameworkCore;
 
 namespace BideryaMvcProject.Controllers
 {
@@ -216,6 +217,17 @@ namespace BideryaMvcProject.Controllers
             }
 
          
+        }
+
+        public IActionResult Ilanlarim()
+        {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            //var ilanlarim =context.Kullanicis.Where(p=>p.Id ==int.Parse(UserId)).Include(p=>p.Ilans).ThenInclude(p=>p.KoltukTemizlik).ToList();
+
+            var ilan =context.Ilans.Where(p=>p.KullaniciId ==int.Parse(UserId)).ToList();
+            return View();
         }
         
         
