@@ -218,6 +218,10 @@ namespace BideryaMvcProject.Controllers
 
          
         }
+        public IActionResult SifremiUnuttum()
+        {
+            return View();
+        }
 
         public IActionResult Ilanlarim()
         {
