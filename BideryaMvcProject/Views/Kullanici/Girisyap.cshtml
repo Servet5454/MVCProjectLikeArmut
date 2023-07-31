@@ -14,82 +14,82 @@
     <section class="signup__area po-rel-z1 pt-80 pb-80">
         <div class="sign__shape">
             <img class="man-1" src="~/img/icon/sign/man-1.png" alt="" />
-            <img class="man-2" src="/img/icon/sign/man-2.png" alt=""/>
-            <img class="circle" src="~/img/icon/sign/circle.png" alt=""/>
-            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt=""/>
-            <img class="dot" src="~/img/icon/sign/dot.png" alt=""/>
-            <img class="bg" src="/img/icon/sign/sign-up.png" alt=""/>
+            <img class="man-2" src="/img/icon/sign/man-2.png" alt="" />
+            <img class="circle" src="~/img/icon/sign/circle.png" alt="" />
+            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="" />
+            <img class="dot" src="~/img/icon/sign/dot.png" alt="" />
+            <img class="bg" src="/img/icon/sign/sign-up.png" alt="" />
         </div>
         <div class="container">
-        <form asp-action="GirisYap" asp-controller="Kullanici" method="post">
-            <div class="row">
-                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                    <div class="sign__wrapper white-bg">
-                        <div class="sign__form">
-                            <div class="sign__input-wrapper mb-25">
-                                <h5>Email Adresi</h5>
-                                <div class="sign__input">
-                                    <input type="text" asp-for="Email" placeholder="Email Adresi">
-                                    <i class="fal fa-envelope"></i>
+            <form asp-action="GirisYap" asp-controller="Kullanici" method="post">
+                <div class="row">
+                    <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                        <div class="sign__wrapper white-bg">
+                            <div class="sign__form">
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Email Adresi</h5>
+                                    <div class="sign__input">
+                                        <input type="text" asp-for="Email" placeholder="Email Adresi">
+                                        <i class="fal fa-envelope"></i>
+                                    </div>
+                                </div>
+
+                                <div class="sign__input-wrapper mb-10">
+                                    <h5>Şifre</h5>
+                                    <div class="sign__input">
+                                        <input type="password" asp-for="Sifre1" placeholder="Şifre">
+                                        <i class="fal fa-lock"></i>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="sign__input-wrapper mb-10">
-                                <h5>Şifre</h5>
-                                <div class="sign__input">
-                                    <input type="password" asp-for="Sifre1" placeholder="Şifre">
-                                    <i class="fal fa-lock"></i>
+                            <div class="sign__action d-sm-flex justify-content-between mb-30">
+                                <div class="sign__agree d-flex align-items-center">
+                                    <input class="m-check-input" type="checkbox" id="m-agree">
+                                    <label class="m-check-label" for="m-agree">
+                                        Hizmet Veren Girişi
+                                    </label>
+                                </div>
+
+                                <div class="sign__agree d-flex align-items-center">
+                                    <input class="m-check-input" type="checkbox" id="m-agree">
+                                    <label class="m-check-label" for="m-agree">
+                                        Hizmet Arayan Girişi
+                                    </label>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="sign__action d-sm-flex justify-content-between mb-30">
-                            <div class="sign__agree d-flex align-items-center">
-                                <input class="m-check-input" type="checkbox" id="m-agree">
-                                <label class="m-check-label" for="m-agree">
-                                    Hizmet Veren Girişi
-                                </label>
+
+
+                            <div class="sign__new text-center mt-20">
+                                <p> <a asp-controller="Kullanici" asp-action="SifremiUnuttum">Şifrenizi mi Unuttunuz?</a></p>
+                            </div>
+                            <br />
+
+
+                            <button type="submit" class="m-btn m-btn-4 w-100">Giriş Yap</button>
+                            <br />
+                            <br />
+
+                            <div class="sign__action d-sm-flex justify-content-center mb-30">
+
+                                <div>
+                                    <input class="m-check-input" type="checkbox" id="m-agree">
+
+                                    <label class="m-check-label" for="m-agree">
+                                        Bilgilerimi Kaydet
+                                    </label>
+                                </div>
+
                             </div>
 
-                            <div class="sign__agree d-flex align-items-center">
-                                <input class="m-check-input" type="checkbox" id="m-agree">
-                                <label class="m-check-label" for="m-agree">
-                                    Hizmet Arayan Girişi
-                                </label>
+                            <div class="sign__new text-center mt-20">
+                                <p>Henüz Kayıt Olmadınız mı?</p><br />
+                                <p> <a asp-controller="Kullanici" asp-action="HesapOlustur">Buraya Tıklayarak Kayıt Olabilirsiniz</a></p>
                             </div>
-                        </div>
-
-
-
-                        <div class="sign__new text-center mt-20">
-                            <p> <a asp-controller="Kullanici" asp-action="HesapOlustur">Şifrenizi mi Unuttunuz?</a></p>
-                        </div>
-                        <br />
-
-
-                        <button type="submit" class="m-btn m-btn-4 w-100">Giriş Yap</button>
-                        <br />
-                        <br />
-
-                        <div class="sign__action d-sm-flex justify-content-center mb-30">
-
-                            <div>
-                                <input class="m-check-input" type="checkbox" id="m-agree">
-                              
-                                <label class="m-check-label" for="m-agree">
-                                    Bilgilerimi Kaydet
-                                </label>
-                            </div>
-
-                        </div>
-
-                        <div class="sign__new text-center mt-20">
-                            <p>Henüz Kayıt Olmadınız mı?</p><br />
-                            <p> <a asp-controller="Kullanici" asp-action="HesapOlustur">Buraya Tıklayarak Kayıt Olabilirsiniz</a></p>
                         </div>
                     </div>
                 </div>
-            </div>
             </form>
         </div>
     </section>
