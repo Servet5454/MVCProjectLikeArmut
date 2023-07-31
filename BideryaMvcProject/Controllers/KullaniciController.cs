@@ -222,7 +222,15 @@ namespace BideryaMvcProject.Controllers
         {
             return View();
         }
-
+        [HttpPost]
+        public IActionResult SifremiUnuttum(string Email)
+        {
+            EmailSender emailSender = new EmailSender();
+            Random rnd = new Random();
+            var yenisifre = rnd.Next(100000, 999999);
+            emailSender.SendEmail(Email, "ŞifreYenileme", yenisifre.ToString());
+            return View();
+        }
         public IActionResult Ilanlarim()
         {
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
