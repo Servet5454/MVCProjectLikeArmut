@@ -44,21 +44,22 @@
                             </div>
 
                             <div class="sign__action d-sm-flex justify-content-between mb-30">
-                                <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">
-                                        Hizmet Veren Girişi
-                                    </label>
-                                </div>
+
 
                                 <div class="sign__agree d-flex align-items-center">
-                                    <input class="m-check-input" type="checkbox" id="m-agree">
-                                    <label class="m-check-label" for="m-agree">
+                                    <input class="m-check-input" type="checkbox" id="m-hizmet-arayan" name="hizmet" onclick="toggleCheck('m-hizmet-arayan')" />
+                                    <label class="m-check-label" for="m-hizmet-arayan">
                                         Hizmet Arayan Girişi
                                     </label>
                                 </div>
-                            </div>
 
+                                <div class="sign__agree d-flex align-items-center">
+                                    <input class="m-check-input" type="checkbox" id="m-hizmet-veren" name="hizmet" onclick="toggleCheck('m-hizmet-veren')" />
+                                    <label class="m-check-label" for="m-hizmet-veren">
+                                        Hizmet Veren Girişi
+                                    </label>
+                                </div>
+                            </div>
 
 
                             <div class="sign__new text-center mt-20">
@@ -66,7 +67,7 @@
                             </div>
                             <br />
 
-
+                      
                             <button type="submit" class="m-btn m-btn-4 w-100">Giriş Yap</button>
                             <br />
                             <br />
@@ -96,3 +97,26 @@
     <!-- kayıt olma alanı sonu -->
 
 </main>
+<script>// Sayfa yüklendiğinde bu fonksiyon çalışacak
+    window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+    // Hizmet Veren veya Hizmet Arayan kutularından biri seçildiğinde diğerini iptal et
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true; // Kullanıcı bu kutuyu iptal edemez
+        }
+    }</script>

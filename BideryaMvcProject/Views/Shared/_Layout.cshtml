@@ -72,7 +72,7 @@
                             </a>
                         </div>
                     </div>
-                    <div class="col-xxl-8 col-xl-8 col-lg-8 d-none d-lg-block">
+                    <div class="col-xxl-7 col-xl-7 col-lg-7 d-none d-lg-block offset-1">
                         <div class="main-menu">
                             <nav id="mobile-menu">
                                 <ul>
@@ -135,7 +135,7 @@
                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-8 col-6">
                         <div class="header__action d-flex align-items-center justify-content-end">
                             <div class="header__login d-none d-sm-block">
-                                <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Giriş Yap</a>
+                                <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Giriş Yap </a>
                             </div>
                            
                             <div class="sidebar__menu d-lg-none">
@@ -212,11 +212,9 @@
                                 <div class="footer__widget-content">
                                     <div class="footer__link">
                                         <ul>
-                                            <li><a asp-controller="" asp-action="">Koltuk Temizleme</a></li>
-                                            <li><a asp-controller="" asp-action="">Boya-Badana Hizmeti</a></li>
-                                            <li><a asp-controller="" asp-action="">Evden Eve Nakliyat</a></li>
-                                            <li><a asp-controller="" asp-action="">Bina Mantolama</a></li>
-                                            <li><a asp-controller="" asp-action="">Cam Balkon</a></li>
+                                            <li><a asp-controller="Temizlik" asp-action="KoltukTemizlik">Koltuk Temizleme</a></li>
+                                            <li><a asp-controller="Temizlik" asp-action="BoyaBadanaIsleri">Boya-Badana Hizmeti</a></li>
+                                            <li><a asp-controller="Temizlik" asp-action="EvdenEveNakliyat">Evden Eve Nakliyat</a></li>
                                         </ul>
                                     </div>
                                 </div>
