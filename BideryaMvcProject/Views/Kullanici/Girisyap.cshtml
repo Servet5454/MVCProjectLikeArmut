@@ -101,7 +101,7 @@
     <!-- kayıt olma alanı sonu -->
 
 </main>
-<script>// Sayfa yüklendiğinde bu fonksiyon çalışacak
+<script>
     window.onload = function () {
         const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
         const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
@@ -109,7 +109,7 @@
         hizmetArayanCheckbox.checked = true;
     };
 
-    // Hizmet Veren veya Hizmet Arayan kutularından biri seçildiğinde diğerini iptal et
+   
     function toggleCheck(checkboxId) {
         const checkbox = document.getElementById(checkboxId);
         const checkboxes = document.getElementsByName("hizmet");
@@ -121,6 +121,6 @@
                 }
             });
         } else {
-            checkbox.checked = true; // Kullanıcı bu kutuyu iptal edemez
+            checkbox.checked = true;
         }
     }</script>
