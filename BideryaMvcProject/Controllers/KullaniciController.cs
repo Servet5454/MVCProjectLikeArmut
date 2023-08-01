@@ -43,34 +43,64 @@ namespace BideryaMvcProject.Controllers
                 string? mD5SifreOnEk = configuration.GetValue<string>("AppSettings:MD5OnEk");
                 string paswordSifre = model.Sifre1 + mD5SifreOnEk;
                 string hashedsifre1 = paswordSifre.MD5();
-
-                Kullanici? kul = context?.Kullanicis?
+                if (model.HizmetArayanmi == true)
+                {
+                    Kullanici? kul = context?.Kullanicis?
                             .FirstOrDefault(p => p.Email == model.Email.ToLower() && p.Sifre1 == hashedsifre1);
 
-                if (kul == null)
-                {
-                    TempData["KullaniciBilgi"] = "Email Adresi yada Şifreniz Hatalı";
-                    return View("GirisYap", model);
+                    if (kul == null)
+                    {
+                        TempData["KullaniciBilgi"] = "Email Adresi yada Şifreniz Hatalı";
+                        return View("GirisYap", model);
+                    }
+                    else
+                    {
+                        List<Claim> claims = new List<Claim>();
+                        claims.Add(new Claim(ClaimTypes.NameIdentifier, kul.Id.ToString()));
+                        claims.Add(new Claim(ClaimTypes.Name, kul.Ad ?? string.Empty));
+                        claims.Add(new Claim(ClaimTypes.Surname, kul.Soyad ?? string.Empty));
+                        claims.Add(new Claim(ClaimTypes.Email, kul.Email ?? string.Empty));
+                        claims.Add(new Claim("KullaniciAdi", kul.Ad));
+                        claims.Add(new Claim("KullaniciEmail", kul.Email.ToLower()));
+                        ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                        ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+
+                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                        TempData["Hesabım"] = "Hesabım";
+
+                        return RedirectToAction("Anasayfa", "Home");
+                    }
+                    
                 }
                 else
                 {
-                    List<Claim> claims = new List<Claim>();
-                    claims.Add(new Claim(ClaimTypes.NameIdentifier, kul.Id.ToString()));
-                    claims.Add(new Claim(ClaimTypes.Name, kul.Ad ?? string.Empty));
-                    claims.Add(new Claim(ClaimTypes.Surname, kul.Soyad ?? string.Empty));
-                    claims.Add(new Claim(ClaimTypes.Email, kul.Email ?? string.Empty));
-                    claims.Add(new Claim("KullaniciAdi", kul.Ad));
-                    claims.Add(new Claim("KullaniciEmail", kul.Email.ToLower()));
-                    ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-                    ClaimsPrincipal principal = new ClaimsPrincipal(identity);
+                    HizmetVeren? hizmetveren = context?.HizmetVerens?
+                                .FirstOrDefault(p => p.Email == model.Email.ToLower() && p.Sifre1 == hashedsifre1);
 
-                    HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
-                    TempData["Hesabım"] = "Hesabım";
+                    if (hizmetveren == null)
+                    {
+                        TempData["KullaniciBilgi"] = "Email Adresi yada Şifreniz Hatalı";
+                        return View("GirisYap", model);
+                    }
+                    else
+                    {
+                        List<Claim> claims = new List<Claim>();
+                        claims.Add(new Claim(ClaimTypes.NameIdentifier, hizmetveren.Id.ToString()));
+                        claims.Add(new Claim(ClaimTypes.Name, hizmetveren.Ad ?? string.Empty));
+                        claims.Add(new Claim(ClaimTypes.Surname, hizmetveren.Soyad ?? string.Empty));
+                        claims.Add(new Claim(ClaimTypes.Email, hizmetveren.Email ?? string.Empty));
+                        claims.Add(new Claim("KullaniciAdi", hizmetveren.Ad));
+                        claims.Add(new Claim("KullaniciEmail", hizmetveren.Email.ToLower()));
+                        ClaimsIdentity identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                        ClaimsPrincipal principal = new ClaimsPrincipal(identity);
 
-                    return RedirectToAction("Anasayfa", "Home");
+                        HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
+                        TempData["Hesabım"] = "HizmetVeren";
+
+                        return RedirectToAction("Anasayfa", "Home");
+                    }
                 }
             }
-            
 
         }
         public IActionResult HesapOlustur()

@@ -29,8 +29,10 @@
                                 <div class="sign__input-wrapper mb-25">
                                     <h5>Email Adresi</h5>
                                     <div class="sign__input">
+                                        
                                         <input type="text" asp-for="Email" placeholder="Email Adresi">
                                         <i class="fal fa-envelope"></i>
+                                        
                                     </div>
                                 </div>
 
@@ -38,6 +40,7 @@
                                     <h5>Şifre</h5>
                                     <div class="sign__input">
                                         <input type="password" asp-for="Sifre1" placeholder="Şifre">
+                                        <input type="hidden" asp-for="HizmetArayanmi" value="true">
                                         <i class="fal fa-lock"></i>
                                     </div>
                                 </div>
@@ -51,6 +54,7 @@
                                     <label class="m-check-label" for="m-hizmet-arayan">
                                         Hizmet Arayan Girişi
                                     </label>
+                                    
                                 </div>
 
                                 <div class="sign__agree d-flex align-items-center">
@@ -67,7 +71,7 @@
                             </div>
                             <br />
 
-                      
+                               
                             <button type="submit" class="m-btn m-btn-4 w-100">Giriş Yap</button>
                             <br />
                             <br />

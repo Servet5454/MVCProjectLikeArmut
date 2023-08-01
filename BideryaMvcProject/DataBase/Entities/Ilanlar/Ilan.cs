@@ -12,6 +12,7 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public int KullaniciId { get; set; }
         public int IlanKategoriId { get; set; }
         public int IlanAltKategoriId { get; set; }
+        public string? IlanAltKategoriBaslik { get; set; }
         public string? Il { get; set; }
         public string? Ilce { get; set; }
         public string? AdresDetay { get; set; }

@@ -10,5 +10,6 @@ namespace BideryaMvcProject.Models.HesapKullanici
         [Required(ErrorMessage = "E-posta alanı zorunludur.")]
         [EmailAddress(ErrorMessage = "Geçerli bir e-posta adresi giriniz.")]
         public string? Email { get; set; }
+        public bool? HizmetArayanmi { get; set; } = true;
     }
 }
