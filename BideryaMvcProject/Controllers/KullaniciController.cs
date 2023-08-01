@@ -103,6 +103,10 @@ namespace BideryaMvcProject.Controllers
             }
 
         }
+        public IActionResult HesapBilgilerim()
+        {
+            return View();
+        }
         public IActionResult HesapOlustur()
         {
             return View();
