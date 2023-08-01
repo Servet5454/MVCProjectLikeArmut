@@ -7,38 +7,38 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Place favicon.ico in the root directory -->
-    <link rel="shortcut icon" type="image/x-icon" href="~/img/logo_favicon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/logo_favicon.png" />
     <!-- CSS here -->
-   
+
     <link href="~/css/preloader.css" rel="stylesheet" />
-    
+
     <link href="~/css/bootstrap.min.css" rel="stylesheet" />
-   
+
     <link href="~/css/slick.css" rel="stylesheet" />
-    
+
     <link href="~/css/meanmenu.css" rel="stylesheet" />
-    
+
     <link href="~/css/owl.carousel.min.css" rel="stylesheet" />
-   
+
     <link href="~/css/animate.min.css" rel="stylesheet" />
-  
+
     <link href="~/css/backtotop.css" rel="stylesheet" />
 
-    
+
     <link href="~/css/jquery.fancybox.min.css" rel="stylesheet" />
-   
+
     <link href="~/css/fontawesome5pro.css" rel="stylesheet" />
-   
+
     <link href="~/css/elegantfont.css" rel="stylesheet" />
-   
+
     <link href="~/css/default.css" rel="stylesheet" />
- 
+
     <link href="~/css/style.css" rel="stylesheet" />
 
 
 </head>
 <body>
-    
+
     <!-- Add your site or application content here -->
     <!-- pre loader area start -->
     <div id="loading">
@@ -132,20 +132,42 @@
                             </nav>
                         </div>
                     </div>
+
                     <div class="col-xxl-2 col-xl-2 col-lg-2 col-md-8 col-6">
-                        <div class="header__action d-flex align-items-center justify-content-end">
-                            <div class="header__login d-none d-sm-block">
-                                <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Giriş Yap </a>
-                            </div>
-                           
-                            <div class="sidebar__menu d-lg-none">
-                                <div class="sidebar-toggle-btn" id="sidebar-toggle">
-                                    <span class="line"></span>
-                                    <span class="line"></span>
-                                    <span class="line"></span>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="header__action d-flex align-items-center justify-content-end">
+                                <div class="header__login d-none d-sm-block">
+                                    <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Hesabım </a>
+                                    <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Çıkış Yap </a>
+                                </div>
+
+                                <div class="sidebar__menu d-lg-none">
+                                    <div class="sidebar-toggle-btn" id="sidebar-toggle">
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        }
+                        else
+                        {
+                            <div class="header__action d-flex align-items-center justify-content-end">
+                                <div class="header__login d-none d-sm-block">
+                                    <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Giriş Yap </a>
+                                </div>
+
+                                <div class="sidebar__menu d-lg-none">
+                                    <div class="sidebar-toggle-btn" id="sidebar-toggle">
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
                     </div>
                 </div>
             </div>
@@ -280,21 +302,21 @@
 
     <!-- footer area end -->
     <!-- JS here -->
-   
+
     <script src="~/js/vendor/jquery-3.5.1.min.js"></script>
-   
+
     <script src="~/js/vendor/waypoints.min.js"></script>
-   
+
     <script src="~/js/bootstrap.bundle.min.js"></script>
-   
+
     <script src="~/js/jquery.meanmenu.js"></script>
-    
+
     <script src="~/js/slick.min.js"></script>
-   
+
     <script src="~/js/jquery.fancybox.min.js"></script>
-   
+
     <script src="~/js/isotope.pkgd.min.js"></script>
-    
+
     <script src="~/js/parallax.min.js"></script>
 
     <script src="~/js/owl.carousel.min.js"></script>
@@ -302,7 +324,7 @@
     <script src="~/js/backtotop.js"></script>
 
     <script src="~/js/jquery.counterup.min.js"></script>
- 
+
     <script src="~/js/ajax-form.js"></script>
 
     <script src="~/js/wow.min.js"></script>
