@@ -9,7 +9,7 @@
             BosEvTemizligi = 3,
             CamTemizligi = 4,
             EvIlaclama = 5,
-            EvTemizligi = 6,
+            EvTemizlik = 6,
             EvdeHaliYikama = 7,
             EvdeUtuHizmeti = 8,
             HaliYikama = 9,
@@ -138,7 +138,7 @@
             Şehirler_Arası_Motosiklet_Taşıma = 328,
             Şehirler_Arası_Nakliye = 329,
             Şöförlü_Araç_Kiralama = 330,
-            Uluslararası_Evden_Eve_Nakliyat = 331
+            Uluslararası_Nakliyat = 331
         }
 
         public enum MontajVeTamir
@@ -173,7 +173,7 @@
             Kombi_Petek_Temizleme = 428,
             Kombi_Tamiri = 429,
             Korniş_Montaj = 430,
-            Mobilya_Sökme_Taşıma_ve_Montaj = 431,
+            Mobilya_Sökme_ve_Montaj = 431,
             Musluk_Tamiri = 432,
             Panjur_Tamiri = 433,
             Pencere_Tamiri = 434,

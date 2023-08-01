@@ -141,9 +141,9 @@
                                             <li class="has-dropdown active">
                                                 <a>Hesabım</a>
                                                 <ul class="submenu">
-                                                    <li><a asp-controller="Temizlik" asp-action="EvTemizlik">İlanlarım</a></li>
-                                                    <li><a asp-controller="Temizlik" asp-action="KoltukTemizlik">Hesap Bilgilerim</a></li>
-                                                    <li><a asp-controller="Temizlik" asp-action="ApartmanTemizlik">Çıkış Yap</a></li>
+                                                    <li><a asp-controller="Kullanici" asp-action="Ilanlarim">İlanlarım</a></li>
+                                                    <li><a asp-controller="Kullanici" asp-action="HesapBilgilerim">Hesap Bilgilerim</a></li>
+                                                    <li><a asp-controller="Kullanici" asp-action="CikisYap">Çıkış Yap</a></li>
                                                 </ul>
                                             </li>
 
@@ -163,7 +163,22 @@
                         }
                         else
                         {
-                            
+                            <div class="header__action d-flex align-items-center justify-content-end">
+                                <div class="header__login d-none d-sm-block">
+                                    <a asp-controller="Kullanici" asp-action="Girisyap"><i class="far fa-unlock"></i> Giris Yap </a>
+
+
+
+                                </div>
+
+                                <div class="sidebar__menu d-lg-none">
+                                    <div class="sidebar-toggle-btn" id="sidebar-toggle">
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                        <span class="line"></span>
+                                    </div>
+                                </div>
+                            </div>
                         
 
 
