@@ -128,6 +128,14 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
+        public IActionResult HaliYikama()
+        {
+            return View();
+        }
+        public IActionResult ApartmanTemizlik()
+        {
+            return View();
+        }
     }
 }
 

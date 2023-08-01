@@ -34,5 +34,13 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         {
             return View();
         }
+        public IActionResult BoyaBadana()
+        {
+            return View();
+        }
+        public IActionResult LaminantDoseme()
+        {
+            return View();
+        }
     }
 }
