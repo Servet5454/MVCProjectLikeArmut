@@ -1,6 +1,8 @@
 ﻿@{
-    Layout = null; // This line disables the layout for this view
+    Layout = null;
 }
+
+
 <html>
     <head>
     <link href="~/formsayfasi/formsayfa.css" rel="stylesheet" />
@@ -48,15 +50,25 @@
             </div>
         </div>
         <div class="text-center">
-            <div class="rerun-button">ReRun</div>
+            <div class="rerun-button">İlan Ver</div>
         </div>
-
-
 
     </form>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="~/formsayfasi/formsayfa.js"></script>
+    <script>
+        $(document).ready(function () {
+            // When the "Start" button is clicked
+            $(".modal-body-step-1 .button").on("click", function () {
+                // Hide the current step and show the next step
+                $(".modal-body-step-1").removeClass("is-showing");
+                $(".modal-body-step-2").addClass("is-showing");
+            });
 
+            // Add similar event listeners for other buttons and form steps as needed
+        });
+    </script>
 </body>
 
 

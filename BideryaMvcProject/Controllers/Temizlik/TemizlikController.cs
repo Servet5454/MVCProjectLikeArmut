@@ -124,6 +124,26 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult EvTemizlik(EvTemizlikViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                //hatalı giriş 
+                return View(model);
+            }
+            else
+            {
+                
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+              
+            }
+
+
+            return View();
+        }
 
 
         public IActionResult AracYikama()
