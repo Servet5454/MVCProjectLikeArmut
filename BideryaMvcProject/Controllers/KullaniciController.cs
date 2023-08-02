@@ -272,7 +272,10 @@ namespace BideryaMvcProject.Controllers
 
             //var ilanlarim =context.Kullanicis.Where(p=>p.Id ==int.Parse(UserId)).Include(p=>p.Ilans).ThenInclude(p=>p.KoltukTemizlik).ToList();
 
-            var ilan =context.Ilans.Where(p=>p.KullaniciId ==int.Parse(UserId)).ToList();
+            var ilan = context.Ilans.Where(p => p.KullaniciId ==int.Parse(UserId))
+                .Include(p => p.Kullanici).Where(p => p.KullaniciId ==int.Parse(UserId))
+                .Include(p=>p.KoltukTemizliks)
+                                .ToList();
             return View();
         }
         

@@ -8,8 +8,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int Id { get; set; }
         
         public int IlanId { get; set; }
-        [ForeignKey(nameof(IlanAltKategoriId))]
-        public int IlanAltKategoriId { get; set; }
+        [ForeignKey(nameof(KullaniciId))]
+        public int KullaniciId { get; set; }
         
         public int KoltukSayisi { get; set; }
         public string? DigerYerler { get; set; }

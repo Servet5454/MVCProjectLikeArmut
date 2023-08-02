@@ -1,4 +1,5 @@
 ﻿using BideryaMvcProject.DataBase;
+using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.DataBase.Entities.Ilanlar;
 using BideryaMvcProject.DataBase.Entities.Kullanicilar;
 using BideryaMvcProject.Models.Ilanlar.Temizlik;
@@ -39,9 +40,9 @@ namespace BideryaMvcProject.Controllers.Temizlik
             .Include(p => p.KullaniciAdress)
             .FirstOrDefault(p => p.Email == UserEmail && p.Id == int.Parse(UserId));
             var ilanlar = context.Ilans//TODO Bu Sorun Çözülecek
-              .Include(i => i.KoltukTemizlik)
-              .Include(i => i.EvTadilat)
-              .Include(i => i.Mantolama)
+              .Include(i => i.KoltukTemizliks)
+              .Include(i => i.EvTadilats)
+              .Include(i => i.Mantolamas)
               .Where(i => i.IlanAltKategoriId == 2)
               .ToList();
 
@@ -85,9 +86,12 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
+                    IlanAltKategoriBaslik ="Koltuk Temizlik",
 
 
-                    KoltukTemizlik =new DataBase.Entities.Hizmetler.Temizlik.KoltukTemizlik
+                    KoltukTemizliks =new List<KoltukTemizlik>()
+                    {
+                     new KoltukTemizlik
                     {
                     TeklifSayisi =0,
                     IkiliKoltukSayisi =model.IkiliKoltukSayisi,
@@ -100,6 +104,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
                     TekliYatakSayisi =model.TekliYatakSayisi,
                     IlanAltKategoriId =2,
+                       }
+                    
                     }
                     }
                 };

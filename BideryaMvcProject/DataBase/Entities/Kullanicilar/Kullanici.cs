@@ -14,7 +14,6 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
 
         public int Id { get; set; }
         public string? Ad { get; set; }
-
         public string? Soyad { get; set; }
         public string? Sifre1 { get; set; }
         public string? Sifre2 { get; set; }

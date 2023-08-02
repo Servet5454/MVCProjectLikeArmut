@@ -1,126 +1,37 @@
-﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.KoltukTemizlikViewModel
-
-<main>
-
-    <!-- arkaplan şekil alanı başlangıcı -->
-    <div class="bg-shape">
-        <img src="~/img/shape/shape-1.png" alt="">
-    </div>
-    <!-- arkaplan şekil alanı sonu -->
-    <!-- kayıt olma alanı başlangıcı -->
-    <section class="signup__area po-rel-z1 pt-100 pb-145">
-        <div class="sign__shape">
-            <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
-            <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
-            <img class="circle" src="~/img/icon/sign/circle.png" alt="">
-            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
-            <img class="dot" src="~/img/icon/sign/dot.png" alt="">
-            <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
-            <img class="flower" src="~/img/icon/sign/flower.png" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                    <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                        </div>
-                        <div class="sign__form">
-                            <form asp-controller="Temizlik" asp-action="KoltukTemizlik" method="post">
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Tekli Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-
-                                        <input type="text" asp-for="TekliKoltukSayisi" placeholder="Tekli Koltuk Sayısı">
-                                        <i class=""><img src="~img/icon/sofa16.png"></i>
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Üç'lü Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="IkiliKoltukSayisi" placeholder="İkili Koltuk Sayısı">
-
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>İki'li' Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="UcluKoltukSayisi" placeholder="Üçlü Koltuk Sayısı">
-
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>L-Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="LKoltukSayisi" placeholder="L-Koltuk Sayısı">
-
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Minder Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="MinderSayisi" placeholder="Minder Sayısı">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Sandalye Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" aso-for="Sandalye" placeholder="Sandalye Sayısı">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Yatak Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="TekliYatakSayisi" placeholder="Tekli Yatak Sayısı">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Yatak Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="CiftKisilikYatakSayisi" placeholder="Çift Kişilik Yatak Sayısı">
-                                    </div>
-                                </div>
-
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Açıklama</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Aciklama" placeholder="Açıklama">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Şehir</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Il" placeholder="Şehir">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>İlçe</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Ilce" placeholder="İlçe">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Adres Tanımı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="AdresGenel" placeholder="Tam Adresi Yazınız">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Şehir</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="SandalyeSayisi" placeholder="Sehir">@*Düzelttt*@
-                                    </div>
-                                </div>
-                                @* <input type="hidden" asp-for="HizmetTuru" value="1">
-                                <input type="hidden" asp-for="HizmetAltKategori" value="1">*@
-                                <input type="hidden" asp-for="TeklifSayisi" value="0">
-                                <button type="submit" class="m-btn m-btn-4 w-100"> <span></span> Hizmet Talep Et</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- kayıt olma alanı sonu -->
-
-</main>
+﻿<!-- multistep form -->
+<form id="msform">
+    <!-- progressbar -->
+    <ul id="progressbar">
+        <li class="active">Account Setup</li>
+        <li>Social Profiles</li>
+        <li>Personal Details</li>
+    </ul>
+    <!-- fieldsets -->
+    <fieldset>
+        <h2 class="fs-title">Create your account</h2>
+        <h3 class="fs-subtitle">This is step 1</h3>
+        <input type="text" name="email" placeholder="Email" />
+        <input type="password" name="pass" placeholder="Password" />
+        <input type="password" name="cpass" placeholder="Confirm Password" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Social Profiles</h2>
+        <h3 class="fs-subtitle">Your presence on the social network</h3>
+        <input type="text" name="twitter" placeholder="Twitter" />
+        <input type="text" name="facebook" placeholder="Facebook" />
+        <input type="text" name="gplus" placeholder="Google Plus" />
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <input type="button" name="next" class="next action-button" value="Next" />
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Personal Details</h2>
+        <h3 class="fs-subtitle">We will never sell it</h3>
+        <input type="text" name="fname" placeholder="First Name" />
+        <input type="text" name="lname" placeholder="Last Name" />
+        <input type="text" name="phone" placeholder="Phone" />
+        <textarea name="address" placeholder="Address"></textarea>
+        <input type="button" name="previous" class="previous action-button" value="Previous" />
+        <a href="https://twitter.com/GoktepeAtakan" class="submit action-button" target="_top">Submit</a>
+    </fieldset>
+</form>

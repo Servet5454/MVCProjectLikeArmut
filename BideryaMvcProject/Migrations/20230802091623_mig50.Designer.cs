@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230802091623_mig50")]
+    partial class mig50
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,7 +134,7 @@ namespace BideryaMvcProject.Migrations
                             FirmaIsmi = "BeautyElla",
                             HizmetKategoriId = 1,
                             IsTelNo = "05455503341",
-                            KayitTarihi = new DateTime(2023, 8, 2, 13, 18, 8, 824, DateTimeKind.Local).AddTicks(3603),
+                            KayitTarihi = new DateTime(2023, 8, 2, 12, 16, 23, 208, DateTimeKind.Local).AddTicks(5353),
                             Sehir = "ankara",
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
@@ -357,6 +360,22 @@ namespace BideryaMvcProject.Migrations
                     b.ToTable("MutfakDolabiYapimis");
                 });
 
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon.TadilatDekorasyon", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("HizmetKategoriId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TadilatDekorasyons");
+                });
+
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.AracYikama", b =>
                 {
                     b.Property<int>("Id")
@@ -410,10 +429,10 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("HayvanVarmi")
                         .HasColumnType("bit");
 
-                    b.Property<int>("IlanId")
+                    b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
-                    b.Property<int>("KullaniciId")
+                    b.Property<int>("IlanId")
                         .HasColumnType("int");
 
                     b.Property<int>("OdaSayisi")
@@ -434,8 +453,8 @@ namespace BideryaMvcProject.Migrations
                             BanyoSayisi = 1,
                             CalismaSuresi = 3f,
                             HayvanVarmi = false,
+                            IlanAltKategoriId = 0,
                             IlanId = 1,
-                            KullaniciId = 0,
                             OdaSayisi = 1
                         });
                 });
@@ -522,6 +541,43 @@ namespace BideryaMvcProject.Migrations
                     b.HasIndex("IlanId");
 
                     b.ToTable("KoltukTemizliks");
+                });
+
+            modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.TemizlikAna", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Aciklama")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("AltKategoriId")
+                        .HasColumnType("int");
+
+                    b.Property<short?>("BanyoSayisi")
+                        .HasColumnType("smallint");
+
+                    b.Property<float?>("CalismaSuresi")
+                        .HasColumnType("real");
+
+                    b.Property<bool>("EvBosmu")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("HayvanVarmi")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("HizmetKategoriId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("HizmetServis")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TemizlikAnas");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Ilanlar.Ilan", b =>
@@ -618,7 +674,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 8, 2, 13, 18, 8, 824, DateTimeKind.Local).AddTicks(2009),
+                            KayitTarihi = new DateTime(2023, 8, 2, 12, 16, 23, 208, DateTimeKind.Local).AddTicks(4787),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Yılmaz",
@@ -629,7 +685,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse@gmail.com",
-                            KayitTarihi = new DateTime(2023, 8, 2, 13, 18, 8, 824, DateTimeKind.Local).AddTicks(2020),
+                            KayitTarihi = new DateTime(2023, 8, 2, 12, 16, 23, 208, DateTimeKind.Local).AddTicks(4792),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Kaya",

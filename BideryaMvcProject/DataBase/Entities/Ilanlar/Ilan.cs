@@ -18,15 +18,15 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public string? AdresDetay { get; set; }
 
         public virtual Kullanici? Kullanici { get; set; }
-        public virtual CamBalkon? CamBalkon { get; set; }
-        public virtual EvTadilat? EvTadilat { get; set; }
-        public virtual Mantolama? Mantolama { get; set; }
-        public virtual MutfakDolabiYapimi? MutfakDolabiYapimi { get; set; }
+        public virtual ICollection<CamBalkon>? CamBalkons { get; set; }
+        public virtual ICollection<EvTadilat>? EvTadilats { get; set; }
+        public virtual ICollection<Mantolama>? Mantolamas { get; set; }
+        public virtual ICollection<MutfakDolabiYapimi>? MutfakDolabiYapimis { get; set; }
 
-        public virtual AracYikama? AracYikama { get; set; }
-        public virtual EvTemizlik? EvTemizlik { get; set; }
-        public virtual Ilaclama? Ilaclama { get; set; }
-        public virtual KoltukTemizlik? KoltukTemizlik { get; set; }
+        public virtual ICollection<AracYikama>? AracYikamas { get; set; }
+        public virtual ICollection<EvTemizlik>? EvTemizliks { get; set; }
+        public virtual ICollection<Ilaclama>? Ilaclamas { get; set; }
+        public virtual ICollection<KoltukTemizlik>? KoltukTemizliks { get; set; }
 
 
 
