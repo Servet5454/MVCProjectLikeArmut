@@ -105,11 +105,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     TekliYatakSayisi =model.TekliYatakSayisi,
                     IlanAltKategoriId =2,
                        }
-                    
+
                     }
                     }
                 };
-                
+
 
                 context.Update(kul);
                 context.SaveChanges();
@@ -134,11 +134,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
             }
             else
             {
-                
+
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
-              
+
             }
 
 
@@ -153,6 +153,58 @@ namespace BideryaMvcProject.Controllers.Temizlik
         public IActionResult Ilaclama()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult Ilaclama(IlaclamaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+
+
+                return View();
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =model.IlanAltKategoriId,
+                    IlanKategoriId =model.IlanKategoriId,
+                    IlanAltKategoriBaslik =model.IlanBaslik,
+
+
+                    Ilaclamas =new List<Ilaclama>()
+                    {
+                     new Ilaclama
+                    {
+                    Aciklama = model.Aciklama,
+                    HasereTipi = model.HasereTipi,
+                    IlanAltKategoriId =model.IlanAltKategoriId,
+                    MekanTipi =model.MekanTipi,
+                    Metrekare =model.Metrekare,
+                    
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+                return View();
+
+                //TODO burada kaldım
+            }
         }
         public IActionResult HaliYikama()
         {

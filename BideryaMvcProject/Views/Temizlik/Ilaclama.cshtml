@@ -1,79 +1,102 @@
-﻿@{
-    Layout = null;
-}
+﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.IlaclamaViewModel
 
+<main>
 
-<html>
-    <head>
-    <link href="~/formsayfasi/formsayfa.css" rel="stylesheet" />
-    </head>
-<body>
+    <!-- arkaplan şekil alanı başlangıcı -->
+    <div class="bg-shape">
+        <img src="~/img/shape/shape-1.png" alt="">
+    </div>
+    <!-- arkaplan şekil alanı sonu -->
+    <!-- kayıt olma alanı başlangıcı -->
+    <section class="signup__area po-rel-z1 pt-100 pb-145">
+        <div class="sign__shape">
+            <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+            <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+            <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+            <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+            <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+            <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                    <div class="sign__wrapper white-bg">
+                        <div class="sign__header mb-35">
+                        </div>
+                        <div class="sign__form">
+                            <form asp-controller="Temizlik" asp-action="Ilaclama" method="post">
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Tekli Koltuk Sayısı</h5>
+                                    <div class="sign__input">
 
-    <form>
+                                        <input type="text" asp-for="MekanTipi" placeholder="Ev İşyeri">
+                                        <i class=""><img src="~img/icon/sofa16.png"></i>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>Üç'lü Koltuk Sayısı</h5>
+                                    <div class="sign__input">
+                                        <input type="number" asp-for="Metrekare" placeholder="metrekare">
 
-        <div class="modal-wrap">
-            <div class="modal-header"><span class="is-active"></span><span></span><span></span></div>
-            <div class="modal-bodies">
-                <div class="modal-body modal-body-step-1 is-showing">
-                    <div class="title">Step 1</div>
-                    <div class="description">Hello there, Let's play a game.</div>
+                                    </div>
+                                </div>
+                                <div class="sign__input-wrapper mb-25">
+                                    <h5>İki'li' Koltuk Sayısı</h5>
+                                    <div class="sign__input">
+                                        <input type="text" asp-for="HasereTipi" placeholder="Hasere Türü" list="hasereList">
+                                    </div>
+                                </div>
 
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <div class="text-center">
-                        <div class="button">Start</div>
-                    </div>
+                                <datalist id="hasereList">
+                                    <option value="Böcek">Böcek</option>
+                                    <option value="Örümcek">Örümcek</option>
+                                    <option value="TahtaKurusu">Tahtakurusu</option>
+                                    <!-- Add more options as needed -->
+                                </datalist>
+                                                               
 
-                </div>
-                <div class="modal-body modal-body-step-2">
-                    <div class="title">Step 2</div>
-                    <div class="description">Would you rather</div>
+                                    <div class="sign__input-wrapper mb-25">
+                                        <h5>L-Koltuk Sayısı</h5>
+                                        <div class="sign__input">
+                                            <input type="text" asp-for="Aciklama" placeholder="Aciklama">
 
-                    <label>
-                        <input type="radio" name="radio" />live one life that lasts 1,000 years?
-                    </label>
-                    <label>
-                        <input type="radio" name="radio" id="radio2" />live 10 lives that last 100 years each?
-                    </label>
-                    <div class="text-center fade-in">
-                        <div class="button">Next</div>
-                    </div>
+                                        </div>
+                                    </div>
+                                                                      
+                                    <div class="sign__input-wrapper mb-25">
+                                        <h5>Şehir</h5>
+                                        <div class="sign__input">
+                                            <input type="text" asp-for="Il" placeholder="Şehir">
+                                        </div>
+                                    </div>
+                                    <div class="sign__input-wrapper mb-25">
+                                        <h5>İlçe</h5>
+                                        <div class="sign__input">
+                                            <input type="text" asp-for="Ilce" placeholder="İlçe">
+                                        </div>
+                                    </div>
+                                    <div class="sign__input-wrapper mb-25">
+                                        <h5>Adres Tanımı</h5>
+                                        <div class="sign__input">
+                                            <input type="text" asp-for="AdresGenel" placeholder="Tam Adresi Yazınız">
+                                        </div>
+                                    </div>
 
-                </div>
-                <div class="modal-body modal-body-step-3">
-                    <div class="title">Step 3</div>
-                    <div class="description">Check your email for the game results.</div>
-                    <div class="text-center">
-                        <div class="button">Done!</div>
+                                    @* <input type="hidden" asp-for="HizmetTuru" value="1">
+                                    <input type="hidden" asp-for="HizmetAltKategori" value="1">*@
+                                    <input type="hidden" asp-for="TeklifSayisi" value="0">
+                                    <input type="hidden" asp-for="IlanBaslik" value="Hasere İlaçlama">
+                                    <input type="hidden" asp-for="IlanAltKategoriId" value="10">
+                                    <input type="hidden" asp-for="IlanKategoriId" value=1>
+                                    <button type="submit" class="m-btn m-btn-4 w-100"> <span></span> Hizmet Talep Et</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <div class="rerun-button">İlan Ver</div>
-        </div>
+    </section>
+    <!-- kayıt olma alanı sonu -->
 
-    </form>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="~/formsayfasi/formsayfa.js"></script>
-    <script>
-        $(document).ready(function () {
-            // When the "Start" button is clicked
-            $(".modal-body-step-1 .button").on("click", function () {
-                // Hide the current step and show the next step
-                $(".modal-body-step-1").removeClass("is-showing");
-                $(".modal-body-step-2").addClass("is-showing");
-            });
-
-            // Add similar event listeners for other buttons and form steps as needed
-        });
-    </script>
-</body>
-
-
-
-</html>
-
-
-
+</main>
