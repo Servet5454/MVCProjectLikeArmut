@@ -1,8 +1,9 @@
 ﻿using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
+using BideryaMvcProject.Models.Ilanlar.IlanAdresBilgileri;
 
 namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
-    public class EvTemizlikViewModel
+    public class EvTemizlikViewModel : IlanAdres
     {
         public int Id { get; set; }
         public bool Aktifmi { get; set; } = false;    

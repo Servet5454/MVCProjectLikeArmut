@@ -27,14 +27,14 @@ namespace BideryaMvcProject.Controllers.Temizlik
         }
         public IActionResult KoltukTemizlik()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("GirisYap","Kullanici");
+            }
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var UserEmail = User.FindFirstValue(ClaimTypes.Email);
             KoltukTemizlikViewModel koltukTemizlikViewModel = new KoltukTemizlikViewModel();
-            //var deneme = context.Ilans?.Include(p => p.Kullanici)
-            //    .Include(p=>p.KoltukTemizlik).Where(p=>p.IlanAltKategoriId ==2)
-            //    .Where(p => p.KullaniciId == int.Parse(UserId));
-
-
+          
 
             var kul = context?.Kullanicis?
             .Include(p => p.KullaniciAdress)
@@ -47,7 +47,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
               .ToList();
 
             var KullaniciAdres = kul.KullaniciAdress?.FirstOrDefault(p => p.KullaniciId == int.Parse(UserId));
-
+             
             if (KullaniciAdres != null)
             {
                 koltukTemizlikViewModel.Il = KullaniciAdres.Il ?? null;
@@ -122,6 +122,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
         }
         public IActionResult EvTemizlik()
         {
+           
+
+            
+
+                  
             return View();
         }
         [HttpPost]
