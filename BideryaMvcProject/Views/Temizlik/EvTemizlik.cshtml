@@ -78,7 +78,7 @@
                                             <br />
                                             <br />
 
-                                            <div class="sign__input-wrapper mb-25">
+                                            <dv class="sign__input-wrapper mb-25">
                                                 <p>Evinizde Evcil Hayvan Bulunuyor Mu?</p>
                                                 <select id="dropdown" class="m-btn m-btn-4 w-100" required>
                                                     <option disable select>Evcil Hayvanınız Var Mı?</option>
@@ -95,9 +95,38 @@
 
                                                 </div>
 
+                                                <div class="sign__input-wrapper mb-25">
+
+
+                                                    <br />
+                                                    <br />
+
+                                                    <select asp-for="Il" id="turkiye_illeri" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                                        <option disabled selected>İlinizi Seçiniz</option>
+                                                        <!-- İl seçenekleri burada dinamik olarak oluşturulacak -->
+                                                    </select>
+
+                                                    <br />
+                                                    <br />
+
+                                                    <select asp-for="Ilce" id="turkiye_ilceler" class="m-btn m-btn-4 w-100" required>
+                                                        <option disabled selected>İlçenizi Seçiniz</option>
+                                                        <!-- İlçe seçenekleri burada dinamik olarak oluşturulacak -->
+                                                    </select>
+
+                                                    <br />
+                                                    <br />
+
+
+
+                                                </div>
+
+
+
+
                                                 <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
 
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -110,6 +139,9 @@
     </section>
 
 </main>
+
+
+
 <script>window.onload = function () {
         const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
         const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
@@ -132,3 +164,7 @@
             checkbox.checked = true;
         }
     }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+
