@@ -2,7 +2,7 @@
 
 namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
-    public class IlaclamaViewModel: IlanAdres
+    public class IlaclamaViewModel: IlanAdresGenelBilgi
     {
         public int Id { get; set; }
         public string? HasereTipi { get; set; }

@@ -2,7 +2,7 @@
 
 namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
-    public class KoltukTemizlikViewModel : IlanAdres
+    public class KoltukTemizlikViewModel : IlanAdresGenelBilgi
     {
         public int Id { get; set; }
         public int TekliKoltukSayisi { get; set; }

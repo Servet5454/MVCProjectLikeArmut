@@ -30,16 +30,144 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
+        
+       
+       
+
+
+        public IActionResult AracYikama()
+        {
+            return View();
+        }
+        public IActionResult Ilaclama()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Ilaclama(IlaclamaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+
+
+                return View();
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =model.IlanAltKategoriId,
+                    IlanKategoriId =model.IlanKategoriId,
+                    IlanAltKategoriBaslik =model.IlanBaslik,
+
+
+                    Ilaclamas =new List<Ilaclama>()
+                    {
+                     new Ilaclama
+                    {
+                    Aciklama = model.Aciklama,
+                    HasereTipi = model.HasereTipi,
+                    IlanAltKategoriId =model.IlanAltKategoriId,
+                    MekanTipi =model.MekanTipi,
+                    Metrekare =model.Metrekare,
+                    
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+                return View();
+
+                //TODO burada kaldım
+            }
+        }
+        
+        public IActionResult ApartmanTemizlik()
+        {
+            return View();
+        }
+        public IActionResult BosEvTemizligi()
+        {
+            return View();
+        }
+        public IActionResult CamTemizligi()
+        {
+            return View();
+        }
+        public IActionResult EvTemizlik()
+        {
+            //JasonSerilizear serilizear = new JasonSerilizear();
+            //var jsonlar = serilizear.jsonSehirgetir();
+
+            //var ilce = serilizear.jsonIlcegetir();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EvTemizlik(EvTemizlikViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                //hatalı giriş 
+                return View(model);
+            }
+            else
+            {
+
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            }
+
+
+            return View();
+        }
+
+        public IActionResult EvdeHaliYikama()
+        {
+            return View();
+        }
+        public IActionResult EvdeUtuHizmeti()
+        {
+            return View();
+        }
+        public IActionResult HaliYikama()
+        {
+            return View();
+        }
+        public IActionResult InsaatSonrasiTemizlik()
+        {
+            return View();
+        }
+        public IActionResult IsyeriTemizligi()
+        {
+            return View();
+        }
         public IActionResult KoltukTemizlik()
         {
             if (!User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("GirisYap","Kullanici");
+                return RedirectToAction("GirisYap", "Kullanici");
             }
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var UserEmail = User.FindFirstValue(ClaimTypes.Email);
             KoltukTemizlikViewModel koltukTemizlikViewModel = new KoltukTemizlikViewModel();
-          
+
 
             var kul = context?.Kullanicis?
             .Include(p => p.KullaniciAdress)
@@ -52,7 +180,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
               .ToList();
 
             var KullaniciAdres = kul.KullaniciAdress?.FirstOrDefault(p => p.KullaniciId == int.Parse(UserId));
-             
+
             if (KullaniciAdres != null)
             {
                 koltukTemizlikViewModel.Il = KullaniciAdres.Il ?? null;
@@ -125,103 +253,24 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
             return View();
         }
-       
-        public IActionResult EvTemizlik()
-        {
-            //JasonSerilizear serilizear = new JasonSerilizear();
-            //var jsonlar = serilizear.jsonSehirgetir();
 
-            //var ilce = serilizear.jsonIlcegetir();
-                  
-            return View();
-        }
-        [HttpPost]
-        public IActionResult EvTemizlik(EvTemizlikViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                //hatalı giriş 
-                return View(model);
-            }
-            else
-            {
-
-                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
-
-
-            }
-
-
-            return View();
-        }
-
-
-        public IActionResult AracYikama()
+        public IActionResult KuruTemizleme()
         {
             return View();
         }
-        public IActionResult Ilaclama()
+        public IActionResult MermerCilalama()
         {
             return View();
         }
-        [HttpPost]
-        public IActionResult Ilaclama(IlaclamaViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-
-
-                return View();
-            }
-            else
-            {
-                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
-
-                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
-
-                kul.Ilans =new List<Ilan>() { new Ilan
-                {
-                    AdresDetay =model.AdresGenel,
-                    Il =model.Il,
-                    Ilce =model.Ilce,
-                    KullaniciId = int.Parse(UserId),
-                    IlanAltKategoriId =model.IlanAltKategoriId,
-                    IlanKategoriId =model.IlanKategoriId,
-                    IlanAltKategoriBaslik =model.IlanBaslik,
-
-
-                    Ilaclamas =new List<Ilaclama>()
-                    {
-                     new Ilaclama
-                    {
-                    Aciklama = model.Aciklama,
-                    HasereTipi = model.HasereTipi,
-                    IlanAltKategoriId =model.IlanAltKategoriId,
-                    MekanTipi =model.MekanTipi,
-                    Metrekare =model.Metrekare,
-                    
-
-                     }
-
-                    }
-                    }
-                };
-
-
-                context.Update(kul);
-                context.SaveChanges();
-                return View();
-
-                //TODO burada kaldım
-            }
-        }
-        public IActionResult HaliYikama()
+        public IActionResult StorPerdeYikama()
         {
             return View();
         }
-        public IActionResult ApartmanTemizlik()
+        public IActionResult YatakYikama()
+        {
+            return View();
+        }
+        public IActionResult YorganYikama()
         {
             return View();
         }

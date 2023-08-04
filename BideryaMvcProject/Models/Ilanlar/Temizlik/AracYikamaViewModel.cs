@@ -2,7 +2,7 @@
 
 namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
-    public class AracYikamaViewModel:IlanAdres
+    public class AracYikamaViewModel:IlanAdresGenelBilgi
     {
         public int Id { get; set; }
         public int TemizlikAnaId { get; set; }

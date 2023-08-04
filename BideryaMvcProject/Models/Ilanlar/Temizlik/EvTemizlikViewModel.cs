@@ -3,13 +3,13 @@ using BideryaMvcProject.Models.Ilanlar.IlanAdresBilgileri;
 
 namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
-    public class EvTemizlikViewModel : IlanAdres
+    public class EvTemizlikViewModel : IlanAdresGenelBilgi
     {
         public int Id { get; set; }
         public bool Aktifmi { get; set; } = false;    
-        public string? OdaSayisi { get; set; }
+        public int OdaSayisi { get; set; }
         public int BanyoSayisi { get; set; }       
-        public float CalismaSuresi { get; set; }
+        public int CalismaSuresi { get; set; }
         public bool? HayvanVarmi { get; set; }
         public string? Aciklama { get; set; }
 

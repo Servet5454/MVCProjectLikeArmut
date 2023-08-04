@@ -5,10 +5,8 @@
         public enum TemizlikAltKategori
         {
             ApartmanTemizligi = 1,
-            BocekIlaclama = 2,
             BosEvTemizligi = 3,
             CamTemizligi = 4,
-            EvIlaclama = 5,
             EvTemizlik = 6,
             EvdeHaliYikama = 7,
             EvdeUtuHizmeti = 8,

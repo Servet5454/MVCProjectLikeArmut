@@ -1,6 +1,6 @@
 ﻿namespace BideryaMvcProject.Models.Ilanlar.IlanAdresBilgileri
 {
-    public class IlanAdres
+    public class IlanAdresGenelBilgi
     {
         public string? Il { get; set; }
         public string? Ilce { get; set; }
