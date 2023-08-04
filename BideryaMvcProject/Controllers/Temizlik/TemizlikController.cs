@@ -6,6 +6,11 @@ using BideryaMvcProject.Models.Ilanlar.Temizlik;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
+using System.IO;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
+using BideryaMvcProject.DataBase.IlIlceJson;
+
 
 namespace BideryaMvcProject.Controllers.Temizlik
 {
@@ -120,12 +125,13 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
             return View();
         }
+       
         public IActionResult EvTemizlik()
         {
-           
+            //JasonSerilizear serilizear = new JasonSerilizear();
+            //var jsonlar = serilizear.jsonSehirgetir();
 
-            
-
+            //var ilce = serilizear.jsonIlcegetir();
                   
             return View();
         }

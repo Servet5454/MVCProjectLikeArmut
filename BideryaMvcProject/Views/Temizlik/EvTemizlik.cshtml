@@ -29,14 +29,14 @@
 <main>
     <section>
         <div class="container">
-            <form asp-action="GirisYap" asp-controller="Kullanici" method="post">
+            <form asp-action="EvTemizlik" asp-controller="Temizlik" method="post">
                 <div class="row">
                     <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
                         <div class="sign__wrapper white-bg">
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
                                     <p>Evinizde Kaç Adet Oda Bulunuyor?</p>
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" class="m-btn m-btn-4 w-100"  required>
                                         <option disable select>Oda Sayısını Seçiniz</option>
                                         <option value="1">1+0</option>
                                         <option value="2">1+1</option>
@@ -91,7 +91,7 @@
 
                                                 <div class="contact__input textarea">
                                                     <p>Belirtmek İstediğiniz Ek Bilgileri Yazınız</p>
-                                                    <textarea placeholder="Bilgileri Bu Alana Yazabilirsiniz" data-val="true" data-val-required="Adres tanımı alanı zorunludur." id="form"></textarea>
+                                                    <textarea asp-for="Aciklama" placeholder="Bilgileri Bu Alana Yazabilirsiniz" data-val="true" data-val-required="Adres tanımı alanı zorunludur." id="form"></textarea>
 
                                                 </div>
 
