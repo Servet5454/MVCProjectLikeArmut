@@ -58,7 +58,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Il =model.Il,
                     Ilce =model.Ilce,
                     KullaniciId = int.Parse(UserId),
-                    IlanAltKategoriId =model.IlanAltKategoriId,
+                    IlanAltKategoriId =model.IlanKategoriId,
                     IlanKategoriId =model.IlanKategoriId,
                     IlanAltKategoriBaslik =model.IlanBaslik,
 
@@ -94,6 +94,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         public IActionResult BosEvTemizligi()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult BosEvTemizligi(BosEvTemizlikViewModel model)
         {
             return View();
         }

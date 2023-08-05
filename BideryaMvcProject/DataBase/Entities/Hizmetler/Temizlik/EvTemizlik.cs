@@ -6,9 +6,10 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
     public class EvTemizlik
     {
         public int Id { get; set; }
-        [ForeignKey(nameof(IlanAltKategoriId))]
-        public int IlanAltKategoriId { get; set; }
+        [ForeignKey(nameof(IlanId))]
         public int IlanId { get; set; }
+        public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ        
+        public int IlanAltKategoriId { get; set; }        
         public int OdaSayisi { get; set; }
         public int BanyoSayisi { get; set; }
         public int BalkonSayisi { get; set; }

@@ -31,8 +31,7 @@ namespace BideryaMvcProject.DataBase
 
         #region TemizlikHizmetleri Dbset
        
-        public DbSet<AracYikama>? AracYikamas { get; set; }
-        
+             
         
         
         public DbSet<ApartmanTemizlik>? ApartmanTemizliks { get; set; }
