@@ -1,126 +1,180 @@
 ﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.KoltukTemizlikViewModel
 
-<main>
+<div class="bg-shape">
+    <img src="~/img/shape/shape-1.png" alt="">
+</div>
 
-    <!-- arkaplan şekil alanı başlangıcı -->
-    <div class="bg-shape">
-        <img src="~/img/shape/shape-1.png" alt="">
+<section class="signup__area po-rel-z1 pt-100 pb-145">
+    <div class="sign__shape">
+        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
     </div>
-    <!-- arkaplan şekil alanı sonu -->
-    <!-- kayıt olma alanı başlangıcı -->
-    <section class="signup__area po-rel-z1 pt-100 pb-145">
-        <div class="sign__shape">
-            <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
-            <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
-            <img class="circle" src="~/img/icon/sign/circle.png" alt="">
-            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
-            <img class="dot" src="~/img/icon/sign/dot.png" alt="">
-            <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
-            <img class="flower" src="~/img/icon/sign/flower.png" alt="">
-        </div>
+</section>
+
+
+<header class="header-survey">
+    <h1 id="title" class="text-center text-shadow">Koltuk Temizliği</h1>
+    <p id="description" class="description text-center">
+        Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+    </p>
+</header>
+
+<main>
+    <section>
         <div class="container">
-            <div class="row">
-                <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                    <div class="sign__wrapper white-bg">
-                        <div class="sign__header mb-35">
-                        </div>
-                        <div class="sign__form">
-                            <form asp-controller="Temizlik" asp-action="KoltukTemizlik" method="post">
+            <form asp-action="KoltukTemizlik" asp-controller="Temizlik" method="post">
+                <div class="row">
+                    <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                        <div class="sign__wrapper white-bg">
+                            <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Tekli Koltuk Sayısı</h5>
-                                    <div class="sign__input">
+                                    <select id="dropdown" asp-for="TekliKoltukSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet Tekli Koltuk Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
+                                </div>
 
-                                            <input type="text" asp-for="TekliKoltukSayisi" placeholder="Tekli Koltuk Sayısı">
-                                            <i class=""><img src="~img/icon/sofa16.png"></i>
-                                        </div>
-                                </div>
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Üç'lü Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="IkiliKoltukSayisi" placeholder="İkili Koltuk Sayısı">
-                                       
-                                    </div>
+                                    <select id="dropdown" asp-for="IkiliKoltukSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet İkili Koltuk Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
                                 </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>İki'li' Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="UcluKoltukSayisi" placeholder="Üçlü Koltuk Sayısı">
 
-                                    </div>
-                                </div>
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>L-Koltuk Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="LKoltukSayisi" placeholder="L-Koltuk Sayısı">
+                                    <select id="dropdown" asp-for="UcluKoltukSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet Koltuk Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
+                                </div>
 
-                                    </div>
-                                </div>
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Minder Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="MinderSayisi" placeholder="Minder Sayısı">
-                                    </div>
+                                    <select id="dropdown" asp-for="SandalyeSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet Sandalye Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
                                 </div>
+
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Sandalye Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" aso-for="Sandalye" placeholder="Sandalye Sayısı">
-                                    </div>
+                                    <select id="dropdown" asp-for="MinderSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet Minder Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
                                 </div>
+
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Yatak Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="TekliYatakSayisi" placeholder="Tekli Yatak Sayısı">
-                                    </div>
+                                    <select id="dropdown" asp-for="TekliYatakSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet Tekli Yatak Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
                                 </div>
+
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Yatak Sayısı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="CiftKisilikYatakSayisi" placeholder="Çift Kişilik Yatak Sayısı">
-                                    </div>
+                                    <select id="dropdown" asp-for="CiftKisilikYatakSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Kaç Adet Çift Kişilik Yatak Temizlenecek</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla'</option>
+                                    </select>
                                 </div>
-                               
+
                                 <div class="sign__input-wrapper mb-25">
-                                    <h5>Açıklama</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Aciklama" placeholder="Açıklama">
-                                    </div>
+
+                                    <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                        <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                    </select>
+                                    <br />
+                                    <br />
+                                    <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                        <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                    </select>
+
                                 </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Şehir</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Il" placeholder="Şehir">
-                                    </div>
+
+                                <div class="contact__input textarea">
+                                    <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
                                 </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>İlçe</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="Ilce" placeholder="İlçe">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Adres Tanımı</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="AdresGenel" placeholder="Tam Adresi Yazınız">
-                                    </div>
-                                </div>
-                                <div class="sign__input-wrapper mb-25">
-                                    <h5>Şehir</h5>
-                                    <div class="sign__input">
-                                        <input type="text" asp-for="SandalyeSayisi" placeholder="Sehir">@*Düzelttt*@
-                                    </div>
-                                </div>
-                              
-                                <input type="hidden" asp-for="TeklifSayisi" value="0">
-                                
-                                <button type="submit" class="m-btn m-btn-4 w-100"> <span></span> Hizmet Talep Et</button>
-                            </form>
+
+                                <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </section>
-    <!-- kayıt olma alanı sonu -->
-
 </main>
+
+
+
+<script>window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true;
+        }
+    }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+
