@@ -30,15 +30,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
-        
-       
-       
-
-
-        public IActionResult AracYikama()
-        {
-            return View();
-        }
+            
+               
         public IActionResult Ilaclama()
         {
             return View();

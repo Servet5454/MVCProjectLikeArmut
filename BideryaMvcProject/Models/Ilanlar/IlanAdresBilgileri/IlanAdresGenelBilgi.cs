@@ -9,5 +9,6 @@
         public int TeklifSayisi { get; set; } = 0;
         public int IlanKategoriId { get; set; }
         public int IlanAltKategoriId { get; set; }
+        public string? Aciklama { get; set; } 
     }
 }

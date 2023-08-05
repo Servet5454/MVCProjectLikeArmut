@@ -32,14 +32,29 @@ namespace BideryaMvcProject.DataBase
         #region TemizlikHizmetleri Dbset
        
         public DbSet<AracYikama>? AracYikamas { get; set; }
+        
+        
+        
+        public DbSet<ApartmanTemizlik>? ApartmanTemizliks { get; set; }
+        public DbSet<CamTemizlik>? CamTemizliks { get; set; }
+        public DbSet<EvdeHaliYikama>? EvdeHaliYikamas { get; set; }
+        public DbSet<EvdeUtu>? EvdeUtus { get; set; }
         public DbSet<EvTemizlik>? EvTemizliks { get; set; }
         public DbSet<Ilaclama>? Ilaclamas { get; set; }
+        public DbSet<IsyeriTemizlik>? IsyeriTemizliks { get; set; }
         public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
+        public DbSet<KuruTemizleme>? KuruTemizlemes { get; set; }
+        public DbSet<StorPerdeYikama>? StorPerdeYikamas { get; set; }
+        public DbSet<YatakYikama>? YatakYikamas { get; set; }
+
+        public DbSet<YorganYikama>? YorganYikamas { get; set; }
+
+
 
         #endregion
 
         #region Tadilat Dekorasyon DbSet
-        
+
         public DbSet<CamBalkon>? CamBalkons { get; set; }
         public DbSet<EvTadilat>? EvTadilats { get; set; }
         public DbSet<Mantolama>? Mantolamas { get; set; }
