@@ -1,1 +1,111 @@
-﻿
+﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.ApartmanTemizlikViewModel
+
+<div class="bg-shape">
+    <img src="~/img/shape/shape-1.png" alt="">
+</div>
+
+<section class="signup__area po-rel-z1 pt-100 pb-145">
+    <div class="sign__shape">
+        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+    </div>
+</section>
+
+
+<header class="header-survey">
+    <h1 id="title" class="text-center text-shadow">Apartman Temizliği</h1>
+    <p id="description" class="description text-center">
+        Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+    </p>
+</header>
+
+<main>
+    <section>
+        <div class="container">
+            <form asp-action="EvTemizlik" asp-controller="Temizlik" method="post">
+                <div class="row">
+                    <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                        <div class="sign__wrapper white-bg">
+                            <div class="sign__form">
+                                <div class="sign__input-wrapper mb-25">
+                                    <select id="dropdown" asp-for="DaireSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Binanızda Toplam Kaç Adet Daire Olduğunu Seçiniz</option>
+                                        <option value="1">1-4 Arası</option>
+                                        <option value="2">5-9 Arası</option>
+                                        <option value="3">10-19 Arası</option>
+                                        <option value="4">20-29 Arası</option>
+                                        <option value="5">30-49 Arası</option>
+                                        <option value="6">50-74 Arası</option>
+                                        <option value="7">75-99 Arası</option>
+                                        <option value="8">100'den Fazla</option>
+                                    </select>
+                                </div>
+
+                                <div class="sign__input-wrapper mb-25">
+                                    <select id="dropdown" asp-for="CopToplama" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Binadaki Çöplerin Toplanmasını İstiyor Musunuz?</option>
+                                        <option value="true">Evet</option>
+                                        <option value="false">Hayır</option>
+                                    </select>
+                                </div>
+
+                                <div class="sign__input-wrapper mb-25">
+
+                                    <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                        <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                    </select>
+                                    <br />
+                                    <br />
+                                    <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                        <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="contact__input textarea">
+                                    <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
+                                </div>
+
+                                <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+
+
+<script>window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true;
+        }
+    }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+
