@@ -1,8 +1,14 @@
-﻿namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
 {
     public class ApartmanTemizlik
     {
         public int Id { get; set; }
+        [ForeignKey(nameof(IlanId))]
+        public int IlanId { get; set; }
+        public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
+        public int IlanAltKategoriId { get; set; }
         public int DaireSayisi { get; set; }
         public bool CopToplama { get; set; }
     }
