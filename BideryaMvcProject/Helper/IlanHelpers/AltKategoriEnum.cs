@@ -4,22 +4,23 @@
     {
         public enum TemizlikAltKategori
         {
-            ApartmanTemizligi = 1,
-            BosEvTemizligi = 3,
-            CamTemizligi = 4,
-            EvTemizlik = 6,
-            EvdeHaliYikama = 7,
-            EvdeUtuHizmeti = 8,
-            HaliYikama = 9,
-            HasereIlaclama = 10,
-            InsaatSonrasiTemizlik = 11,
-            IsyeriTemizligi = 12,
-            KoltukYikama = 13,
-            KuruTemizleme = 14,
-            MermerCilalama = 15,
-            StorPerdeYikama = 16,
-            YatakYikama = 17,
-            YorganYikama = 18
+            ApartmanTemizligi = 101,
+            BosEvTemizligi = 102,
+            CamTemizligi = 103,
+            EvTemizlik = 104,
+            EvdeHaliYikama = 105,
+            EvdeUtuHizmeti = 106,
+            HaliYikama = 107,
+            Ilaclama = 108,
+            InsaatSonrasiTemizlik =109,
+            IsyeriTemizligi = 110,
+            KoltukYikama = 111,
+            KuruTemizleme = 112,
+            MermerCilalama = 113,
+            StorPerdeYikama = 114,
+            YatakYikama = 115,
+            YorganYikama = 116,
+            
         }
 
         public enum TadilatVeDekorasyonHizmetleri

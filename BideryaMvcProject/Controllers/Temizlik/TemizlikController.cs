@@ -6,11 +6,7 @@ using BideryaMvcProject.Models.Ilanlar.Temizlik;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
-using BideryaMvcProject.DataBase.IlIlceJson;
-
+using BideryaMvcProject.Helper.IlanHelpers;
 
 namespace BideryaMvcProject.Controllers.Temizlik
 {
@@ -34,11 +30,14 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
         public IActionResult Ilaclama()
         {
+            
+            
             return View();
         }
         [HttpPost]
         public IActionResult Ilaclama(IlaclamaViewModel model)
         {
+            
             if (!ModelState.IsValid)
             {
 
@@ -58,8 +57,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Il =model.Il,
                     Ilce =model.Ilce,
                     KullaniciId = int.Parse(UserId),
-                    IlanAltKategoriId =model.IlanKategoriId,
-                    IlanKategoriId =model.IlanKategoriId,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.Ilaclama
+                    ),
                     IlanBaslik =model.IlanBaslik,
 
 
@@ -72,14 +71,15 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     IlanAltKategoriId =model.IlanAltKategoriId,
                     MekanTipi =model.MekanTipi,
                     Metrekare =model.Metrekare,
-
+                    
 
                      }
 
                     }
                     }
                 };
-
+                AltKategoriEnum enumcik = new AltKategoriEnum();
+              
 
                 context.Update(kul);
                 context.SaveChanges();
@@ -91,6 +91,10 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
         public IActionResult ApartmanTemizlik()
         {
+            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+            var liste = context.Ilans.Where(p => p.KullaniciId ==int.Parse(UserId)).ToList();
             return View();
         }
         [HttpPost]
@@ -125,19 +129,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
                      new ApartmanTemizlik
                     {
                      Aciklama =model.Aciklama,
-                     IlanKategoriId=model.IlanKategoriId,
-                    IlanAltKategoriId =model.IlanAltKategoriId,
+
                     DaireSayisi =model.DaireSayisi,
                     CopToplama =model.CopToplama,
                     Aktifmi =true,
-                    
-                    
-
-
-
-
                      }
-
                     }
                     }
                 };

@@ -9,7 +9,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         [ForeignKey(nameof(IlanId))]
         public int IlanId { get; set; }
         public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
-        public int IlanAltKategoriId { get; set; }
+        public int IlanAltKategoriId { get; set; } = 1;
         public int DaireSayisi { get; set; }
         public bool CopToplama { get; set; }
         public string? Aciklama { get; set; }
