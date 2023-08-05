@@ -84,10 +84,380 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 return View();
             }
         }
+        public IActionResult BosEvTemizligi()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult BosEvTemizligi(BosEvTemizlikViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    BosEvTemizliks =new List<BosEvTemizlik>()
+                    {
+                     new BosEvTemizlik
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    EvinDurumu =model.EvinDurumu,
+                    BanyoSayisi =model.BanyoSayisi,
+                    OdaSayisi =model.OdaSayisi,
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,
+
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+                //TODO burada kaldım
+            }
+        }
 
         public IActionResult CamTemizligi()
         {
             return View();
+        }
+        [HttpPost]
+        public IActionResult CamTemizligi(CamTemizlikViewModel model)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    CamTemizliks =new List<CamTemizlik>()
+                    {
+                     new CamTemizlik
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    Balkon =model.Balkon,
+                    EvBuyukluk =model.EvBuyukluk,
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,
+
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+                //TODO burada kaldım
+            }
+        }
+        public IActionResult EvdeHaliYikama()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult EvdeHaliYikama(EvdeHaliYikamaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    EvdeHaliYikamas =new List<EvdeHaliYikama>()
+                    {
+                     new EvdeHaliYikama
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    //
+                    //
+                    //
+                    //
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,
+
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+                //TODO burada kaldım
+            }
+
+        }
+        public IActionResult EvdeUtuHizmeti()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult EvdeUtuHizmeti(EvdeUtuViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    EvdeUtus =new List<EvdeUtu>()
+                    {
+                     new EvdeUtu
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    //
+                    //
+                    //
+                    //
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,
+                    ParcaSayisi =model.ParcaSayisi,
+                    Nevresim =model.Nevresim,
+                    
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+                
+            }
+        }
+        public IActionResult EvTemizlik()
+        {
+
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EvTemizlik(EvTemizlikViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    EvTemizliks =new List<EvTemizlik>()
+                    {
+                     new EvTemizlik
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    //
+                    //
+                    //
+                    //
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,
+                   BanyoSayisi =model.BanyoSayisi,
+                   OdaSayisi =model.OdaSayisi,
+                   HayvanVarmi =Convert.ToBoolean(model.HayvanVarmi),
+                   CalismaSuresi =model.CalismaSuresi,
+                   BalkonSayisi =model.BalkonSayisi,
+
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+
+            }
+        }
+        public IActionResult HaliYikama()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult HaliYikama(HaliYikamaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    HaliYikamas =new List<HaliYikama>()
+                    {
+                     new HaliYikama
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    //
+                    //
+                    //
+                    //
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,
+                  
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+
+            }
         }
 
         public IActionResult Ilaclama()
@@ -121,6 +491,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.Ilaclama
                     ),
                     IlanBaslik =model.IlanBaslik,
+                    
 
 
 
@@ -137,7 +508,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Ilce =model.Ilce,
                     IlanKategoriId =1,
 
-
+                    
 
                      }
 
@@ -154,112 +525,14 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 //TODO burada kaldım
             }
         }
-
-
-        public IActionResult BosEvTemizligi()
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult BosEvTemizligi(BosEvTemizlikViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                // Eksik Bilgiler Var
-                return View(model);
-            }
-            else
-            {
-                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
-
-                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
-
-                kul.Ilans =new List<Ilan>() { new Ilan
-                {
-                    AdresDetay =model.AdresGenel,
-                    Il =model.Il,
-                    Ilce =model.Ilce,
-                    KullaniciId = int.Parse(UserId),
-                    IlanAltKategoriId =2,
-                    IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
-                   
-
-                    BosEvTemizliks =new List<BosEvTemizlik>()
-                    {
-                     new BosEvTemizlik
-                    {
-                    TeklifSayisi =0,
-                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
-                    EvinDurumu =model.EvinDurumu,
-                    BanyoSayisi =model.BanyoSayisi,
-                    OdaSayisi =model.OdaSayisi,
-                    Aciklama =model.Aciklama,
-                    Il =model.Il,
-                    Ilce =model.Ilce,
-                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
-                    Aktifmi =true,                 
-
-
-                     }
-
-                    }
-                    }
-                };
-
-
-                context.Update(kul);
-                context.SaveChanges();
-
-                return View();
-                //TODO burada kaldım
-            }
-        }
-
-        public IActionResult EvTemizlik()
-        {
-            //JasonSerilizear serilizear = new JasonSerilizear();
-            //var jsonlar = serilizear.jsonSehirgetir();
-
-            //var ilce = serilizear.jsonIlcegetir();
-
-            return View();
-        }
-
-        [HttpPost]
-        public IActionResult EvTemizlik(EvTemizlikViewModel model)
-        {
-            if (!ModelState.IsValid)
-            {
-                //hatalı giriş 
-                return View(model);
-            }
-            else
-            {
-
-                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
-
-            }
-
-
-            return View();
-        }
-
-        public IActionResult EvdeHaliYikama()
-        {
-            return View();
-        }
-        public IActionResult EvdeUtuHizmeti()
-        {
-            return View();
-        }
-        public IActionResult HaliYikama()
-        {
-            return View();
-        }
+        
+       
         public IActionResult InsaatSonrasiTemizlik()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult InsaatSonrasiTemizlik(InsaatSonrasiTemizlikViewModel model)
         {
             return View();
         }
@@ -411,3 +684,10 @@ namespace BideryaMvcProject.Controllers.Temizlik
 //context.Add(koltukIlan);
 //context.SaveChanges();
 
+
+
+
+//JasonSerilizear serilizear = new JasonSerilizear();
+//var jsonlar = serilizear.jsonSehirgetir();
+
+//var ilce = serilizear.jsonIlcegetir();

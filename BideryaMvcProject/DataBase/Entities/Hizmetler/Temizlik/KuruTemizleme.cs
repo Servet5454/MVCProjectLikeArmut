@@ -11,8 +11,20 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
         public int IlanAltKategoriId { get; set; }
         public string? Aciklama { get; set; }
-       
+
+        public string? Ceket { get; set; }
+        public string? Pantalon { get; set; }
+        public string? Gomlek { get; set; }
+
+        public string? Mont { get; set; }
+        public string? Gelinlik { get; set; }
+        public string? Yorgan { get; set; }
         public string? IlanBaslik { get; set; } = "Kuru Temizleme";
+
+
+
+
+        
 
         public bool Aktifmi { get; set; } = false;
         public int TeklifSayisi { get; set; } = 0;
