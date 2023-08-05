@@ -35,7 +35,7 @@
                         <div class="sign__wrapper white-bg">
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="OdaSayisi" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Oda Sayısını Seçiniz</option>
                                         <option value="1">1+0</option>
                                         <option value="2">1+1</option>
@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="BanyoSayisi" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Banyo Sayısını Seçiniz</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -56,7 +56,7 @@
                                 </div>
 
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="CalismaSuresi" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Temizlik Süresini Seçiniz</option>
                                         <option value="1">3</option>
                                         <option value="2">4</option>
@@ -69,21 +69,21 @@
                                 </div>
 
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="HayvanVarmi" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Evcil Hayvanınız Var Mı?</option>
-                                        <option value="1">Evet</option>
-                                        <option value="2">Hayır</option>
+                                        <option value="true">Evet</option>
+                                        <option value="false">Hayır</option>
                                     </select>
                                 </div>
 
                                 <div class="sign__input-wrapper mb-25">
                                    
-                                    <select id="turkiye_illeri" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                    <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
                                         <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
                                     </select>
                                     <br />
                                     <br />
-                                    <select id="turkiye_ilceler" class="m-btn m-btn-4 w-100" required>
+                                    <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
                                         <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
                                     </select>
                                     

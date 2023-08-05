@@ -1,4 +1,4 @@
-﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.
+﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.BosEvTemizlikViewModel
 <div class="bg-shape">
     <img src="~/img/shape/shape-1.png" alt="">
 </div>
@@ -35,7 +35,7 @@
                         <div class="sign__wrapper white-bg">
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" asp-for= class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="OdaSayisi" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Oda Sayısını Seçiniz</option>
                                         <option value="1">1+0</option>
                                         <option value="2">1+1</option>
@@ -51,7 +51,7 @@
                                 </div>
 
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="BanyoSayisi" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Banyo Sayısını Seçiniz</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
@@ -60,7 +60,7 @@
                                 </div>
 
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" class="m-btn m-btn-4 w-100" required>
+                                    <select id="dropdown" asp-for="EvinDurumu" class="m-btn m-btn-4 w-100" required>
                                         <option disable select>Evin Durumunu Belirtiniz</option>
                                         <option value="1">Kiracı Çıktı</option>
                                         <option value="2">Yeni (Sıfır) Ev</option>
@@ -69,12 +69,12 @@
 
                                 <div class="sign__input-wrapper mb-25">
 
-                                    <select id="turkiye_illeri" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                    <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
                                         <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
                                     </select>
                                     <br />
                                     <br />
-                                    <select id="turkiye_ilceler" class="m-btn m-btn-4 w-100" required>
+                                    <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
                                         <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
                                     </select>
 
