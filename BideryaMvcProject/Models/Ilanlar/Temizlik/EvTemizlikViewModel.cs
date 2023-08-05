@@ -8,7 +8,8 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public int Id { get; set; }
         public int IlanKategoriId { get; set; }
         public int IlanAltKategoriId { get; set; }
-        public bool Aktifmi { get; set; } = false;    
+        public bool Aktifmi { get; set; } = false;
+        public int TeklifSayisi { get; set; } = 0;
         public int OdaSayisi { get; set; }
         public int BanyoSayisi { get; set; }       
         public int CalismaSuresi { get; set; }

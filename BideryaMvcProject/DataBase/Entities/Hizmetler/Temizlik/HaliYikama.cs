@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
 {
-    public class KuruTemizleme
+    public class HaliYikama
     {
         public int Id { get; set; }
         [ForeignKey(nameof(IlanId))]
@@ -11,12 +11,11 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
         public int IlanAltKategoriId { get; set; }
         public string? Aciklama { get; set; }
-       
-        public string? IlanBaslik { get; set; } = "Kuru Temizleme";
-
         public bool Aktifmi { get; set; } = false;
         public int TeklifSayisi { get; set; } = 0;
 
+
+        public string? IlanBaslik { get; set; } = "Evde Halı Yıkama";
         public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
         public Ilan? Ilan { get; set; }
     }

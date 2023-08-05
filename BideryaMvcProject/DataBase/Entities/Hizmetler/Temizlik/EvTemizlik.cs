@@ -17,6 +17,12 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public bool HayvanVarmi { get; set; }
         public string? Aciklama { get; set; }
 
+        public bool Aktifmi { get; set; } = false;
+        public int TeklifSayisi { get; set; } = 0;
+        
+        public string? IlanBaslik { get; set; } = "Ev Temizlik";
+
+        public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
 
         public virtual Ilan? Ilan { get; set; }
 

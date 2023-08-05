@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230805105610_mig60")]
+    partial class mig60
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,7 +134,7 @@ namespace BideryaMvcProject.Migrations
                             FirmaIsmi = "BeautyElla",
                             HizmetKategoriId = 1,
                             IsTelNo = "05455503341",
-                            KayitTarihi = new DateTime(2023, 8, 5, 13, 57, 26, 519, DateTimeKind.Local).AddTicks(4581),
+                            KayitTarihi = new DateTime(2023, 8, 5, 13, 56, 10, 426, DateTimeKind.Local).AddTicks(4347),
                             Sehir = "ankara",
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
@@ -516,7 +519,7 @@ namespace BideryaMvcProject.Migrations
                             IlanKategoriId = 1,
                             OdaSayisi = 1,
                             TeklifSayisi = 0,
-                            YayinlanmaTarihi = new DateTime(2023, 8, 5, 13, 57, 26, 519, DateTimeKind.Local).AddTicks(4542)
+                            YayinlanmaTarihi = new DateTime(2023, 8, 5, 13, 56, 10, 426, DateTimeKind.Local).AddTicks(4292)
                         });
                 });
 
@@ -640,7 +643,7 @@ namespace BideryaMvcProject.Migrations
 
                     b.HasIndex("IlanId");
 
-                    b.ToTable("HaliYikamas");
+                    b.ToTable("HaliYikama");
                 });
 
             modelBuilder.Entity("BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik.Ilaclama", b =>
@@ -1043,7 +1046,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 8, 5, 13, 57, 26, 519, DateTimeKind.Local).AddTicks(4158),
+                            KayitTarihi = new DateTime(2023, 8, 5, 13, 56, 10, 426, DateTimeKind.Local).AddTicks(3610),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Yılmaz",
@@ -1054,7 +1057,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse@gmail.com",
-                            KayitTarihi = new DateTime(2023, 8, 5, 13, 57, 26, 519, DateTimeKind.Local).AddTicks(4162),
+                            KayitTarihi = new DateTime(2023, 8, 5, 13, 56, 10, 426, DateTimeKind.Local).AddTicks(3616),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Kaya",

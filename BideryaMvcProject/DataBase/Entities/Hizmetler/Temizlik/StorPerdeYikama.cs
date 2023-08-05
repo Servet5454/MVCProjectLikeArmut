@@ -11,8 +11,14 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
         public int IlanAltKategoriId { get; set; }
 
+        
+        public string? IlanBaslik { get; set; } = "Stor Perde Yıkama";
 
+        public bool Aktifmi { get; set; } = false;
+        public int TeklifSayisi { get; set; } = 0;
+        public string? Aciklama { get; set; }
 
+        public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
         public Ilan? Ilan { get; set; }
     }
 }

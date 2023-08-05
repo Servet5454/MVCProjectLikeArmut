@@ -39,6 +39,7 @@ namespace BideryaMvcProject.DataBase
         public DbSet<EvdeHaliYikama>? EvdeHaliYikamas { get; set; }
         public DbSet<EvdeUtu>? EvdeUtus { get; set; }
         public DbSet<EvTemizlik>? EvTemizliks { get; set; }
+        public DbSet<HaliYikama>? HaliYikamas { get; set; }
         public DbSet<Ilaclama>? Ilaclamas { get; set; }
         public DbSet<IsyeriTemizlik>? IsyeriTemizliks { get; set; }
         public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
@@ -188,7 +189,7 @@ namespace BideryaMvcProject.DataBase
                 Il = "Ankara",
                 Ilce ="Yenikent",
                 IlanKategoriId =1,
-                IlanAltKategoriBaslik ="Ev Temizlik",
+                IlanBaslik ="Ev Temizlik",
                 IlanAltKategoriId =1,
                 AdresDetay ="Ayaş Merkez"
             });

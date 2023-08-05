@@ -4,8 +4,8 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
     public class EvdeUtuViewModel:IlanAdresGenelBilgi
     {
-        public int ParcaSayisi { get; set; }
-        public int Nevresim { get; set; }
+        public string? ParcaSayisi { get; set; }
+        public string? Nevresim { get; set; }
         public string? IlanBaslik { get; set; } = "Evde Ütü Hizmeti";
 
 

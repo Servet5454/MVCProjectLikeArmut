@@ -12,10 +12,11 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public int KullaniciId { get; set; }
         public int IlanKategoriId { get; set; }
         public int IlanAltKategoriId { get; set; }
-        public string? IlanAltKategoriBaslik { get; set; }
+        public string? IlanBaslik { get; set; }
         public string? Il { get; set; }
         public string? Ilce { get; set; }
         public string? AdresDetay { get; set; }
+        
 
         public virtual Kullanici? Kullanici { get; set; }
         public virtual ICollection<CamBalkon>? CamBalkons { get; set; }
@@ -37,6 +38,7 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public virtual ICollection<EvdeHaliYikama>? EvdeHaliYikamas { get; set; }
         public virtual ICollection<EvdeUtu>? EvdeUtus { get; set; }
         public virtual ICollection<EvTemizlik>? EvTemizliks { get; set; }
+        public virtual ICollection<HaliYikama>? HaliYikamas { get; set; }
         public virtual ICollection<Ilaclama>? Ilaclamas { get; set; }
         public virtual ICollection<IsyeriTemizlik>? IsyeriTemizliks { get; set; }
         public virtual ICollection<KoltukTemizlik>? KoltukTemizliks { get; set; }

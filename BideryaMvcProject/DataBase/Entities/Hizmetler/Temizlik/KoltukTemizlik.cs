@@ -18,8 +18,15 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int MinderSayisi { get; set; }
         public int TekliYatakSayisi { get; set; }
         public int CiftKisilikYatakSayisi { get; set; }
-        public int TeklifSayisi { get; set; }
+        
+
+
+        public string? IlanBaslik { get; set; } = "Koltuk Temizlik";
         public string? Aciklama { get; set; }
+        public bool Aktifmi { get; set; } = false;
+        public int TeklifSayisi { get; set; } = 0;
+
+        public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
 
         public virtual Ilan? Ilan { get; set; }
 
