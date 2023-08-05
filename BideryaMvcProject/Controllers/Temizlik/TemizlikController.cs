@@ -163,7 +163,58 @@ namespace BideryaMvcProject.Controllers.Temizlik
         [HttpPost]
         public IActionResult BosEvTemizligi(BosEvTemizlikViewModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =2,
+                    IlanKategoriId =1,
+                    IlanBaslik =model.IlanBaslik,
+                   
+
+                    BosEvTemizliks =new List<BosEvTemizlik>()
+                    {
+                     new BosEvTemizlik
+                    {
+                    TeklifSayisi =0,
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    EvinDurumu =model.EvinDurumu,
+                    BanyoSayisi =model.BanyoSayisi,
+                    OdaSayisi =model.OdaSayisi,
+                    Aciklama =model.Aciklama,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    Aktifmi =true,                 
+
+
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+                //TODO burada kaldım
+            }
         }
 
         public IActionResult EvTemizlik()
@@ -294,7 +345,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
                     TekliYatakSayisi =model.TekliYatakSayisi,
                    
-                       }
+                     }
 
                     }
                     }
@@ -304,11 +355,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 context.Update(kul);
                 context.SaveChanges();
 
-
+                return View();
                 //TODO burada kaldım
             }
 
-            return View();
+           
         }
 
         public IActionResult KuruTemizleme()
