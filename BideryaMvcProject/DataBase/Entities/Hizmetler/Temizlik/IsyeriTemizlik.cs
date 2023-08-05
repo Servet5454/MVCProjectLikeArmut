@@ -15,6 +15,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public string? Il { get; set; }
         public string? Ilce { get; set; }
 
+        public string? IsyeriTipi { get; set; }
+        public string? Metrekare { get; set; }
 
         public string? IlanBaslik { get; set; } = "İşyeri Temizlik";
 

@@ -1,6 +1,8 @@
-﻿namespace BideryaMvcProject.Models.Ilanlar.Temizlik
+﻿using BideryaMvcProject.Models.Ilanlar.IlanAdresBilgileri;
+
+namespace BideryaMvcProject.Models.Ilanlar.Temizlik
 {
-    public class InsaatSonrasiTemizlikViewModel
+    public class InsaatSonrasiTemizlikViewModel :IlanAdresGenelBilgi
     {
         public int IlanKategoriId { get; set; }
         public int IlanAltKategoriId { get; set; }
