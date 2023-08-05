@@ -40,6 +40,7 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public virtual ICollection<EvTemizlik>? EvTemizliks { get; set; }
         public virtual ICollection<HaliYikama>? HaliYikamas { get; set; }
         public virtual ICollection<Ilaclama>? Ilaclamas { get; set; }
+        public virtual ICollection<InsaatSonrasiTemizlik>? InsaatSonrasiTemizliks { get; set; }
         public virtual ICollection<IsyeriTemizlik>? IsyeriTemizliks { get; set; }
         public virtual ICollection<KoltukTemizlik>? KoltukTemizliks { get; set; }
         public virtual ICollection<KuruTemizleme>? KuruTemizlemes { get; set; }

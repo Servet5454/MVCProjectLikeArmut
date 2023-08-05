@@ -17,7 +17,9 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public string? Aciklama { get; set; }
         public bool Aktifmi { get; set; } = false;
         public int TeklifSayisi { get; set; } = 0;
-        
+        public string? Il { get; set; }
+        public string? Ilce { get; set; }
+
         public string? IlanBaslik { get; set; } = "İlaçlama";
         public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
 

@@ -4,6 +4,7 @@ using BideryaMvcProject.DataBase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BideryaMvcProject.Migrations
 {
     [DbContext(typeof(BideryaMvcDatabase))]
-    partial class BideryaMvcDatabaseModelSnapshot : ModelSnapshot
+    [Migration("20230805121840_mig62")]
+    partial class mig62
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -131,7 +134,7 @@ namespace BideryaMvcProject.Migrations
                             FirmaIsmi = "BeautyElla",
                             HizmetKategoriId = 1,
                             IsTelNo = "05455503341",
-                            KayitTarihi = new DateTime(2023, 8, 5, 15, 22, 6, 727, DateTimeKind.Local).AddTicks(6069),
+                            KayitTarihi = new DateTime(2023, 8, 5, 15, 18, 40, 409, DateTimeKind.Local).AddTicks(2907),
                             Sehir = "ankara",
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
@@ -377,9 +380,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("DaireSayisi")
                         .HasColumnType("int");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -391,9 +391,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -428,9 +425,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("EvBuyukluk")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -442,9 +436,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -485,9 +476,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("HayvanVarmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -499,9 +487,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("OdaSayisi")
                         .HasColumnType("int");
@@ -534,7 +519,7 @@ namespace BideryaMvcProject.Migrations
                             IlanKategoriId = 1,
                             OdaSayisi = 1,
                             TeklifSayisi = 0,
-                            YayinlanmaTarihi = new DateTime(2023, 8, 5, 15, 22, 6, 727, DateTimeKind.Local).AddTicks(6033)
+                            YayinlanmaTarihi = new DateTime(2023, 8, 5, 15, 18, 40, 409, DateTimeKind.Local).AddTicks(2867)
                         });
                 });
 
@@ -552,9 +537,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -566,9 +548,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -597,9 +576,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -611,9 +587,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nevresim")
                         .HasColumnType("nvarchar(max)");
@@ -648,9 +621,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -662,9 +632,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -696,9 +663,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("HasereTipi")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -710,9 +674,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("MekanTipi")
                         .HasColumnType("nvarchar(max)");
@@ -750,9 +711,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<string>("EvinDurumu")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -764,9 +722,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Metrekare")
                         .HasColumnType("nvarchar(max)");
@@ -801,9 +756,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -815,9 +767,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -852,9 +801,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<int>("IkiliKoltukSayisi")
                         .HasColumnType("int");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -866,9 +812,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("LKoltukSayisi")
                         .HasColumnType("int");
@@ -915,9 +858,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -929,9 +869,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -960,9 +897,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -974,9 +908,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -1005,9 +936,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -1019,9 +947,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -1050,9 +975,6 @@ namespace BideryaMvcProject.Migrations
                     b.Property<bool>("Aktifmi")
                         .HasColumnType("bit");
 
-                    b.Property<string>("Il")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("IlanAltKategoriId")
                         .HasColumnType("int");
 
@@ -1064,9 +986,6 @@ namespace BideryaMvcProject.Migrations
 
                     b.Property<int>("IlanKategoriId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Ilce")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TeklifSayisi")
                         .HasColumnType("int");
@@ -1175,7 +1094,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 1,
                             Ad = "Ahmet",
                             Email = "ahmet.yilmaz@gmail.com",
-                            KayitTarihi = new DateTime(2023, 8, 5, 15, 22, 6, 727, DateTimeKind.Local).AddTicks(5655),
+                            KayitTarihi = new DateTime(2023, 8, 5, 15, 18, 40, 409, DateTimeKind.Local).AddTicks(2442),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Yılmaz",
@@ -1186,7 +1105,7 @@ namespace BideryaMvcProject.Migrations
                             Id = 2,
                             Ad = "Ayşe",
                             Email = "ayse@gmail.com",
-                            KayitTarihi = new DateTime(2023, 8, 5, 15, 22, 6, 727, DateTimeKind.Local).AddTicks(5660),
+                            KayitTarihi = new DateTime(2023, 8, 5, 15, 18, 40, 409, DateTimeKind.Local).AddTicks(2447),
                             Sifre1 = "3A987843C71CDC036B1477D929084804",
                             Sifre2 = "3A987843C71CDC036B1477D929084804",
                             Soyad = "Kaya",

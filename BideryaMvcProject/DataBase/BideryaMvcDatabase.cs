@@ -41,6 +41,7 @@ namespace BideryaMvcProject.DataBase
         public DbSet<EvTemizlik>? EvTemizliks { get; set; }
         public DbSet<HaliYikama>? HaliYikamas { get; set; }
         public DbSet<Ilaclama>? Ilaclamas { get; set; }
+        public DbSet<InsaatSonrasiTemizlik>? InsaatSonrasiTemizliks { get; set; }
         public DbSet<IsyeriTemizlik>? IsyeriTemizliks { get; set; }
         public DbSet<KoltukTemizlik>? KoltukTemizliks { get; set; }
         public DbSet<KuruTemizleme>? KuruTemizlemes { get; set; }

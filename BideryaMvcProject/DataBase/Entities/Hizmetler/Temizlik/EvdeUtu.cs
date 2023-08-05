@@ -14,6 +14,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public string? ParcaSayisi { get; set; }
         public string? Nevresim { get; set; }
         public string? IlanBaslik { get; set; } = "Evde Ütü Hizmeti";
+        public string? Il { get; set; }
+        public string? Ilce { get; set; }
 
 
         public bool Aktifmi { get; set; } = false;
