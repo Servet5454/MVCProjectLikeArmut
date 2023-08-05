@@ -433,7 +433,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                      new HaliYikama
                     {
                     TeklifSayisi =0,
-                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.HaliYikama),
                     //
                     //
                     //
@@ -534,7 +534,64 @@ namespace BideryaMvcProject.Controllers.Temizlik
         [HttpPost]
         public IActionResult InsaatSonrasiTemizlik(InsaatSonrasiTemizlikViewModel model)
         {
-            return View();
+
+
+            if (!ModelState.IsValid)
+            {
+
+
+                return View();
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.InsaatSonrasiTemizlik
+                    ),
+                    IlanBaslik =model.IlanBaslik,
+
+
+
+
+                    InsaatSonrasiTemizliks =new List<InsaatSonrasiTemizlik>()
+                    {
+                     new InsaatSonrasiTemizlik
+                    {
+                    Aciklama = model.Aciklama,                   
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.InsaatSonrasiTemizlik),
+                    BanyoSayisi =model.BanyoSayisi,
+                    OdaSayisi =model.OdaSayisi,
+                    EvinDurumu =model.EvinDurumu,
+                    
+                    Metrekare =model.Metrekare,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanKategoriId =1,
+                    
+
+                     }
+
+                    }
+                    }
+                };
+               
+
+
+                context.Update(kul);
+                context.SaveChanges();
+                return View();
+
+                //TODO burada kaldım
+            }
         }
         public IActionResult IsyeriTemizligi()
         {

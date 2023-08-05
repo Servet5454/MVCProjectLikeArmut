@@ -19,6 +19,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int TeklifSayisi { get; set; } = 0;
         public string? Il { get; set; }
         public string? Ilce { get; set; }
+        public string? Aciklama { get; set; }
+
 
         public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
 
