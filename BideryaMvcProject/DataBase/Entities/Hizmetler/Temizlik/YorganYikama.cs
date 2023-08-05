@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
 {
@@ -9,5 +10,9 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int IlanId { get; set; }
         public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
         public int IlanAltKategoriId { get; set; }
+
+
+
+        public Ilan? Ilan { get; set; }
     }
 }

@@ -13,7 +13,8 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public int BanyoSayisi { get; set; }       
         public int CalismaSuresi { get; set; }
         public bool? HayvanVarmi { get; set; }
-        public string? Aciklama { get; set; }
+        
+        public string? IlanBaslik { get; set; } = "Ev Temizliği";
 
     }
 }

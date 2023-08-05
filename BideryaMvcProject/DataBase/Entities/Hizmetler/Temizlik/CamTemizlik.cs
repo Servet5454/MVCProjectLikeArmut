@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
 {
@@ -11,5 +12,6 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int IlanAltKategoriId { get; set; }
         public string? EvBuyukluk { get; set; }
         public string? Balkon { get; set; }
+        public Ilan? Ilan { get; set; }
     }
 }

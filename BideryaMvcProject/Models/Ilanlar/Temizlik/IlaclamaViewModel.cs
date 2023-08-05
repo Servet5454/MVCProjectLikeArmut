@@ -13,7 +13,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public string? MekanTipi { get; set; }
         public string? Aciklama { get; set; }
 
-
+        public string? IlanBaslik { get; set; } = "İlaçlama";
 
     }
 }
