@@ -33,6 +33,7 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         
 
         public virtual ICollection<ApartmanTemizlik>? ApartmanTemizliks { get; set; }
+        public virtual ICollection<BosEvTemizlik>? BosEvTemizliks { get; set; }
         
         public virtual ICollection<CamTemizlik>? CamTemizliks { get; set; }
         public virtual ICollection<EvdeHaliYikama>? EvdeHaliYikamas { get; set; }

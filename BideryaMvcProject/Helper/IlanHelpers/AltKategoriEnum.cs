@@ -2,6 +2,11 @@
 {
     public class AltKategoriEnum
     {
+        public enum IlanKategori
+        {
+            Temizlik =1,
+
+        }
         public enum TemizlikAltKategori
         {
             ApartmanTemizligi = 101,

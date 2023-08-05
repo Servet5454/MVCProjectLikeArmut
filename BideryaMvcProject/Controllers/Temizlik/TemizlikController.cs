@@ -72,7 +72,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Aktifmi =true,
                     Il =model.Il,
                     Ilce =model.Ilce,
-                    
+
                      }
                     }
                     }
@@ -85,16 +85,20 @@ namespace BideryaMvcProject.Controllers.Temizlik
             }
         }
 
+        public IActionResult CamTemizligi()
+        {
+            return View();
+        }
 
         public IActionResult Ilaclama()
-        {           
-            
+        {
+
             return View();
         }
         [HttpPost]
         public IActionResult Ilaclama(IlaclamaViewModel model)
         {
-            
+
             if (!ModelState.IsValid)
             {
 
@@ -117,7 +121,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.Ilaclama
                     ),
                     IlanBaslik =model.IlanBaslik,
-                    
+
 
 
                     Ilaclamas =new List<Ilaclama>()
@@ -132,8 +136,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Il =model.Il,
                     Ilce =model.Ilce,
                     IlanKategoriId =1,
-                                      
-                    
+
+
 
                      }
 
@@ -141,7 +145,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     }
                 };
                 AltKategoriEnum enumcik = new AltKategoriEnum();
-              
+
 
                 context.Update(kul);
                 context.SaveChanges();
@@ -151,7 +155,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             }
         }
 
-       
+
         public IActionResult BosEvTemizligi()
         {
             return View();
@@ -161,10 +165,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
-        public IActionResult CamTemizligi()
-        {
-            return View();
-        }
+
         public IActionResult EvTemizlik()
         {
             //JasonSerilizear serilizear = new JasonSerilizear();
@@ -285,7 +286,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     {
                     TeklifSayisi =0,
                     IkiliKoltukSayisi =model.IkiliKoltukSayisi,
-                    LKoltukSayisi =model.LKoltukSayisi,
                     MinderSayisi =model.MinderSayisi,
                     TekliKoltukSayisi=model.TekliKoltukSayisi,
                     UcluKoltukSayisi =model.UcluKoltukSayisi,
@@ -293,7 +293,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     SandalyeSayisi =model.SandalyeSayisi,
                     CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
                     TekliYatakSayisi =model.TekliYatakSayisi,
-                    IlanAltKategoriId =2,
+                   
                        }
 
                     }
