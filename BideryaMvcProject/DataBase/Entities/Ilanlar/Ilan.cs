@@ -23,10 +23,32 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public virtual ICollection<Mantolama>? Mantolamas { get; set; }
         public virtual ICollection<MutfakDolabiYapimi>? MutfakDolabiYapimis { get; set; }
 
+
+
+        #region Temizlik Hizmetleri
+        
+        
+        
+        
+
+        public virtual ICollection<ApartmanTemizlik>? ApartmanTemizliks { get; set; }
         public virtual ICollection<AracYikama>? AracYikamas { get; set; }
+        public virtual ICollection<CamTemizlik>? CamTemizliks { get; set; }
+        public virtual ICollection<EvdeHaliYikama>? EvdeHaliYikamas { get; set; }
+        public virtual ICollection<EvdeUtu>? EvdeUtus { get; set; }
         public virtual ICollection<EvTemizlik>? EvTemizliks { get; set; }
         public virtual ICollection<Ilaclama>? Ilaclamas { get; set; }
+        public virtual ICollection<IsyeriTemizlik>? IsyeriTemizliks { get; set; }
         public virtual ICollection<KoltukTemizlik>? KoltukTemizliks { get; set; }
+        public virtual ICollection<KuruTemizleme>? KuruTemizlemes { get; set; }
+        public virtual ICollection<StorPerdeYikama>? StorPerdeYikamas { get; set; }
+        public virtual ICollection<YatakYikama>? YatakYikamas { get; set; }
+        public virtual ICollection<YorganYikama>? YorganYikamas { get; set; }
+
+
+
+        #endregion
+
 
 
 
