@@ -61,9 +61,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Il =model.Il,
                     Ilce =model.Ilce,
                     KullaniciId = int.Parse(UserId),
-                    IlanAltKategoriId =model.IlanAltKategoriId,
-                    IlanKategoriId =model.IlanKategoriId,
-                    IlanBaslik =model.IlanBaslik,
+                    
 
 
                     ApartmanTemizliks =new List<ApartmanTemizlik>()

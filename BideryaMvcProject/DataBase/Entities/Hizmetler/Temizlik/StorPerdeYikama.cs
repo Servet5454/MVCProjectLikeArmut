@@ -11,10 +11,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int IlanId { get; set; }
         public int IlanKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik);
         public int IlanAltKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.StorPerdeYikama);
-
-
         public string? IlanBaslik { get; set; } = "Stor Perde Yıkama";
-
         public bool Aktifmi { get; set; } = false;
         public int TeklifSayisi { get; set; } = 0;
 
