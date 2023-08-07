@@ -17,6 +17,9 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public string? Il { get; set; }
         public string? Ilce { get; set; }
 
+        public string? HaliMetrekare { get; set; }
+        public bool LekeCikarma { get; set; }
+
 
         public string? IlanBaslik { get; set; } = "Evde Halı Yıkama";
         public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;

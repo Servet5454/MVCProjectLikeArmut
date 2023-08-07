@@ -8,5 +8,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public string? TekKisilikSayisi { get; set; }
 
         public bool LekeVarmi { get; set; }
+
+        public string? IlanBaslik { get; set; } = "Yorgan Yıkama";
     }
 }
