@@ -64,7 +64,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     IlanAltKategoriId =model.IlanAltKategoriId,
                     IlanKategoriId =model.IlanKategoriId,
                     IlanBaslik =model.IlanBaslik,
-                    
+
 
                     ApartmanTemizliks =new List<ApartmanTemizlik>()
                     {
@@ -312,6 +312,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     //
                     //
                     //
+                    IlanBaslik =model.IlanBaslik,
                     Aciklama =model.Aciklama,
                     Il =model.Il,
                     Ilce =model.Ilce,
@@ -319,7 +320,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Aktifmi =true,
                     ParcaSayisi =model.ParcaSayisi,
                     Nevresim =model.Nevresim,
-                    
+
                      }
 
                     }
@@ -331,7 +332,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 context.SaveChanges();
 
                 return View();
-                
+
             }
         }
         public IActionResult EvTemizlik()
@@ -377,6 +378,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     //
                     //
                     //
+                    IlanBaslik =model.IlanBaslik,
                     Aciklama =model.Aciklama,
                     Il =model.Il,
                     Ilce =model.Ilce,
@@ -448,7 +450,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Ilce =model.Ilce,
                     IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
                     Aktifmi =true,
-                  
+
 
                      }
 
@@ -496,7 +498,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.Ilaclama
                     ),
                     IlanBaslik =model.IlanBaslik,
-                    
+
 
 
 
@@ -513,7 +515,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     Ilce =model.Ilce,
                     IlanKategoriId =1,
 
-                    
+
 
                      }
 
@@ -530,8 +532,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 //TODO burada kaldım
             }
         }
-        
-       
+
+
         public IActionResult InsaatSonrasiTemizlik()
         {
             return View();
@@ -571,24 +573,24 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     {
                      new InsaatSonrasiTemizlik
                     {
-                    Aciklama = model.Aciklama,                   
+                    Aciklama = model.Aciklama,
                     IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.InsaatSonrasiTemizlik),
                     BanyoSayisi =model.BanyoSayisi,
                     OdaSayisi =model.OdaSayisi,
                     EvinDurumu =model.EvinDurumu,
-                    
+
                     Metrekare =model.Metrekare,
                     Il =model.Il,
                     Ilce =model.Ilce,
                     IlanKategoriId =1,
-                    
+
 
                      }
 
                     }
                     }
                 };
-               
+
 
 
                 context.Update(kul);
@@ -602,6 +604,56 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
+        public IActionResult IsyeriTemizligi(IsyeriTemizlikViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    KullaniciId = int.Parse(UserId),
+                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.IsyeriTemizligi),
+                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
+                    
+
+                    IsyeriTemizliks =new List<IsyeriTemizlik>()
+                    {
+                     new IsyeriTemizlik
+                    {
+                    TeklifSayisi =0,                    
+                    Aciklama =model.Aciklama,
+                    IsyeriTipi =model.IsyeriTipi,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    Metrekare =model.Metrekare,
+                    
+                   
+                     }
+
+                    }
+                    }
+                };
+
+
+                context.Update(kul);
+                context.SaveChanges();
+
+                return View();
+            }
+
+            }
         public IActionResult KoltukTemizlik()
         {
             if (!User.Identity.IsAuthenticated)
@@ -679,7 +731,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     SandalyeSayisi =model.SandalyeSayisi,
                     CiftKisilikYatakSayisi =model.CiftKisilikYatakSayisi,
                     TekliYatakSayisi =model.TekliYatakSayisi,
-                   
+
                      }
 
                     }
@@ -691,10 +743,10 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 context.SaveChanges();
 
                 return View();
-                //TODO burada kaldım
+               
             }
 
-           
+
         }
 
         public IActionResult KuruTemizleme()
