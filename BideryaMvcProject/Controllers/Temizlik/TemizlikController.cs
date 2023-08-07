@@ -26,6 +26,11 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
+
+        public IActionResult TemizlikHizmetleri()
+        {
+            return View();
+        }
         public IActionResult ApartmanTemizlik()
         {
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -59,7 +64,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     IlanAltKategoriId =model.IlanAltKategoriId,
                     IlanKategoriId =model.IlanKategoriId,
                     IlanBaslik =model.IlanBaslik,
-
+                    
 
                     ApartmanTemizliks =new List<ApartmanTemizlik>()
                     {
