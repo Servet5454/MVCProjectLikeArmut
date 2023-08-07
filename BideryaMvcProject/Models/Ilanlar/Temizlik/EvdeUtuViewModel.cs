@@ -6,7 +6,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
     {
         public string? ParcaSayisi { get; set; }
         public string? Nevresim { get; set; }
-
+        public string? IlanBaslik { get; set; } = "Evde Ütü Hizmeti";
 
 
     }

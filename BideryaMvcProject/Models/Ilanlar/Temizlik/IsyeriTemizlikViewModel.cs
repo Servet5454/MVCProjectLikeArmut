@@ -7,7 +7,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public string? IsyeriTipi { get; set; }
         public string? Metrekare { get; set; }
 
-
+        public string? IlanBaslik { get; set; } = "İşyeri Temizlik";
 
     }
 }

@@ -13,7 +13,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public int MinderSayisi { get; set; }
         public int TekliYatakSayisi { get; set; }
         public int CiftKisilikYatakSayisi { get; set; }
-       
+        public string? IlanBaslik { get; set; } = "Koltuk Temizlik";
 
     }
 }

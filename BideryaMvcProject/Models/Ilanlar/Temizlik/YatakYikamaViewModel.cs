@@ -9,5 +9,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
                
         public bool LekeVarmi { get; set; }
 
+        public string? IlanBaslik { get; set; } = "Yatak Yıkama";
+
     }
 }

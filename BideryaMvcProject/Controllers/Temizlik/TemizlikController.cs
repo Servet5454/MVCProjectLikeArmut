@@ -56,7 +56,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     ApartmanTemizliks =new List<ApartmanTemizlik>()
@@ -106,7 +106,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     BosEvTemizliks =new List<BosEvTemizlik>()
@@ -162,6 +162,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
+                     IlanBaslik =model.IlanBaslik,
+
 
                     CamTemizliks =new List<CamTemizlik>()
                     {
@@ -214,7 +216,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     EvdeHaliYikamas =new List<EvdeHaliYikama>()
@@ -269,7 +271,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     EvdeUtus =new List<EvdeUtu>()
@@ -325,7 +327,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     EvTemizliks =new List<EvTemizlik>()
@@ -382,7 +384,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     HaliYikamas =new List<HaliYikama>()
@@ -441,7 +443,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-                    
+                     IlanBaslik =model.IlanBaslik,
 
                     Ilaclamas =new List<Ilaclama>()
                     {
@@ -496,7 +498,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
                     InsaatSonrasiTemizliks =new List<InsaatSonrasiTemizlik>()
                     {
                      new InsaatSonrasiTemizlik
@@ -548,7 +550,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     IsyeriTemizliks =new List<IsyeriTemizlik>()
@@ -601,7 +603,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     KoltukTemizliks =new List<KoltukTemizlik>()
@@ -659,7 +661,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     KuruTemizlemes =new List<KuruTemizleme>()
@@ -717,7 +719,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     MermerCilalamas =new List<MermerCilalama>()
@@ -773,7 +775,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-
+                     IlanBaslik =model.IlanBaslik,
 
 
                     StorPerdeYikamas =new List<StorPerdeYikama>()
@@ -840,7 +842,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     CiftKisilikSayisi =model.CiftKisilikSayisi,
                     TekKisilikSayisi=model.TekKisilikSayisi,
                     LekeVarmi =model.LekeVarmi,
-
+                     IlanBaslik =model.IlanBaslik,
                     Aciklama =model.Aciklama,
                     Il =model.Il,
                     Ilce =model.Ilce,

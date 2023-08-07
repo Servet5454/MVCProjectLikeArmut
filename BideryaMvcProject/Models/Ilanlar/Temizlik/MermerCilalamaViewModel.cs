@@ -10,6 +10,6 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public string? Metrekare { get; set; }
 
 
-
+        public string? IlanBaslik { get; set; } = "Mermer Cilalama";
     }
 }
