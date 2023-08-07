@@ -10,6 +10,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         [ForeignKey(nameof(IlanId))]
         public int IlanId { get; set; }
         public int IlanKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik);
+        public int IlanAltKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi);
         public string? Aciklama { get; set; }
         public bool Aktifmi { get; set; } = false;
         public int TeklifSayisi { get; set; } = 0;

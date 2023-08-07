@@ -1,4 +1,5 @@
 ﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using BideryaMvcProject.Helper.IlanHelpers;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
@@ -9,8 +10,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public int Id { get; set; }
         [ForeignKey(nameof(IlanId))]
         public int IlanId { get; set; }
-        public int IlanKategoriId { get; set; } = 1;// TEMİZLİK KATEGORİ
-        public int IlanAltKategoriId { get; set; }
+        public int IlanKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik);
+        public int IlanAltKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.YatakYikama);
 
         public bool Aktifmi { get; set; } = false;
         public int TeklifSayisi { get; set; } = 0;
