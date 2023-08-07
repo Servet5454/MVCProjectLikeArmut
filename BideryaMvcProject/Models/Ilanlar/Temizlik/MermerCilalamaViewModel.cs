@@ -11,6 +11,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public int TeklifSayisi { get; set; } = 0;
         public string? Il { get; set; }
         public string? Ilce { get; set; }
+        public string? Aciklama { get; set; }
         public string? IlanBaslik { get; set; } = "Mermer Cilalama";
         #endregion
         public string? MekanTipi { get; set; }
