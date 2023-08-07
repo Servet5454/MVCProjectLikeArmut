@@ -8,7 +8,5 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public string? EvBuyukluk { get; set; }
         public string? Balkon { get; set; }
 
-        public string? IlanBaslik { get; set; } = "Cam Temizliği";
-
     }
 }

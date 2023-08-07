@@ -114,7 +114,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     BosEvTemizliks =new List<BosEvTemizlik>()
@@ -176,7 +175,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     CamTemizliks =new List<CamTemizlik>()
@@ -235,7 +233,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     EvdeHaliYikamas =new List<EvdeHaliYikama>()
@@ -297,7 +294,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     EvdeUtus =new List<EvdeUtu>()
@@ -310,7 +306,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     //
                     //
                     //
-                    IlanBaslik =model.IlanBaslik,
                     Aciklama =model.Aciklama,
                     Il =model.Il,
                     Ilce =model.Ilce,
@@ -363,7 +358,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     EvTemizliks =new List<EvTemizlik>()
@@ -376,7 +370,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     //
                     //
                     //
-                    IlanBaslik =model.IlanBaslik,
                     Aciklama =model.Aciklama,
                     Il =model.Il,
                     Ilce =model.Ilce,
@@ -430,7 +423,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     HaliYikamas =new List<HaliYikama>()
@@ -495,7 +487,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.Ilaclama
                     ),
-                    IlanBaslik =model.IlanBaslik,
 
 
 
@@ -562,7 +553,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.InsaatSonrasiTemizlik
                     ),
-                    IlanBaslik =model.IlanBaslik,
 
 
 
@@ -713,7 +703,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     KullaniciId = int.Parse(UserId),
                     IlanAltKategoriId =2,
                     IlanKategoriId =1,
-                    IlanBaslik =model.IlanBaslik,
 
 
                     KoltukTemizliks =new List<KoltukTemizlik>()

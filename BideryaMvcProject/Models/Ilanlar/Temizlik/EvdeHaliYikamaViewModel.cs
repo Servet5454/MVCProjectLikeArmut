@@ -8,6 +8,5 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         
         public string? HaliMetrekare { get; set; }
         public bool LekeCikarma { get; set; }
-        public string? IlanBaslik { get; set; } = "Evde Halı Yıkama";
     }
 }

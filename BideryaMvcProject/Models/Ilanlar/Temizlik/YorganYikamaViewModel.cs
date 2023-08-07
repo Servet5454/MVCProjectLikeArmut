@@ -5,6 +5,7 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
     public class YorganYikamaViewModel:IlanAdresGenelBilgi
     {
         public string? Adet { get; set; }
+        public string? Buyukluk { get; set; }
 
     }
 }

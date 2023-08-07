@@ -15,6 +15,5 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public int CiftKisilikYatakSayisi { get; set; }
        
 
-        public string? IlanBaslik { get; set; } = "Koltuk Temizliği";
     }
 }

@@ -17,6 +17,13 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
         public string? Il { get; set; }
         public string? Ilce { get; set; }
 
+
+
+        public string? Adet { get; set; }
+        public string? Buyukluk { get; set; }
+
+
+
         public string? IlanBaslik { get; set; } = "Yorgan Yıkama";
 
         public DateTime YayinlanmaTarihi { get; set; } = DateTime.Now;
