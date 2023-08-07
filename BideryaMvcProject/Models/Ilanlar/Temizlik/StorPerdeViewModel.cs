@@ -9,6 +9,9 @@ namespace BideryaMvcProject.Models.Ilanlar.Temizlik
         public string? Ilce { get; set; }
         public string? Aciklama { get; set; }
 
-        
+        public string? Metrekare { get; set; }
+        public string? Adet { get; set; }
+        public string? Kornis { get; set; }
+
     }
 }
