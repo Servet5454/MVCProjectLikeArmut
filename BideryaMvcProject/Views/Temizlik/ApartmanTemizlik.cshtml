@@ -14,7 +14,6 @@
         <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
         <img class="flower" src="~/img/icon/sign/flower.png" alt="">
     </div>
-</section>
 
 
 <header class="header-survey">
@@ -24,8 +23,6 @@
     </p>
 </header>
 
-<main>
-    <section>
         <div class="container">
             <form asp-action="ApartmanTemizlik" asp-controller="Temizlik" method="post">
                 <div class="row">
@@ -34,7 +31,7 @@
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
                                     <select id="dropdown" asp-for="DaireSayisi" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Binanızda Toplam Kaç Adet Daire Olduğunu Seçiniz</option>
+                                        <option disable select>Binadaki Daire Sayısını Seçiniz</option>
                                         <option value="1-4 Arası">1-4 Arası</option>
                                         <option value="5-9 Arası">5-9 Arası</option>
                                         <option value="10-19 Arası">10-19 Arası</option>
@@ -48,7 +45,7 @@
 
                                 <div class="sign__input-wrapper mb-25">
                                     <select id="dropdown" asp-for="CopToplama" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Binadaki Çöplerin Toplanmasını İstiyor Musunuz?</option>
+                                        <option disable select>Çöpler Toplansın Mı?</option>
                                         <option value="true">Evet</option>
                                         <option value="false">Hayır</option>
                                     </select>
@@ -78,8 +75,7 @@
                 </div>
             </form>
         </div>
-    </section>
-</main>
+</section>
 
 
 

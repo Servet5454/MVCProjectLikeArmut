@@ -14,8 +14,6 @@
         <img class="flower" src="~/img/icon/sign/flower.png" alt="">
     </div>
 
-</section>
-
 
 <header class="header-survey">
     <h1 id="title" class="text-center text-shadow">Evde Halı Yıkama</h1>
@@ -24,19 +22,15 @@
     </p>
 </header>
 
-
-
-<main>
-    <section>
         <div class="container">
             <form asp-action="EvdeHaliYikama" asp-controller="Temizlik" method="post">
                 <div class="row">
-                    <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
+                    <div class="col-xxl-7 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8">
                         <div class="sign__wrapper white-bg">
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
                                     <select id="dropdown" asp-for="HaliMetrekare" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Toplam Kaç M² Halı Temizlenecek?</option>
+                                        <option disable select>Temizlencek Halı Büyüklüğünü Belirtiniz</option>
                                         <option value="0-9 M²">0-9 M²</option>
                                         <option value="10-19 M²">10-19 M²</option>
                                         <option value="20-29 M²">20-29 M²</option>
@@ -49,7 +43,7 @@
 
                                 <div class="sign__input-wrapper mb-25">
                                     <select id="dropdown" asp-for="LekeCikarma" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Halılarda Leke Çıkarma İşlemi Yapılacak Mı?</option>
+                                        <option disable select>Leke Çıkarma İşlemi Yapılacak Mı?</option>
                                         <option value="true">Evet</option>
                                         <option value="false">Hayır</option>
                                     </select>
@@ -79,8 +73,7 @@
                 </div>
             </form>
         </div>
-    </section>
-</main>
+</section>
 
 
 
