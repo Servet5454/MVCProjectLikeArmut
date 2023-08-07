@@ -19,8 +19,10 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik
 
 
 
-        public string? Adet { get; set; }
-        public string? Buyukluk { get; set; }
+        public string? CiftKisilikSayisi { get; set; }
+        public string? TekKisilikSayisi { get; set; }
+
+        public bool LekeVarmi { get; set; }
 
 
 

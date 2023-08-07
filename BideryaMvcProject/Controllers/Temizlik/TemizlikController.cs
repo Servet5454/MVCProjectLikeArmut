@@ -33,10 +33,6 @@ namespace BideryaMvcProject.Controllers.Temizlik
         }
         public IActionResult ApartmanTemizlik()
         {
-            var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-            var UserEmail = User.FindFirstValue(ClaimTypes.Email);
-
-            var liste = context.Ilans.Where(p => p.KullaniciId ==int.Parse(UserId)).ToList();
             return View();
         }
         [HttpPost]
@@ -68,13 +64,13 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     {
                      new ApartmanTemizlik
                     {
-                     Aciklama =model.Aciklama,
-
+                    Aciklama =model.Aciklama,
                     DaireSayisi =model.DaireSayisi,
                     CopToplama =model.CopToplama,
                     Aktifmi =true,
                     Il =model.Il,
                     Ilce =model.Ilce,
+                    
 
                      }
                     }
@@ -111,27 +107,21 @@ namespace BideryaMvcProject.Controllers.Temizlik
                     AdresDetay =model.AdresGenel,
                     Il =model.Il,
                     Ilce =model.Ilce,
-                    KullaniciId = int.Parse(UserId),
-                    IlanAltKategoriId =2,
-                    IlanKategoriId =1,
+                   
 
 
                     BosEvTemizliks =new List<BosEvTemizlik>()
                     {
                      new BosEvTemizlik
                     {
-                    TeklifSayisi =0,
-                    IlanAltKategoriId =Convert.ToInt32(AltKategoriEnum.TemizlikAltKategori.BosEvTemizligi),
+                    
                     EvinDurumu =model.EvinDurumu,
                     BanyoSayisi =model.BanyoSayisi,
                     OdaSayisi =model.OdaSayisi,
                     Aciklama =model.Aciklama,
                     Il =model.Il,
                     Ilce =model.Ilce,
-                    IlanKategoriId =Convert.ToInt32(AltKategoriEnum.IlanKategori.Temizlik),
-                    Aktifmi =true,
-
-
+                   
                      }
 
                     }
