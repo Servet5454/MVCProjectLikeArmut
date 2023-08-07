@@ -18,7 +18,7 @@
 
 
 <header class="header-survey">
-    <h1 id="title" class="text-center text-shadow">Evde Halı Yıkama</h1>
+    <h1 id="title" class="text-center text-shadow">Yatak Temizleme</h1>
     <p id="description" class="description text-center">
         Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
     </p>
@@ -35,8 +35,8 @@
                         <div class="sign__wrapper white-bg">
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" asp-for="Adet" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Kaç Adet Yatak Temizlenecek</option>
+                                    <select id="dropdown" asp-for="TekKisilikSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Tek Kişilik Yatak Sayısı</option>
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -49,11 +49,15 @@
 
 
                                 <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" asp-for="Buyukluk" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Yatak Büyüklüğü Nedir?</option>
-                                        <option value="1">Tek Kişilik (Eni 130cm'den Küçük)</option>
-                                        <option value="2">Çift Kişilik (Eni 130cm'den Büyük)</option>
-                                       
+                                    <select id="dropdown" asp-for="CiftKisilikSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Çift Kişilik Yatak Sayısı</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6-10 Arası</option>
+                                        <option value="7">10'dan Fazla</option>
                                     </select>
                                 </div>
 
