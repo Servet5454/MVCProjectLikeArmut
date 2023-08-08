@@ -1,32 +1,36 @@
 ﻿@model BideryaMvcProject.Models.Ilanlar.Temizlik.EvdeHaliYikamaViewModel
+
 <div class="bg-shape">
-    <img src="~/img/shape/shape-1.png" alt="">
+        <img src="~/img/shape/shape-1.png" alt="">
 </div>
 
-<section class="signup__area po-rel-z1 pt-100 pb-145">
-    <div class="sign__shape">
-        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
-        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
-        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
-        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
-        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
-        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
-        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
-    </div>
 
 
-<header class="header-survey">
-    <h1 id="title" class="text-center text-shadow">Evde Halı Yıkama</h1>
-    <p id="description" class="description text-center">
-        Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
-    </p>
-</header>
+    <section class="signup__area po-rel-z1 pt-100 pb-145">
+        <div class="sign__shape">
+            <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+            <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+            <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+            <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+            <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+            <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+            <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+        </div>
+    
+
+
+        <header class="header-survey">
+            <h1 id="title" class="text-center text-shadow">Evde Halı Yıkama</h1>
+            <p id="description" class="description text-center">
+                Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+            </p>
+        </header>
 
         <div class="container">
             <form asp-action="EvdeHaliYikama" asp-controller="Temizlik" method="post">
                 <div class="row">
-                    <div class="col-xxl-7 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8">
-                        <div class="sign__wrapper white-bg">
+                    <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
+                        <div class="sign__wrapper">
                             <div class="sign__form">
                                 <div class="sign__input-wrapper mb-25">
                                     <select id="dropdown" asp-for="HaliMetrekare" class="m-btn m-btn-4 w-100" required>
@@ -67,39 +71,41 @@
                                 </div>
 
                                 <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+
                             </div>
                         </div>
                     </div>
-                </div>
+                    </div>
+                
             </form>
         </div>
-</section>
+    </section>
 
 
 
-<script>window.onload = function () {
-        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
-        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
-        hizmetVerenCheckbox.checked = false;
-        hizmetArayanCheckbox.checked = true;
-    };
+    <script>window.onload = function () {
+            const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+            const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+            hizmetVerenCheckbox.checked = false;
+            hizmetArayanCheckbox.checked = true;
+        };
 
 
-    function toggleCheck(checkboxId) {
-        const checkbox = document.getElementById(checkboxId);
-        const checkboxes = document.getElementsByName("hizmet");
+        function toggleCheck(checkboxId) {
+            const checkbox = document.getElementById(checkboxId);
+            const checkboxes = document.getElementsByName("hizmet");
 
-        if (checkbox.checked) {
-            checkboxes.forEach((item) => {
-                if (item.id !== checkboxId) {
-                    item.checked = false;
-                }
-            });
-        } else {
-            checkbox.checked = true;
-        }
-    }</script>
+            if (checkbox.checked) {
+                checkboxes.forEach((item) => {
+                    if (item.id !== checkboxId) {
+                        item.checked = false;
+                    }
+                });
+            } else {
+                checkbox.checked = true;
+            }
+        }</script>
 
 
-<script src=~/FormSayfasi/FormSayfa.js></script>
+    <script src=~/FormSayfasi/FormSayfa.js></script>
 

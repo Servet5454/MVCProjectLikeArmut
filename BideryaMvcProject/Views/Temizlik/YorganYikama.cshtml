@@ -14,88 +14,83 @@
         <img class="flower" src="~/img/icon/sign/flower.png" alt="">
     </div>
 
-</section>
 
-
-<header class="header-survey">
+<header class="header-survey" style="justify-content-">
     <h1 id="title" class="text-center text-shadow">Yorgan Temizleme</h1>
     <p id="description" class="description text-center">
         Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
     </p>
 </header>
 
-
-
-<main>
-    <section>
         <div class="container">
-            <form asp-action="YorganYikama" asp-controller="Temizlik" method="post">
-                <div class="row">
-                    <div class="col-xxl-6 offset-xxl-3 col-xl-6 offset-xl-3 col-lg-8 offset-lg-2">
-                        <div class="sign__wrapper white-bg">
-                            <div class="sign__form">
-                                <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" asp-for="TekKisilikSayisi" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Tek Kişilik Yorgan Sayısını Belirtiniz</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6-10 Arası">6-10 Arası</option>
-                                        <option value="10'dan fazla'">10'dan Fazla</option>
-                                    </select>
+            <div class="row justify-content-center">
+                <form asp-action="YorganYikama" asp-controller="Temizlik" method="post">
+                    <div class="row">
+                        <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
+                            <div class="sign__wrapper">
+                                <div class="sign__form">
+                                    <div class="sign__input-wrapper mb-25">
+                                        <select id="dropdown" asp-for="TekKisilikSayisi" class="m-btn m-btn-4 w-100" required>
+                                            <option disable select>Tek Kişilik Yorgan Sayısını Belirtiniz</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6-10 Arası">6-10 Arası</option>
+                                            <option value="10'dan fazla'">10'dan Fazla</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="sign__input-wrapper mb-25">
+                                        <select id="dropdown" asp-for="CiftKisilikSayisi" class="m-btn m-btn-4 w-100" required>
+                                            <option disable select>Çift Kişilik Yorgan Sayısını Belirtiniz</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6-10 Arası">6-10 Arası</option>
+                                            <option value="10'dan fazla">10'dan Fazla</option>
+                                        </select>
+                                    </div>
+
+
+                                    <div class="sign__input-wrapper mb-25">
+                                        <select id="dropdown" asp-for="LekeVarmi" class="m-btn m-btn-4 w-100" required>
+                                            <option disable select>Leke Çıkarma İşlemi Yapılacak Mı?</option>
+                                            <option value="true">Evet</option>
+                                            <option value="false">Hayır</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="sign__input-wrapper mb-25">
+
+                                        <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                            <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                        </select>
+                                        <br />
+                                        <br />
+                                        <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                            <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                        </select>
+
+                                    </div>
+
+                                    <div class="contact__input textarea">
+                                        <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
                                 </div>
-
-
-                                <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" asp-for="CiftKisilikSayisi" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Çift Kişilik Yorgan Sayısını Belirtiniz</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6-10 Arası">6-10 Arası</option>
-                                        <option value="10'dan fazla">10'dan Fazla</option>
-                                    </select>
-                                </div>
-
-
-                                <div class="sign__input-wrapper mb-25">
-                                    <select id="dropdown" asp-for="LekeVarmi" class="m-btn m-btn-4 w-100" required>
-                                        <option disable select>Leke Çıkarma İşlemi Yapılacak Mı?</option>
-                                        <option value="true">Evet</option>
-                                        <option value="false">Hayır</option>
-                                    </select>
-                                </div>
-
-                                <div class="sign__input-wrapper mb-25">
-
-                                    <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
-                                        <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
-                                    </select>
-                                    <br />
-                                    <br />
-                                    <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
-                                        <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
-                                    </select>
-
-                                </div>
-
-                                <div class="contact__input textarea">
-                                    <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
-                                </div>
-
-                                <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </section>
-</main>
+</section>
 
 
 
