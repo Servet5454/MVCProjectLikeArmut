@@ -5,6 +5,7 @@
         public enum IlanKategori
         {
             Temizlik =1,
+            TadilatVeDekorasyon =2,
 
         }
         public enum TemizlikAltKategori

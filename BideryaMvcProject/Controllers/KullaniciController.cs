@@ -12,6 +12,7 @@ using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
 using BideryaMvcProject.Helper;
 using Microsoft.Identity.Client;
 using Microsoft.EntityFrameworkCore;
+using BideryaMvcProject.DataBase.Entities.Ilanlar;
 
 namespace BideryaMvcProject.Controllers
 {
@@ -265,19 +266,24 @@ namespace BideryaMvcProject.Controllers
             emailSender.SendEmail(Email, "ŞifreYenileme", yenisifre.ToString());
             return View();
         }
-        public IActionResult Ilanlarim()
+        public async Task<IActionResult> Ilanlarim()
         {
             var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
             var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
             //var ilanlarim =context.Kullanicis.Where(p=>p.Id ==int.Parse(UserId)).Include(p=>p.Ilans).ThenInclude(p=>p.KoltukTemizlik).ToList();
 
-            var ilan = context.Ilans.Where(p => p.KullaniciId ==int.Parse(UserId))
-                .Include(p => p.Kullanici).Where(p => p.KullaniciId ==int.Parse(UserId))
-                                                .ToList();
+            var ilan = await context.Ilans.Where(p => p.KullaniciId ==int.Parse(UserId))
+                .Include(p => p.Kullanici).Where(p => p.KullaniciId ==int.Parse(UserId)).Select(p => p.IlanBaslik)
+                                                .ToListAsync();
             var kullanici =context.Kullanicis.Where(p => p.Id ==int.Parse(UserId))
                 .Include(p=>p.Ilans).Include(p=>p.Ilans.Where(p=>p.KullaniciId==int.Parse(UserId))).ThenInclude(p=>p.KoltukTemizliks).ToList();
             
+            return View(ilan);
+        }
+
+        public async Task<IActionResult> Ilanlarim(Ilan model)
+        {
             return View();
         }
         

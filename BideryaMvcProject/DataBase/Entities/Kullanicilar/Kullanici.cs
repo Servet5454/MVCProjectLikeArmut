@@ -1,4 +1,5 @@
 ﻿using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Numerics;
 
 namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
@@ -11,7 +12,7 @@ namespace BideryaMvcProject.DataBase.Entities.Kullanicilar
             KullaniciAdress = new HashSet<KullaniciAdres>();
             Ilans =new HashSet<Ilan>();
         }
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string? Ad { get; set; }
         public string? Soyad { get; set; }

@@ -36,7 +36,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult ApartmanTemizlik(ApartmanTemizlikViewModel model)
+        public async Task<IActionResult> ApartmanTemizlik(ApartmanTemizlikViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -49,7 +49,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
-                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+                Kullanici kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id == int.Parse(UserId));
 
                 kul.Ilans =new List<Ilan>() { new Ilan
                 {
@@ -77,8 +77,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 };
 
 
-                context.Update(kul);
-                context.SaveChanges();
+                await context.AddAsync(kul);
+                await context.SaveChangesAsync();
                 return View();
             }
         }
@@ -87,7 +87,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult BosEvTemizligi(BosEvTemizlikViewModel model)
+        public async Task<IActionResult> BosEvTemizligi(BosEvTemizlikViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -99,7 +99,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
-                Kullanici kul = context.Kullanicis.FirstOrDefault(p => p.Id ==int.Parse(UserId));
+                Kullanici kul =await context.Kullanicis.FirstOrDefaultAsync(p => p.Id == int.Parse(UserId));
 
                 kul.Ilans =new List<Ilan>() { new Ilan
                 {
@@ -129,8 +129,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 };
 
 
-                context.Update(kul);
-                context.SaveChanges();
+                await context.AddAsync(kul);
+                await context.SaveChangesAsync();
 
                 return View();
                 //TODO burada kaldım
@@ -142,7 +142,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult CamTemizligi(CamTemizlikViewModel model)
+        public async Task<IActionResult> CamTemizligi(CamTemizlikViewModel model)
         {
 
             if (!ModelState.IsValid)
@@ -185,8 +185,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 };
 
 
-                context.Update(kul);
-                context.SaveChanges();
+               context.Update(kul);
+               await context.SaveChangesAsync();
 
                 return View();
 
@@ -241,7 +241,8 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
                 context.Update(kul);
                 context.SaveChanges();
-
+                
+                 
                 return View();
                 //TODO burada kaldım
             }
@@ -531,6 +532,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
         {
             return View();
         }
+        [HttpPost]
         public IActionResult IsyeriTemizligi(IsyeriTemizlikViewModel model)
         {
             if (!ModelState.IsValid)
