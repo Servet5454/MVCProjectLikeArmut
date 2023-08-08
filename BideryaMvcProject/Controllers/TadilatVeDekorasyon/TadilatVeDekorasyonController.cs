@@ -18,6 +18,10 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         {
             return View();
         }
+        public IActionResult TadilatVeDekorasyon()
+        {
+            return View();
+        }
         public IActionResult CamBalkon()
         {
             return View();
