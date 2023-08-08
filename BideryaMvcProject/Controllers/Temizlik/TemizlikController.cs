@@ -366,7 +366,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult HaliYikama(HaliYikamaViewModel model)
+        public async Task<IActionResult> HaliYikama(HaliYikamaViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -410,7 +410,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
 
@@ -423,7 +423,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult Ilaclama(IlaclamaViewModel model)
+        public async Task<IActionResult> Ilaclama(IlaclamaViewModel model)
         {
 
             if (!ModelState.IsValid)
@@ -464,7 +464,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
                 };
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
                 return View();
 
                 //TODO burada kaldım
@@ -477,7 +477,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult InsaatSonrasiTemizlik(InsaatSonrasiTemizlikViewModel model)
+        public async Task<IActionResult> InsaatSonrasiTemizlik(InsaatSonrasiTemizlikViewModel model)
         {
 
 
@@ -522,7 +522,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
                 return View();
 
                 //TODO burada kaldım
@@ -533,7 +533,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult IsyeriTemizligi(IsyeriTemizlikViewModel model)
+        public async Task<IActionResult> IsyeriTemizligi(IsyeriTemizlikViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -574,7 +574,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
             }
@@ -586,7 +586,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult KoltukTemizlik(KoltukTemizlikViewModel model)
+        public async Task<IActionResult> KoltukTemizlik(KoltukTemizlikViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -630,7 +630,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
 
@@ -644,7 +644,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult KuruTemizleme(KuruTemizlemeViewModel model)
+        public async Task<IActionResult> KuruTemizleme(KuruTemizlemeViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -690,7 +690,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+               await context.SaveChangesAsync();
 
                 return View();
 
@@ -702,7 +702,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult MermerCilalama(MermerCilalamaViewModel model)
+        public async Task<IActionResult> MermerCilalama(MermerCilalamaViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -745,7 +745,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
 
@@ -757,7 +757,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult StorPerdeYikama(StorPerdeViewModel model)
+        public async Task<IActionResult> StorPerdeYikama(StorPerdeViewModel model)
         {
 
             if (!ModelState.IsValid)
@@ -802,7 +802,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
 
@@ -813,7 +813,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult YatakYikama(YatakYikamaViewModel model)
+        public async Task<IActionResult> YatakYikama(YatakYikamaViewModel model)
         {
 
             if (!ModelState.IsValid)
@@ -859,7 +859,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
 
@@ -870,7 +870,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
             return View();
         }
         [HttpPost]
-        public IActionResult YorganYikama(YorganYikamaViewModel model)
+        public async Task<IActionResult> YorganYikama(YorganYikamaViewModel model)
         {
 
             if (!ModelState.IsValid)
@@ -915,7 +915,7 @@ namespace BideryaMvcProject.Controllers.Temizlik
 
 
                 context.Update(kul);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
 
                 return View();
 
