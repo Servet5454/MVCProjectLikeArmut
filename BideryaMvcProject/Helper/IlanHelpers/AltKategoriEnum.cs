@@ -81,13 +81,12 @@
             PVCKapiPencereBalkon = 245,
             SeramikDoseme = 246,
             SesYalitimi = 247,
-            Sineklik = 248,
-            StorPerde = 249,
-            SuYalitimi = 250,
-            SupurgelikMontaji = 251,
-            SurguluKapi = 252,
-            TelOrguCiti = 253,
-            TenteBrandaTadilatVeDekorasyon = 254
+            StorPerde = 248,
+            SuYalitimi = 249,
+            SupurgelikMontaji = 250,
+            SurguluKapi = 251,
+            TelOrguCiti = 252,
+            TenteBrandaTadilatVeDekorasyon = 253
         }
 
 
