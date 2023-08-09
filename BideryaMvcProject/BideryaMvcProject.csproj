@@ -16,6 +16,9 @@
     <None Remove="Views\HizmetlerGenel\" />
     <Content Remove="wwwroot\img\Hizmetler\" />
     <Content Remove="wwwroot\img\Hizmetler\Temizlik\" />
+    <Content Remove="wwwroot\img\Tadilat\binaguclendirme.jpg" />
+    <Content Remove="wwwroot\img\Tadilat\catitadilati.jpg" />
+    <Content Remove="wwwroot\img\Hizmetler\Tadilat\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
@@ -35,5 +38,6 @@
     <Folder Include="Views\HizmetlerGenel\" />
     <Folder Include="wwwroot\img\Hizmetler\" />
     <Folder Include="wwwroot\img\Hizmetler\Temizlik\" />
+    <Folder Include="wwwroot\img\Hizmetler\Tadilat\" />
   </ItemGroup>
 </Project>
