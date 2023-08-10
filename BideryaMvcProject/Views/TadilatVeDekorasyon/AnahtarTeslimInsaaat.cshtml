@@ -1,5 +1,185 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon.AnahtarTeslimInsaatViewModel
+
+<div class="bg-shape">
+    <img src="~/img/shape/shape-1.png" alt="">
+</div>
+
+<section class="signup__area po-rel-z1 pt-100 pb-145">
+    <div class="sign__shape">
+        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+    </div>
+
+
+    <header class="header-survey">
+        <h1 id="title" class="text-center text-shadow">Anahtar Teslim İnşaat</h1>
+        <p id="description" class="description text-center">
+            Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+        </p>
+    </header>
+
+    <div class="container">
+        <form asp-action="AnahtarTeslimInsaaat" asp-controller="TadilatVeDekorasyon" method="post">
+            <div class="row">
+                <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
+                    <div class="sign__wrapper">
+                        <div class="sign__form">
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Kat" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Binanın Kaç Katlı Olacağını Belirtiniz</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10 ve Üzeri">10 ve Üzeri</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Kat" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Binada Kaç Daire Olacağını Belirtiniz</option>
+                                    <option value="0">Binada Daire Olmayacak</option>
+                                    <option value="1">1 (Müstakil Ev)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10 ve Üzeri">10 ve Üzeri</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="ProjeCizimi" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>İnşaatın Projesi Hazır Mı?</option>
+                                    <option value="Hazır Değil">Proje Henüz Hazır Değil</option>
+                                    <option value="Hazır">Projesi Mevcut</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="OdemeSekli" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Projenin Ödeme Şekli Nasıl Olacak?</option>
+                                    <option value="Peşin">Peşin</option>
+                                    <option value="Hakedişe Tabi">Hakedişe Tabi</option>
+                                    <option value="Kat Karşılığı">Kat Karşılığı</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="BinaMalzemesi" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Bina Malzemesini Belirtiniz</option>
+                                    <option value="Betonarme">Betonarme</option>
+                                    <option value="Taş">Taş</option>
+                                    <option value="Ahşap">Ahşap</option>
+                                    <option value="Tuğla">Tuğla</option>
+                                    <option value="Çelik">Çelik</option>
+                                    <option value="Prefabrik">Prefabrik</option>
+                                    <option value="Diğer">Diğer</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="MalzemeKalitesi" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Malzeme Kalitesini Belirtiniz</option>
+                                    <option value="Yüksek">Yüksek Kaliteli</option>
+                                    <option value="Ota">Orta Kaliteli</option>
+                                    <option value="Ekonomik">Ekonomik</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="TabanAlani" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Binanın Yapılacağı Taban Alanını Belirtiniz</option>
+                                    <option value="50 M²">50 M²</option>
+                                    <option value="70 M²">70 M²</option>
+                                    <option value="100 M²">100 M²</option>
+                                    <option value="125 M²">125 M²</option>
+                                    <option value="200 M²">200 M²</option>
+                                    <option value="350 M²">350 M²</option>
+                                    <option value="500 M² ve Üzeri">500 M² ve Üzeri</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="ArsaDurumu" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>İnşaat Yapılacak Arsanın Durumunu Belirtiniz</option>
+                                    <option value="Boş">Arsa Boş</option>
+                                    <option value="Yıkılacak">Arsa Üzerinde Yapı Var Yıkılacak</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="ImarIzni" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Arsanın İmar Durumunu Belirtiniz</option>
+                                    <option value="İzni Yok">İmar İzni Yok</option>
+                                    <option value="İzni Var">İmar İzni Var</option>
+                                    <option value="Ekonomik">Ekonomik</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+
+                                <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                    <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                </select>
+                                <br />
+                                <br />
+                                <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                    <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                </select>
+
+                            </div>
+
+                            <div class="contact__input textarea">
+                                <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
+                            </div>
+
+                            <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true;
+        }
+    }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+
