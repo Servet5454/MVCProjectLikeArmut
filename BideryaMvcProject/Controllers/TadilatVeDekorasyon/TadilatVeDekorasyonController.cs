@@ -17,6 +17,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         public IActionResult Index()
         {
             return View();
+
         }
         public IActionResult TadilatVeDekorasyon()
         {

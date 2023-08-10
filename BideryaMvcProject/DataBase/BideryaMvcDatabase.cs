@@ -57,7 +57,7 @@ namespace BideryaMvcProject.DataBase
         #endregion
 
         #region Tadilat Dekorasyon DbSet
-
+        public DbSet<Tadilat>? Tadilats { get; set; }
         public DbSet<CamBalkon>? CamBalkons { get; set; }
         public DbSet<EvTadilat>? EvTadilats { get; set; }
         public DbSet<Mantolama>? Mantolamas { get; set; }

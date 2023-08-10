@@ -24,7 +24,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public string? MalzemeKalitesi { get; set; }
         public string? Aciklama { get; set; }
         public string? Diger { get; set; }
-        public virtual Ilan? Ilan { get; set; }
+        public virtual Tadilat? Tadilat { get; set; }
 
     }
 }

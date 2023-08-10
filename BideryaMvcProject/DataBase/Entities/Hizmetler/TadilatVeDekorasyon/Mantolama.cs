@@ -18,6 +18,6 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public int BalkonTipi { get; set; }
         public string? Aciklama { get; set; }
 
-        public virtual Ilan? Ilan { get; set; }
+        public virtual Tadilat? Tadilat { get; set; }
     }
 }
