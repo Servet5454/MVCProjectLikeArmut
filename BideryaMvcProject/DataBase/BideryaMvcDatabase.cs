@@ -61,6 +61,11 @@ namespace BideryaMvcProject.DataBase
         public DbSet<AlciIsleri>? AlciIsleris { get; set; }
         public DbSet<AlcipanIsleri>? AlcipanIsleris { get; set; }
         public DbSet<AnahtarTeslimInsaat>? AnahtarTeslimInsaats { get; set; }
+        public DbSet<BahceBakimi>? BahceBakimis { get; set; }
+        public DbSet<BalkonFilesi>? BalkonFilesis { get; set; }
+        public DbSet<BanyoTadilat>? BanyoTadilats { get; set; }
+        public DbSet<BinaGuclendirme>? BinaGuclendirmes { get; set; }
+        public DbSet<BoyaBadana>? BoyaBadanas { get; set; }
         public DbSet<CamBalkon>? CamBalkons { get; set; }
         public DbSet<EvTadilat>? EvTadilats { get; set; }
         public DbSet<Mantolama>? Mantolamas { get; set; }

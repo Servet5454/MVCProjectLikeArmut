@@ -211,34 +211,468 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> AnahtarTeslimInsaaat(AnahtarTeslimInsaatViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        AnahtarTeslimInsaats =new List<AnahtarTeslimInsaat>
+                        {new AnahtarTeslimInsaat()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AnahtarTeslimInsaaat),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            OdemeSekli =model.OdemeSekli,
+                            ArsaDurumu =model.ArsaDurumu,
+                            BinaMalzemesi =model.BinaMalzemesi,
+                            Daire =model.Daire,
+                            ImarIzni =model.ImarIzni,
+                            MalzemeKalitesi =model.MalzemeKalitesi,
+                            ProjeCizimi =model.ProjeCizimi,
+                            TabanAlani =model.TabanAlani,
+                            Kat =model.Kat,
+                                                        
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult AnahtarTeslimTadilat()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AnahtarTeslimTadilat(AnahtarTeslimInsaatViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AnahtarTeslimTadilat),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        AnahtarTeslimTadilats =new List<AnahtarTeslimTadilat>
+                        {new AnahtarTeslimTadilat()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AnahtarTeslimTadilat),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                           
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult BahceBakimi()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> BahceBakimi(BahceBakimiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BahceBakimi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        BahceBakimis =new List<BahceBakimi>
+                        {new BahceBakimi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BahceBakimi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+
+        }
         public IActionResult BalkonFilesi()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> BalkonFilesi(BalkonFilesiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BalkonFilesi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        BalkonFilesis =new List<BalkonFilesi>
+                        {new BalkonFilesi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BalkonFilesi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
 
         public IActionResult BanyoTadilat()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> BanyoTadilat(BanyoTadilatViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BanyoTadilat),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        BalkonFilesis =new List<BalkonFilesi>
+                        {new BalkonFilesi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BanyoTadilat),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult BinaGuclendirme()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> BinaGuclendirme(BinaGuclendirmeViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BinaGuclendirme),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        BinaGuclendirmes =new List<BinaGuclendirme>
+                        {new BinaGuclendirme()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BinaGuclendirme),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult BoyaBadana()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> BoyaBadana(BoyaBadanaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BoyaBadana),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        BoyaBadanas =new List<BoyaBadana>
+                        {new BoyaBadana()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BoyaBadana),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult CamBalkon()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CamBalkon(CamBalkonViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CamBalkon),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        CamBalkons =new List<CamBalkon>
+                        {new CamBalkon()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CamBalkon),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+
         }
         public IActionResult CatiTadilati()
         {
