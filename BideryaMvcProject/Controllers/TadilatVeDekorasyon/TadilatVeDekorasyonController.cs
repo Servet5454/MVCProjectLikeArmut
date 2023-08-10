@@ -48,7 +48,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                 var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 var UserEmail = User.FindFirstValue(ClaimTypes.Email);
 
-                Kullanici? kul =await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
 
                 kul.Ilans =new List<Ilan>() { new Ilan
                 {
@@ -72,9 +72,9 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IsTuru =model.IsTuru,
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
-                           
+
                         }
-                            
+
                         }
                     }
 
@@ -93,9 +93,119 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         {
             return View();
         }
-        public IActionResult AlcipanIsleri()
+        [HttpPost]
+        public async Task<IActionResult> AlciIsleri(AlciIsleriViewModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        AlciIsleris =new List<AlciIsleri>
+                        {new AlciIsleri()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AlciIsleri),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            ExtraHizmet =model.ExtraHizmet,
+                            Malzeme =model.Malzeme,
+                            Metrekare =model.Metrekare,
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
+        public IActionResult AlcipanIsleri()
+        {        
+
+        return View();    
+            
+        }
+        [HttpPost]
+        public async Task<IActionResult> AlcipanIsleri(AlcipanIsleriViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        AlcipanIsleris =new List<AlcipanIsleri>
+                        {new AlcipanIsleri()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AlciIsleri),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            ExtraHizmet =model.ExtraHizmet,
+                            Malzeme =model.Malzeme,
+                            Metrekare =model.Metrekare,
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult AnahtarTeslimInsaaat()
         {

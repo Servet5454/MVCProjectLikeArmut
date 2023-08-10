@@ -281,7 +281,7 @@ namespace BideryaMvcProject.Controllers
             
             return View(ilan);
         }
-
+        [HttpPost]
         public async Task<IActionResult> Ilanlarim(Ilan model)
         {
             return View();

@@ -12,6 +12,9 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
 
         public Ilan? Ilan { get; set; }
         public virtual ICollection<AhsapMerdiven>? AhsapMerdivens { get; set; }
+        public virtual ICollection<AlciIsleri>? AlciIsleris { get; set; }
+        public virtual ICollection<AlcipanIsleri>? AlcipanIsleris { get; set; }
+        public virtual ICollection<AnahtarTeslimInsaat>? AnahtarTeslimInsaats { get; set; }
         public virtual ICollection<CamBalkon>? CamBalkons { get; set; }
         public virtual ICollection<EvTadilat>? EvTadilats { get; set; }
         public virtual ICollection<Mantolama>? Mantolamas { get; set; }
