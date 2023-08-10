@@ -1,5 +1,109 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon.AhsapMerdivenIsleriViewmodel
+<div class="bg-shape">
+    <img src="~/img/shape/shape-1.png" alt="">
+</div>
+
+<section class="signup__area po-rel-z1 pt-100 pb-145">
+    <div class="sign__shape">
+        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+    </div>
+
+
+    <header class="header-survey">
+        <h1 id="title" class="text-center text-shadow">Ahşap Merdiven İşleri</h1>
+        <p id="description" class="description text-center">
+            Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+        </p>
+    </header>
+
+    <div class="container">
+        <form asp-action="AhsapMerdiven" asp-controller="TadilatVeDekorasyon" method="post">
+            <div class="row">
+                    <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
+                        <div class="sign__wrapper">
+                            <div class="sign__form">
+                                <div class="sign__input-wrapper mb-25">
+                                    <select id="dropdown" asp-for="BasamakSayisi" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Basamak Sayısını Belirtiniz</option>
+                                        <option value="0-10">0-10</option>
+                                        <option value="11-20">11-20</option>
+                                        <option value="21-30">21-30</option>
+                                        <option value="31-40">31-40</option>
+                                        <option value="41-50">41-50</option>
+                                        <option value="50'den Fazla">50'den Fazla</option>
+                                    </select>
+                                </div>
+
+                                <div class="sign__input-wrapper mb-25">
+                                    <select id="dropdown" asp-for="IsTuru" class="m-btn m-btn-4 w-100" required>
+                                        <option disable select>Yapılmasını İstediğiniz İşlemi Belirtiniz</option>
+                                        <option value="Ahşap Merdiven Yapımı">Ahşap Merdiven Yapımı</option>
+                                        <option value="Ahşap Merdiven Korkuluğu">Ahşap Merdiven Korkuluğu</option>
+                                        <option value="Ahşap Merdiven Kaplama">Ahşap Merdiven Kaplama</option>
+                                        <option value="Ahşap Merdiven Tamiri">Ahşap Merdiven Tamiri</option>
+                                        <option value="Ahşap Merdiven Boyama">Ahşap Merdiven Boyama</option>
+                                        <option value="Diğer">Diğer</option>
+                                    </select>
+                                </div>
+
+
+                                <div class="sign__input-wrapper mb-25">
+
+                                    <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                        <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                    </select>
+                                    <br />
+                                    <br />
+                                    <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                        <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                    </select>
+
+                                </div>
+
+                                <div class="contact__input textarea">
+                                    <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
+                                </div>
+
+                                <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+</div>
+</section>
+
+
+
+<script>window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true;
+        }
+    }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+
