@@ -11,6 +11,7 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public int AltKategoriId { get; set; }
 
         public Ilan? Ilan { get; set; }
+        public virtual ICollection<AhsapMerdiven>? AhsapMerdivens { get; set; }
         public virtual ICollection<CamBalkon>? CamBalkons { get; set; }
         public virtual ICollection<EvTadilat>? EvTadilats { get; set; }
         public virtual ICollection<Mantolama>? Mantolamas { get; set; }

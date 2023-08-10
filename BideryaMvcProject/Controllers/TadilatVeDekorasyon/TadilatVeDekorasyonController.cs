@@ -1,5 +1,13 @@
 ﻿using BideryaMvcProject.DataBase;
+using BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon;
+using BideryaMvcProject.DataBase.Entities.Hizmetler.Temizlik;
+using BideryaMvcProject.DataBase.Entities.Ilanlar;
+using BideryaMvcProject.DataBase.Entities.Kullanicilar;
+using BideryaMvcProject.Helper.IlanHelpers;
+using BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
 {
@@ -26,6 +34,60 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         public IActionResult AhsapMerdiven()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> AhsapMerdiven(AhsapMerdivenIsleriViewmodel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul =await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        AhsapMerdivens =new List<AhsapMerdiven>
+                        {new AhsapMerdiven()
+                        {
+                            BasamakSayisi =model.BasamakSayisi,
+                            Aciklama =model.Aciklama,
+                            IsTuru =model.IsTuru,
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                           
+                        }
+                            
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult AlciIsleri()
         {
