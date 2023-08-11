@@ -23,6 +23,8 @@ namespace BideryaMvcProject.DataBase.Entities.Ilanlar
         public virtual ICollection<BoyaBadana>? BoyaBadanas { get; set; }
         public virtual ICollection<CamBalkon>? CamBalkons { get; set; }
         public virtual ICollection<CatiTadilati>? CatiTadilatis { get; set; }
+        public virtual ICollection<CelikEvYapimi>? CelikEvYapimis { get; set; }
+        public virtual ICollection<CelikKapi>? CelikKapis { get; set; }
         public virtual ICollection<EvTadilat>? EvTadilats { get; set; }
         public virtual ICollection<Mantolama>? Mantolamas { get; set; }
         public virtual ICollection<MutfakDolabiYapimi>? MutfakDolabiYapimis { get; set; }

@@ -2,9 +2,10 @@
 
 namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
-    public class CatiTadilatiViewModel : IlanAdresGenelBilgi
+    public class CelikEvYapimiViewModel :IlanAdresGenelBilgi
     {
-        public string? IlanBaslik { get; set; } = "Çatı Tadilatı";
+        public string? IlanBaslik { get; set; } = "Çelik Ev Yapımı";
 
+        
     }
 }

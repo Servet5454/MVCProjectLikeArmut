@@ -703,18 +703,177 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> CatiTadilati()
+        public async Task<IActionResult> CatiTadilati(CatiTadilatiViewModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CatiTadilati),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        CatiTadilatis =new List<CatiTadilati>
+                        {new CatiTadilati()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CatiTadilati),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,                            
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult CelikEvYapimi()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> CelikEvYapimi(CelikEvYapimiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CelikEvYapimi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                        
+
+                        CelikEvYapimis =new List<CelikEvYapimi>
+                        {new CelikEvYapimi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CelikEvYapimi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+
+        }
 
         public IActionResult CelikKapi()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> CelikKapi(CelikKapiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CelikKapi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        CelikEvYapimis =new List<CelikEvYapimi>
+                        {new CelikEvYapimi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CelikEvYapimi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+
         }
         public IActionResult DogalgazTesisatiVeProjesi()
         {
