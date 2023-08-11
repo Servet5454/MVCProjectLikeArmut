@@ -503,7 +503,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             Malzeme =model.Malzeme,
                             Metrekare =model.Metrekare,
                             Tur =model.Tur,
-
+                            Kalite =model.Kalite,
                         }
 
                         }
@@ -852,7 +852,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                         CelikEvYapimis =new List<CelikEvYapimi>
                         {new CelikEvYapimi()
                         {
-                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CelikEvYapimi),
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.CelikKapi),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
                             IlanBaslik =model.IlanBaslik,

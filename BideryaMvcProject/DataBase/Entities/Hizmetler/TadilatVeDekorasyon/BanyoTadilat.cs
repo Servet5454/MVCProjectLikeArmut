@@ -15,6 +15,8 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public string? Tur { get; set; }
         public string? Metrekare { get; set; }
         public string? Malzeme { get; set; }
+        public string? Kalite { get; set; }
+
 
         public string? Aciklama { get; set; }
 
