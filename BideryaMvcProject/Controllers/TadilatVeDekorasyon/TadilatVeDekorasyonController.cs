@@ -624,6 +624,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             Malzeme =model.Malzeme,
                             Metrekare =model.Metrekare,
                             Tavan =model.Tavan,
+                            MalzemeKalitesi =model.MalzemeKalitesi,
                         }
 
                         }
@@ -875,15 +876,71 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
             }
 
         }
-        public IActionResult DogalgazTesisatiVeProjesi()
-        {
-            return View();
-        }
+      
         public IActionResult DemirKaynak()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> DemirKaynak(DemirKaynakViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DemirKaynak),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        DemirKaynaks =new List<DemirKaynak>
+                        {new DemirKaynak()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DemirKaynak),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+
+        }
         public IActionResult DepremTesti()
+        {
+            return View();
+        }
+        public IActionResult DogalgazTesisatiVeProjesi()
         {
             return View();
         }

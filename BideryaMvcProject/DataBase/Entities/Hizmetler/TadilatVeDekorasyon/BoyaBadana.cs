@@ -13,6 +13,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public string? IlanBaslik { get; set; } = "Boya Badana";
 
         public string? Metrekare { get; set; }
+        public string? MalzemeKalitesi { get; set; }
         public string? OdaSayisi { get; set; }
         public string? Malzeme { get; set; }
         public string? EvinDurumu { get; set; }

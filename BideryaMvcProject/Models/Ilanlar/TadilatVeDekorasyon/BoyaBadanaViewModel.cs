@@ -9,6 +9,7 @@ namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
         public string? Metrekare { get; set; }
         public string? OdaSayisi { get; set; }
         public string? Malzeme { get; set; }
+        public string? MalzemeKalitesi { get; set; }
         public string? EvinDurumu { get; set; }
         public string? Tavan { get; set; }
 

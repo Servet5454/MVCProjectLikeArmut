@@ -70,6 +70,7 @@ namespace BideryaMvcProject.DataBase
         public DbSet<CatiTadilati>? CatiTadilatis { get; set; }
         public DbSet<CelikEvYapimi>? CelikEvYapimis { get; set; }
         public DbSet<CelikKapi>? CelikKapis { get; set; }
+        public DbSet<DemirKaynak>? DemirKaynaks { get; set; }
         public DbSet<EvTadilat>? EvTadilats { get; set; }
         public DbSet<Mantolama>? Mantolamas { get; set; }
         public DbSet<MutfakDolabiYapimi>? MutfakDolabiYapimis { get; set; }
