@@ -12,6 +12,12 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public string? IlanBaslik { get; set; } = "Bahçe Bakımı";
         public string? Aciklama { get; set; }
 
+        public string? HangiSiklik { get; set; }
+        public string? BakimTuru { get; set; }
+        public string? Sulama { get; set; }
+        public string? Metrekare { get; set; }
+
+
         public virtual Tadilat? Tadilat { get; set; }
     }
 }

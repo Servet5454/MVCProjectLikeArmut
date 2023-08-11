@@ -11,8 +11,9 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public int IlanKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon);
         public int IlanAltKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BalkonFilesi);
         public string? IlanBaslik { get; set; } = "Balkon Filesi";
-       
 
+        public string? Tur { get; set; }
+        public string? Metrekare { get; set; }
 
         public string? Aciklama { get; set; }
 

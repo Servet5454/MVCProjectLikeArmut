@@ -12,7 +12,9 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
         public int IlanAltKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BinaGuclendirme);
         public string? IlanBaslik { get; set; } = "Bina Güçlendirme";
 
-
+        public string? BlokSayisi { get; set; }
+        public string? KatSayisi { get; set; }
+        public string? TabanAlani { get; set; }
 
         public string? Aciklama { get; set; }
 

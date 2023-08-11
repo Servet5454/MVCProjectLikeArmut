@@ -72,7 +72,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IsTuru =model.IsTuru,
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
-
+                            IlanBaslik =model.IlanBaslik,
                         }
 
                         }
@@ -115,7 +115,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                     Ilce =model.Ilce,
                     IlanBaslik =model.IlanBaslik,
 
-
+                    
                     Tadilat =new Tadilat()
                     {
                         AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AhsapMerdiven),
@@ -131,6 +131,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             ExtraHizmet =model.ExtraHizmet,
                             Malzeme =model.Malzeme,
                             Metrekare =model.Metrekare,
+                            IlanBaslik =model.IlanBaslik,
                         }
 
                         }
@@ -148,10 +149,10 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
             }
         }
         public IActionResult AlcipanIsleri()
-        {        
+        {
 
-        return View();    
-            
+            return View();
+
         }
         [HttpPost]
         public async Task<IActionResult> AlcipanIsleri(AlcipanIsleriViewModel model)
@@ -191,6 +192,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             ExtraHizmet =model.ExtraHizmet,
                             Malzeme =model.Malzeme,
                             Metrekare =model.Metrekare,
+                            IlanBaslik =model.IlanBaslik,
                         }
 
                         }
@@ -255,7 +257,9 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             ProjeCizimi =model.ProjeCizimi,
                             TabanAlani =model.TabanAlani,
                             Kat =model.Kat,
-                                                        
+                            IlanBaslik =model.IlanBaslik,
+                            
+
                         }
 
                         }
@@ -277,7 +281,7 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
             return View();
         }
         [HttpPost]
-        public async Task<IActionResult> AnahtarTeslimTadilat(AnahtarTeslimInsaatViewModel model)
+        public async Task<IActionResult> AnahtarTeslimTadilat(AnahtarTeslimTadilatViewModel model)
         {
             if (!ModelState.IsValid)
             {
@@ -311,7 +315,10 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.AnahtarTeslimTadilat),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
-                           
+                            IlanBaslik =model.IlanBaslik,
+                            Malzeme =model.Malzeme,
+                            Metrekare =model.Metrekare,
+                            Tur =model.Tur,                           
 
                         }
 
@@ -368,8 +375,12 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BahceBakimi),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
+                            Sulama =model.Sulama,
+                            HangiSiklik =model.HangiSiklik,
+                            BakimTuru =model.BakimTuru,
+                            IlanBaslik =model.IlanBaslik,
+                            Metrekare =model.Metrekare,
                             
-
                         }
 
                         }
@@ -426,6 +437,10 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BalkonFilesi),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+                            Metrekare =model.Metrekare,
+                            Tur =model.Tur,
+
 
 
                         }
@@ -478,12 +493,18 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                         KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
 
 
-                        BalkonFilesis =new List<BalkonFilesi>
-                        {new BalkonFilesi()
+                        BanyoTadilats =new List<BanyoTadilat>
+                        {new BanyoTadilat()
                         {
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BanyoTadilat),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+                            Malzeme =model.Malzeme,
+                            Metrekare =model.Metrekare,
+                            Tur =model.Tur,
+                            
+                           
 
 
                         }
