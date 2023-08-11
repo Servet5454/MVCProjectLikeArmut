@@ -503,9 +503,6 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             Malzeme =model.Malzeme,
                             Metrekare =model.Metrekare,
                             Tur =model.Tur,
-                            
-                           
-
 
                         }
 
@@ -562,8 +559,10 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BinaGuclendirme),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
-
-
+                            BlokSayisi =model.BlokSayisi,
+                            KatSayisi =model.KatSayisi,
+                            IlanBaslik =model.IlanBaslik,
+                            TabanAlani =model.TabanAlani,
                         }
 
                         }
@@ -619,8 +618,12 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
                             IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.BoyaBadana),
                             IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
                             Aciklama =model.Aciklama,
-
-
+                            OdaSayisi =model.OdaSayisi,
+                            EvinDurumu =model.EvinDurumu,
+                            IlanBaslik =model.IlanBaslik,
+                            Malzeme =model.Malzeme,
+                            Metrekare =model.Metrekare,
+                            Tavan =model.Tavan,
                         }
 
                         }
@@ -699,7 +702,11 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         {
             return View();
         }
-
+        [HttpPost]
+        public async Task<IActionResult> CatiTadilati()
+        {
+            return View();
+        }
         public IActionResult CelikEvYapimi()
         {
             return View();
