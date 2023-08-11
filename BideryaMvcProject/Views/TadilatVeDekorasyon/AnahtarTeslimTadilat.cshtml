@@ -1,5 +1,116 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon.AnahtarTeslimTadilatViewModel
+
+<div class="bg-shape">
+    <img src="~/img/shape/shape-1.png" alt="">
+</div>
+
+<section class="signup__area po-rel-z1 pt-100 pb-145">
+    <div class="sign__shape">
+        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+    </div>
+
+
+    <header class="header-survey">
+        <h1 id="title" class="text-center text-shadow">Anahtar Teslim Tadilat</h1>
+        <p id="description" class="description text-center">
+            Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+        </p>
+    </header>
+
+    <div class="container">
+        <form asp-action="AnahtarTeslimTadilat" asp-controller="TadilatVeDekorasyon" method="post">
+            <div class="row">
+                <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
+                    <div class="sign__wrapper">
+                        <div class="sign__form">
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Tur" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Tadilat Yapılacak Yerin Türünü Belirtiniz</option>
+                                    <option value="Ev">Ev</option>
+                                    <option value="Mağaza">Mağaza</option>
+                                    <option value="Ofis">Ofis</option>
+                                    <option value="Cafe">Cafe</option>
+                                    <option value="Otel">Otel</option>
+                                    <option value="Diğer">Diğer</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Metrekare" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Tadilat Yapılacak Yerin Toplam Alanını Belirtiniz</option>
+                                    <option value="0-24 M²">0-24 M² M²</option>
+                                    <option value="25-49 M²">25-49 M² M²</option>
+                                    <option value="50-99 M²">50-99 M² M²</option>
+                                    <option value="100-149 M²">100-149 M²</option>
+                                    <option value="150-249 M²">150-249 M²</option>
+                                    <option value="250 M² ve Üzeri">250 M² ve Üzeri</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Malzeme" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Malzeme Kalitesini Belirtiniz</option>
+                                    <option value="Yüksek">Yüksek Kaliteli</option>
+                                    <option value="Ota">Orta Kaliteli</option>
+                                    <option value="Ekonomik">Ekonomik</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+
+                                <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                    <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                </select>
+                                <br />
+                                <br />
+                                <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                    <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                </select>
+
+                            </div>
+
+                            <div class="contact__input textarea">
+                                <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
+                            </div>
+
+                            <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true;
+        }
+    }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+

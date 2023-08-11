@@ -1,1 +1,144 @@
-﻿
+﻿@model BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon.BoyaBadanaViewModel
+
+<div class="bg-shape">
+    <img src="~/img/shape/shape-1.png" alt="">
+</div>
+
+<section class="signup__area po-rel-z1 pt-100 pb-145">
+    <div class="sign__shape">
+        <img class="man-1" src="~/img/icon/sign/man-3.png" alt="">
+        <img class="man-2 man-22" src="~/img/icon/sign/man-2.png" alt="">
+        <img class="circle" src="~/img/icon/sign/circle.png" alt="">
+        <img class="zigzag" src="~/img/icon/sign/zigzag.png" alt="">
+        <img class="dot" src="~/img/icon/sign/dot.png" alt="">
+        <img class="bg" src="~/img/icon/sign/sign-up.png" alt="">
+        <img class="flower" src="~/img/icon/sign/flower.png" alt="">
+    </div>
+
+
+    <header class="header-survey">
+        <h1 id="title" class="text-center text-shadow">Anahtar Teslim Tadilat</h1>
+        <p id="description" class="description text-center">
+            Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
+        </p>
+    </header>
+
+    <div class="container">
+        <form asp-action="AnahtarTeslimTadilat" asp-controller="TadilatVeDekorasyon" method="post">
+            <div class="row">
+                <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
+                    <div class="sign__wrapper">
+                        <div class="sign__form">
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Metrekare" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Boya Yapılacak Alanın Büyüklüğünü Belirtiniz</option>
+                                    <option value="0-24 M²">0-24 M²</option>
+                                    <option value="25-49 M²">25-49 M²</option>
+                                    <option value="50-99 M²">50-99 M²</option>
+                                    <option value="100-149 M²">100-149 M²</option>
+                                    <option value="150-249 M²">150-249 M²</option>
+                                    <option value="250 M² ve Üzeri">250 M² ve Üzeri</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="OdaSayisi" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Oda Sayısını Seçiniz</option>
+                                    <option value="1+0">1+0</option>
+                                    <option value="1+1">1+1</option>
+                                    <option value="2+1">2+1</option>
+                                    <option value="3+1">3+1</option>
+                                    <option value="4+1">4+1</option>
+                                    <option value="4+2">4+2</option>
+                                    <option value="5+1">5+1</option>
+                                    <option value="5+2">5+2</option>
+                                    <option value="6+1">6+1</option>
+                                    <option value="6+1'den Daha Büyük">6+1'den Daha Büyük</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Malzeme" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>İşleme Malzeme Dahil Olsun Mu?</option>
+                                    <option value="Sadece İşçilik Olsun">Sadece İşçilik Olsun</option>
+                                    <option value="Malzeme Dahil Olsun">Malzeme Dahil Olsun</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="MalzemeKalitesi" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Malzeme Kalitesini Belirtiniz</option>
+                                    <option value="Yüksek">Yüksek Kaliteli</option>
+                                    <option value="Ota">Orta Kaliteli</option>
+                                    <option value="Ekonomik">Ekonomik</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="EvinDurumu" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Boya Yapılacak Yerin Durumunu Belirtiniz</option>
+                                    <option value="Boş">Boya Yapılacak Yer Boş</option>
+                                    <option value="Dolu">İçeride Eşyalar Var</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Tavan" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Tavanlar Boyanacak Mı?</option>
+                                    <option value="Evet">Tavanlar da Boyanacak</option>
+                                    <option value="Hayır">Tavanların Boyanmasına Gerek Yok</option>
+                                </select>
+                            </div>
+
+                            <div class="sign__input-wrapper mb-25">
+
+                                <select id="turkiye_illeri" asp-for="Il" class="m-btn m-btn-4 w-100" required onchange="showSelectedIl()">
+                                    <option disabled selected>Hizmet İstediğiniz İli Seçiniz</option>
+                                </select>
+                                <br />
+                                <br />
+                                <select id="turkiye_ilceler" asp-for="Ilce" class="m-btn m-btn-4 w-100" required>
+                                    <option disabled selected>Hizmet İstediğiniz İlçeyi Seçiniz</option>
+                                </select>
+
+                            </div>
+
+                            <div class="contact__input textarea">
+                                <textarea asp-for="Aciklama" placeholder="Belirtmek İstediğiniz Ek Açıklamaları Bu Alana Yazabilirsiniz" required id="form"></textarea>
+                            </div>
+
+                            <button type="submit" class="m-btn m-btn-4 w-100">Talep Oluştur</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
+<script>window.onload = function () {
+        const hizmetVerenCheckbox = document.getElementById("m-hizmet-veren");
+        const hizmetArayanCheckbox = document.getElementById("m-hizmet-arayan");
+        hizmetVerenCheckbox.checked = false;
+        hizmetArayanCheckbox.checked = true;
+    };
+
+
+    function toggleCheck(checkboxId) {
+        const checkbox = document.getElementById(checkboxId);
+        const checkboxes = document.getElementsByName("hizmet");
+
+        if (checkbox.checked) {
+            checkboxes.forEach((item) => {
+                if (item.id !== checkboxId) {
+                    item.checked = false;
+                }
+            });
+        } else {
+            checkbox.checked = true;
+        }
+    }</script>
+
+
+<script src=~/FormSayfasi/FormSayfa.js></script>
+
