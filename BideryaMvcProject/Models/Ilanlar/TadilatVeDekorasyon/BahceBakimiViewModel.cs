@@ -5,6 +5,7 @@ namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
     public class BahceBakimiViewModel:IlanAdresGenelBilgi
     {
-        
+        public string? IlanBaslik { get; set; } = "Bahçe Bakımı";
+
     }
 }

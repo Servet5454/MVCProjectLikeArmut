@@ -4,6 +4,7 @@ namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
     public class AnahtarTeslimInsaatViewModel:IlanAdresGenelBilgi
     {
+        public string? IlanBaslik { get; set; } = "Anahtar Teslim İnşaat";
         public string? Kat { get; set; }
         public string? Daire { get; set; }
         public string? ProjeCizimi { get; set; }
