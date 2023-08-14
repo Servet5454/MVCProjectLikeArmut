@@ -1,4 +1,4 @@
-﻿@model BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon.AlcipanIsleriViewModel
+﻿@model BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon.BalkonFilesiViewModel
 <div class="bg-shape">
     <img src="~/img/shape/shape-1.png" alt="">
 </div>
@@ -16,18 +16,29 @@
 
 
     <header class="header-survey">
-        <h1 id="title" class="text-center text-shadow">Alçı İşleri</h1>
+        <h1 id="title" class="text-center text-shadow">Balkon Filesi İşleri</h1>
         <p id="description" class="description text-center">
             Daha kaliteli hizmet alabilmek İçin lütfen formu ve açıklamaları detaylı doldurunuz
         </p>
     </header>
 
     <div class="container">
-        <form asp-action="AlcipanIsleri" asp-controller="TadilatVeDekorasyon" method="post">
+        <form asp-action="BalkonFilesi" asp-controller="TadilatVeDekorasyon" method="post">
             <div class="row">
                 <div class="col-xxl-7 col-xl-6 col-lg-8 mx-xxl-auto">
                     <div class="sign__wrapper">
                         <div class="sign__form">
+
+                            <div class="sign__input-wrapper mb-25">
+                                <select id="dropdown" asp-for="Tur" class="m-btn m-btn-4 w-100" required>
+                                    <option disable select>Yapılacak Filenin Amacını Belirtiniz</option>
+                                    <option value="Çocuk">Çocuk Güvenliği</option>
+                                    <option value="Kedi">Kedi İçin</option>
+                                    <option value="Kuş">Kuş İçin</option>
+                                    <option value="Diğer">Diğer</option>
+                                </select>
+                            </div>
+
                             <div class="sign__input-wrapper mb-25">
                                 <select id="dropdown" asp-for="Metrekare" class="m-btn m-btn-4 w-100" required>
                                     <option disable select>İşlem Yapılacak Alanın Büyüklüğünü Belirtiniz</option>
