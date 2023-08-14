@@ -10,7 +10,7 @@ namespace BideryaMvcProject.DataBase.Entities.Hizmetler.TadilatVeDekorasyon
 
         public int IlanKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon);
         public int IlanAltKategoriId { get; set; } = Convert.ToInt32(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.SeramikDoseme);
-        public string? IlanBaslik { get; set; } = "Seramil Döşeme";
+        public string? IlanBaslik { get; set; } = "Seramik Döşeme";
 
 
 

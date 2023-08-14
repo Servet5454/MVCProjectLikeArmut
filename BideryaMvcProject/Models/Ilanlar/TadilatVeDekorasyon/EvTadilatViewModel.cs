@@ -1,6 +1,8 @@
-﻿namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
+﻿using BideryaMvcProject.Models.Ilanlar.IlanAdresBilgileri;
+
+namespace BideryaMvcProject.Models.Ilanlar.TadilatVeDekorasyon
 {
-    public class EvTadilatViewModel
+    public class EvTadilatViewModel:IlanAdresGenelBilgi
     {
 
         public string? TadilatTipi { get; set; }
@@ -17,5 +19,8 @@
         public string? EvinDurumu { get; set; }
         public string? MalzemeKalitesi { get; set; }
         public string? Diger { get; set; }
+
+        public string? IlanBaslik { get; set; } = "Ev Tadilat";
+
     }
 }
