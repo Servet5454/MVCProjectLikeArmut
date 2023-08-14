@@ -71,9 +71,50 @@ namespace BideryaMvcProject.DataBase
         public DbSet<CelikEvYapimi>? CelikEvYapimis { get; set; }
         public DbSet<CelikKapi>? CelikKapis { get; set; }
         public DbSet<DemirKaynak>? DemirKaynaks { get; set; }
+        public DbSet<DepremTesti>? DepremTestis { get; set; }
+        public DbSet<DogalgazTesisatiVeProjesi>? DogalgazTesisatiVeProjesis { get; set; }
+        public DbSet<DolapYapimi>? DolapYapimis { get; set; }
+        public DbSet<Dusakabin>? Dusakabins { get; set; }
+        public DbSet<DuvarKagidiIsleri>? DuvarKagidiIsleris { get; set; }
+        public DbSet<EpoksiZeminKaplama>? EpoksiZeminKaplamas { get; set; }
+        public DbSet<EvDekorasyon>? EvDekorasyons { get; set; }
         public DbSet<EvTadilat>? EvTadilats { get; set; }
-        public DbSet<Mantolama>? Mantolamas { get; set; }
-        public DbSet<MutfakDolabiYapimi>? MutfakDolabiYapimis { get; set; }
+        public DbSet<FayansDoseme>? FayansDosemes { get; set; }
+        public DbSet<GunesEnerjisi>? GunesEnerjisis { get; set; }
+        public DbSet<HavuzYapimi>? HavuzYapimis { get; set; }
+        public DbSet<HazirRuloCim>? HazirRuloCims { get; set; }
+        public DbSet<KabaInsaat> KabaInsaats { get; set; }
+        public DbSet<KapiPencereSinekligi> KapiPencereSinekligis { get; set; }
+        public DbSet<KoltukDoseme> KoltukDosemes { get; set; }
+        public DbSet<LaminatParkeDoseme> LaminatParkeDosemes { get; set; }
+        public DbSet<Mantolama> Mantolamas { get; set; }
+        public DbSet<MezarYapimi> MezarYapimis { get; set; }
+        public DbSet<MimariProjeCizimi> MimariProjeCizimis { get; set; }
+        public DbSet<MobilyaBoyama> MobilyaBoyamas { get; set; }
+        public DbSet<MutfakDolabiYapimi> MutfakDolabiYapimis { get; set; }
+        public DbSet<MutfakTadilat> MutfakTadilats { get; set; }
+        public DbSet<MutfakTezgahi> MutfakTezgahis { get; set; }
+        public DbSet<OtomatikKepenk> OtomatikKepenks { get; set; }
+        public DbSet<OzelMobilyaYapimi> OzelMobilyaYapimis { get; set; }
+        public DbSet<Panjur> Panjurs { get; set; }
+        public DbSet<ParkeSistreCila> ParkeSistreCilas { get; set; }
+        public DbSet<ParkeTasiDoseme> ParkeTasiDosemes { get; set; }
+        public DbSet<PrefabrikEvYapimi> PrefabrikEvYapimis { get; set; }
+        public DbSet<PVCKapiPencereBalkon> PVCKapiPencereBalkons { get; set; }
+        public DbSet<SeramikDoseme> SeramikDosemes { get; set; }
+        public DbSet<SesYalitimi> SesYalitimis { get; set; }
+        public DbSet<StorPerde> StorPerdes { get; set; }
+        public DbSet<SupurgelikMontaji> SupurgelikMontajis { get; set; }
+        public DbSet<SurguluKapi> SurguluKapis { get; set; }
+        public DbSet<SuYalitimi> SuYalitimis { get; set; }
+        public DbSet<TelOrguCiti> TelOrguCitis { get; set; }
+        public DbSet<TenteBrandaTadilatVeDekorasyon> TenteBrandaTadilatVeDekorasyons { get; set; }
+
+
+
+
+
+       
 
         #endregion
 
