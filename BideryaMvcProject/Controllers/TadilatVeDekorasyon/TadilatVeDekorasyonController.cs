@@ -940,50 +940,698 @@ namespace BideryaMvcProject.Controllers.TadilatVeDekorasyon
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> DepremTesti(DepremTestiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DepremTesti),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        DepremTestis =new List<DepremTesti>
+                        {new DepremTesti()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DepremTesti),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult DogalgazTesisatiVeProjesi()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> DogalgazTesisatiVeProjesi(DogalgazTesisatiVeProjesiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DogalgazTesisatiVeProjesi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        DogalgazTesisatiVeProjesis =new List<DogalgazTesisatiVeProjesi>
+                        {new DogalgazTesisatiVeProjesi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DogalgazTesisatiVeProjesi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+
         }
         public IActionResult DolapYapimi()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> DolapYapimi(DolapYapimiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DolapYapimi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        DolapYapimis =new List<DolapYapimi>
+                        {new DolapYapimi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DolapYapimi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult Dusakabin()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> Dusakabin(DusakabinViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.Dusakabin),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        Dusakabins =new List<Dusakabin>
+                        {new Dusakabin()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.Dusakabin),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult DuvarKagidiIsleri()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> DuvarKagidiIsleri(DuvarKagidiIsleriViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DuvarKagidiIsleri),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        DuvarKagidiIsleris =new List<DuvarKagidiIsleri>
+                        {new DuvarKagidiIsleri()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.DuvarKagidiIsleri),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
 
         public IActionResult EpoksiZeminKaplama()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> EpoksiZeminKaplama(EpoksiZeminKaplamaViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.EpoksiZeminKaplama),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        EpoksiZeminKaplamas =new List<EpoksiZeminKaplama>
+                        {new EpoksiZeminKaplama()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.EpoksiZeminKaplama),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult EvDekorasyon()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> Evdekoeasyon(EvDekorasyonViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.EvDekorasyon),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        EvDekorasyons =new List<EvDekorasyon>
+                        {new EvDekorasyon()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.EvDekorasyon),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult EvTadilat()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> EvTadilat(EvTadilatViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.EvTadilat),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        EvTadilats =new List<EvTadilat>
+                        {new EvTadilat()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.EvTadilat),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult FayansDoseme()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> FayansDoseme(FayansDosemeViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.FayansDoseme),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        FayansDosemes =new List<FayansDoseme>
+                        {new FayansDoseme()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.FayansDoseme),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult GunesEnerjisi()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> GunesEnerjisi(GunesEnerjisiViewModel model) {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.GunesEnerjisi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        GunesEnerjisis =new List<GunesEnerjisi>
+                        {new GunesEnerjisi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.GunesEnerjisi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult HavuzYapimi()
         {
             return View();
         }
+        [HttpPost]
+        public async Task<IActionResult> HavuzYapimi(HavuzYapimiViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.HavuzYapimi),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        HavuzYapimis =new List<HavuzYapimi>
+                        {new HavuzYapimi()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.HavuzYapimi),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
+        }
         public IActionResult HazirRuloCim()
         {
             return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> HazirRuloCim(HazirRuloCimViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                // Eksik Bilgiler Var
+                return View(model);
+            }
+            else
+            {
+                var UserId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                var UserEmail = User.FindFirstValue(ClaimTypes.Email);
+
+                Kullanici? kul = await context.Kullanicis.FirstOrDefaultAsync(p => p.Id ==int.Parse(UserId));
+
+                kul.Ilans =new List<Ilan>() { new Ilan
+                {
+                    AdresDetay =model.AdresGenel,
+                    Il =model.Il,
+                    Ilce =model.Ilce,
+                    IlanBaslik =model.IlanBaslik,
+
+
+                    Tadilat =new Tadilat()
+                    {
+                        AltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.HazirRuloCim),
+                        KategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+
+
+                        HazirRuloCims =new List<HazirRuloCim>
+                        {new HazirRuloCim()
+                        {
+                            IlanAltKategoriId =Convert.ToInt16(AltKategoriEnum.TadilatVeDekorasyonHizmetleri.HazirRuloCim),
+                            IlanKategoriId =Convert.ToInt16(AltKategoriEnum.IlanKategori.TadilatVeDekorasyon),
+                            Aciklama =model.Aciklama,
+                            IlanBaslik =model.IlanBaslik,
+
+
+                        }
+
+                        }
+                    }
+
+                }
+                };
+
+
+                context.Update(kul);
+                await context.SaveChangesAsync();
+
+                return View();
+
+            }
         }
         public IActionResult KabaInsaat()
         {
